@@ -1,0 +1,13 @@
+package com.sonichollow;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SonicHollowApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
