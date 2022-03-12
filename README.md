@@ -11,6 +11,8 @@ To clone this repository on your PC, run the command in git:
 
 Open this project in IDEA and start coding!
 
+File > New > Project from Existing Sources
+
 Notes: 
 
 1. All entities involving **user generated content** should inherent the class BaseEntity.
