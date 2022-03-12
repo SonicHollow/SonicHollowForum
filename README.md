@@ -1,2 +1,32 @@
 # SonicHollowForum
-Forum
+This is the official repository for CPT202 Software Engineering Group Project *Group B1*.
+
+## Guideline
+
+To start, install [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git) on your PC. 
+
+To clone this repository on your PC, run the command in git:
+
+`git clone git@github.com:SonicHollow/SonicHollowForum.git`
+
+Open this project on IDEA and start coding!
+
+Notes: 
+
+1. All entities involving **user generated content** should inherent the class BaseEntity.
+2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html))  to [this one](https://pan.baidu.com/s/1_0r18fd85cthx7hef4n3cA?pwd=o3kv) (You don't have to if you didn't meet this problem). 
+
+### Updates
+
+#### 3.12
+
+Update the project framework with complete registration function
+
+### Useful Websites
+
+[Git Tutorials](https://www.runoob.com/git/git-basic-operations.html)
+
+[Bootstrap CSS Framework - Full Course for Beginners](https://www.youtube.com/watch?v=-qfEOE4vtxE)
+
+[Bootstrap 5 & Material Design 2.0 UI KIT](https://github.com/mdbootstrap/mdb-ui-kit)
+
