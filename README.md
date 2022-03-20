@@ -28,7 +28,7 @@ Create a new branch "login", including the completed login function (database qu
 **Differences:**
 1. No html5, js, css in version 1. Only login-related files.
 2. New LoginController and PageController.
-3. New *pom.xml*, *application.properties* and *application.properties-dev*.
+3. New *pom.xml*, *application.properties* and *application-dev.properties*.
 4. Only one SpringApplication class.
 
 **Todo**
