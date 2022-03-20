@@ -44,7 +44,7 @@ Update the project framework with registration function (no frontend)
 
 [Git Tutorials](https://www.runoob.com/git/git-basic-operations.html)
 
-[Git 视频课程](https://www.bilibili.com/video/BV1vy4y1s7k6)
+[Git Video Tutorials](https://www.bilibili.com/video/BV1vy4y1s7k6)
 
 [Bootstrap CSS Framework - Full Course for Beginners](https://www.youtube.com/watch?v=-qfEOE4vtxE)
 
