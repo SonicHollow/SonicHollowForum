@@ -3,7 +3,6 @@ package com.sonichollow.forum.controller;
 import com.google.code.kaptcha.Constants;
 import com.sonichollow.forum.entity.User;
 import com.sonichollow.forum.service.impl.UserServiceImpl;
-import jdk.internal.access.JavaIOFileDescriptorAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
