@@ -23,7 +23,7 @@ Notes:
 
 #### 3.20
 
-Create a new branch "login", including the completed login function (database queries, verification code and cookie), not including the web pages in version 1. Other files remain the same.
+Create a new branch "login", including the completed login function (frontend and backend), not including the web pages in version 1. Other files remain the same.
 
 **Differences:**
 1. No html5, js, css in version 1. Only login-related files.
