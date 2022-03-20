@@ -23,11 +23,18 @@ Notes:
 
 #### 3.20
 
-Create a new branch "login", including the completed login function (database queries, verification code and cookie), not including the web pages in version 1. 
+Create a new branch "login", including the completed login function (database queries, verification code and cookie), not including the web pages in version 1. Other files remain the same.
+
+Differences:
+1. No HTML5, js, css in version 1. Only login-related files.
+2. New LoginController and PageController.
+3. New *pom.xml*, *application.properties* and *application.properties-dev*.
+4. Only one SpringApplication class.
 
 **Todo**
 
-Integrate the registration function and develop the frontend for it.
+1. Login testing (database queries, verification code API and cookies).
+2. Integrate the registration function and develop the frontend.
 
 #### 3.12
 
