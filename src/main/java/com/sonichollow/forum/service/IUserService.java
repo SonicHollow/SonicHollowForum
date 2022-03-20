@@ -11,10 +11,10 @@ public interface IUserService {
      * @param user 用户数据对象
      */
     void reg(User user);
-    boolean isUser(String name,String password);
+    boolean isUser(String username,String password);
     //判断账号是否已经注册
-    boolean checkName(String name);
+    boolean checkName(String username);
     //注册成功后添加用户
     Integer addUser(User user);
-    User getUser(String name);
+    User getUser(String username);
 }

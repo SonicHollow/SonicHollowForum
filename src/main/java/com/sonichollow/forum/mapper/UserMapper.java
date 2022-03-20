@@ -2,11 +2,15 @@ package com.sonichollow.forum.mapper;
 
 import com.sonichollow.forum.entity.User;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
 /**
  * 用户模块的持久层接口
  */
+@Component
+@Mapper
 public interface UserMapper {
     /**
      * 插入用户的数据
@@ -24,16 +28,16 @@ public interface UserMapper {
 
     // Login Function
 
-    @Select("select name from user where name=#{name} and password=#{password}")
-    String isUser(String name, String password);
+    @Select("select username from user where username=#{username} and password=#{password}")
+    String isUser(String username, String password);
 
-    @Select("select name from user where name=#{name}")
-    String checkName(String name);
+    @Select("select username from user where username=#{username}")
+    String checkName(String username);
 
-    @Insert("insert into user(name,email,password) values(#{name},#{email},#{password}) ")
+    @Insert("insert into user(username,email,password) values(#{username},#{email},#{password})")
     Integer addUser(User user);
 
-    @Select("select * from user where name=#{name}")
-    User getUser(String name);
+    @Select("select * from user where username=#{username}")
+    User getUser(String username);
 
 }

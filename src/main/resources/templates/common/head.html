@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet"  href="../../static/css/bootstrap.min.css"/>
+<script src="../../static/js/jquery-3.5.1.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<script>
+    var myDate;
+    setInterval(function(){
+        myDate = new Date();
+        var minute = myDate.getMinutes();
+        var second = myDate.getSeconds();
+        if( minute == 0 &&  0<= second && second <=15 ) {
+            test.setAttribute("style","color: white;font-size: 18px");
+            test.innerHTML = myDate.toLocaleString();
+        }
+        else {
+            test.removeAttribute("style");
+            test.innerHTML = myDate.toLocaleString();
+        }
+    },1000)
+</script>
+<style>
+.header-sign-up .btn-success {
+min-width: 124px;
+font-size: 15px;
+text-align: center;
+color: #ffffff;
+border-radius: 5px;
+background-color: #37cf7d;
+border-color: #37cf7d;
+padding-top: 10px;
+padding-bottom: 13px;
+box-shadow: none;
+outline: none;
+margin: 2px auto;
+}
+</style>
