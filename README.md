@@ -27,6 +27,7 @@ Update the project framework with complete registration function
 ## Useful Websites
 
 [Git Tutorials](https://www.runoob.com/git/git-basic-operations.html)
+
 [Git 视频课程](https://www.bilibili.com/video/BV1vy4y1s7k6)
 
 [Bootstrap CSS Framework - Full Course for Beginners](https://www.youtube.com/watch?v=-qfEOE4vtxE)
