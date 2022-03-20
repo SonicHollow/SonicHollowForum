@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:include="common/head"> </div>
+<head>
+    <meta charset="UTF-8">
+    <title>提醒</title>
+</head>
+<body>
+<div th:include="common/commonNavbar"> </div>
+<br><br><br><br>
+<center>
+         <div class="page-header" align="center">
+    <h1 style="color: #f5646e" th:text="${#request.getAttribute('msg')}"></h1>
+</div>
+    <br><br>
+    <a href="index">返回首页</a>
+</center>
+   
+<script language="javascript">
+    init();
+    snow();
+</script>
+</body>
+</html>

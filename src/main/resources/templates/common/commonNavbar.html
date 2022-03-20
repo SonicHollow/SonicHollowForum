@@ -1,0 +1,11 @@
+<div th:if="${#session == null}">
+    <div th:include="common/UnLoginNavbar"> </div>
+</div>
+<div th:if="${#session != null}">
+    <div th:if="${#session.getAttribute('username') == null}">
+        <div th:include="common/UnLoginNavbar"> </div>
+    </div>
+    <div th:if="${#session.getAttribute('username') != null}">
+        <div th:include="common/loginNavbar"> </div>
+    </div>
+</div>

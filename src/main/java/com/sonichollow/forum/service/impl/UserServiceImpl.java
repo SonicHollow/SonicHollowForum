@@ -7,6 +7,7 @@ import com.sonichollow.forum.service.ex.InsertException;
 import com.sonichollow.forum.service.ex.UsernameDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
@@ -16,6 +17,29 @@ import java.util.UUID;
 public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
+
+    // Login
+    @Override
+    public boolean isUser(String username, String password) {
+        return userMapper.isUser(username,password)!=null;
+    }
+
+    @Override
+    public boolean checkName(String username) {
+        return userMapper.checkName(username)==null;
+    }
+
+    @Override
+    @Transactional
+    public Integer addUser(User user) {
+        return userMapper.addUser(user);
+    }
+
+    @Override
+    public User getUser(String username) {
+        return userMapper.getUser(username);
+    }
+
 
     @Override
     public void reg(User user) {
@@ -58,7 +82,6 @@ public class UserServiceImpl implements IUserService {
         if (rows != 1) {
             throw new InsertException("未知的注册错误");//数据库宕机...
         }
-
     }
 
     /**
@@ -68,6 +91,7 @@ public class UserServiceImpl implements IUserService {
      * @param salt     盐值
      * @return 新密码MD5
      */
+
     private String getMD5Password(String password, String salt) {
         //加密三次
         for (int i = 0; i < 3; i++) {
@@ -75,5 +99,6 @@ public class UserServiceImpl implements IUserService {
         }
         return password;
     }
+
 
 }

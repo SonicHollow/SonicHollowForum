@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<div th:include="common/head" style="width:100%"> </div>
+<head>
+<title>Welcome to SonicHollow Forum!</title>
+</head>
+<body style="background: #fafafa">
+<div th:include="common/commonNavbar"> </div>
+<br>
+<br>
+
+<div class="text">
+    <h1>Welcome</h1>
+</div>
+<h2>Hello_World_SonicHollow</h2>
+
+</body>
+
+<style>
+    body {
+        background-color: #d5d5d5;
+    }
+
+    .text {
+        color: #816AFE;
+
+        letter-spacing: .05em;
+        text-shadow:
+                4px 4px 0px #d5d5d5,
+                7px 7px 0px rgba(0, 0, 0, 0.2);
+        font-size:2.3em;
+        font-family:  sans-serif;
+        -webkit-animation: shift 2s ;
+        animation: shift 2s ;
+        margin-top:125px;
+        text-align:center;
+        text-transform:uppercase;
+    }
+    h2 {
+        animation: appear 3.2s;
+        text-align:center;
+    }
+
+    @keyframes shift {
+        0% {opacity:0;}
+        33% {margin-top:0px;opacity:0;}
+        100% {margin-top:125px;opacity:1;text-shadow:
+                4px 4px 0px #d5d5d5,
+                7px 7px 0px rgba(0, 0, 0, 0.2);}
+    }
+
+    @keyframes appear {
+        0% {opacity:0;}
+        50% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+</style>

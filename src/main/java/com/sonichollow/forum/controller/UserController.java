@@ -1,30 +1,28 @@
 package com.sonichollow.forum.controller;
 
+import com.google.code.kaptcha.Constants;
 import com.sonichollow.forum.entity.User;
 import com.sonichollow.forum.service.IUserService;
-import com.sonichollow.forum.service.ex.InsertException;
-import com.sonichollow.forum.service.ex.UsernameDuplicatedException;
+import com.sonichollow.forum.service.impl.UserServiceImpl;
 import com.sonichollow.forum.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 //@Controller
 @RestController //@Controller+@ResponseBody
 @RequestMapping("users")
-public class UserController extends BaseController{
+public class UserController extends BaseController {
     @Autowired
     private IUserService userService;
 
     @RequestMapping("reg")
     // @ResponseBody //表示此方法响应以Json格式进行数据给前端
-    public JsonResult<Void> reg(User user){
+    public JsonResult<Void> reg(User user) {
         userService.reg(user);
         return new JsonResult<Void>(OK);
     }
-
 }
 
 // http://localhost:8080/users/reg?username=Tom&password=123456
