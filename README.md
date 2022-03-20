@@ -25,7 +25,7 @@ Notes:
 
 Create a new branch "login", including the completed login function (frontend and backend), not including the web pages in version 1. Other files remain the same.
 
-**Differences:**
+**Differences**
 1. No html5, js, css in version 1. Only login-related files.
 2. New LoginController and PageController.
 3. New *pom.xml*, *application.properties* and *application-dev.properties*.
