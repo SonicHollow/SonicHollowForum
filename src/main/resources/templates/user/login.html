@@ -1,5 +1,33 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <head>
+        <title>Login</title>
+    </head>
+    <div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
+    <body>
+        <div class="container">
+            <h1>Login to SonicHollow</h1>
+            <form method="post" action="loginUser">
+                <div class="form-control">
+                    <input id="username" name="username" type="text" th:value="${param.username}" class="form-control login-input" required maxlength="50" placeholder="Username" style="color: gray">
+                </div>
+                <div class="form-control">
+                    <input id="password" name="password" type="password" th:value="${param.password}" class="form-control login-input login-password" required maxlength="50" placeholder="Password" style="color: gray">
+                </div>
+                <div class="form-control">
+                    <input id="code" name="code"  class="form-control login-input login-input" required maxlength="4" placeholder="Verification Code" style="color: gray">
+                </div>
+                <div class="form-control">
+                    <img id="code_img" alt="Display Error" src="loginimage" width="50%">
+                    <span class="errorMsg" style="color: black" th:text="${param.msg}"></span>
+                </div>
+                <button type="submit" id="signin" class="btn">Login</button>
+                <p class="text" style="color: #86a7ca">Don't have an account? <a href="regist">Register one!</a> </p>
+            </form>
+        </div>
+    </body>
+</html>
 <script type="text/javascript">
     $(function () {
         // 给验证码的图片，绑定单击事件
@@ -39,38 +67,7 @@
         });
     });
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>Login</title>
-</head>
-<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
-<body>
-<div class="container">
-    <h1>Login to SonicHollow</h1>
-    <form method="post" action="loginUser">
-        <div class="form-control">
-            <input id="username" name="username" type="text" th:value="${param.username}" class="form-control login-input" required maxlength="50" placeholder="Username" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="password" name="password" type="password" th:value="${param.password}" class="form-control login-input login-password" required maxlength="50" placeholder="Password" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="code" name="code"  class="form-control login-input login-input" required maxlength="4" placeholder="Verification Code" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <img id="code_img" alt="Display Error" src="loginimage" width="50%">
-            <span class="errorMsg" style="color: black" th:text="${param.msg}">hahaha</span>
-        </div>
-        <button type="submit" id="signin" class="btn">Login</button>
-        <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a> </p>
-    </form>
-</div>
 
-</body>
-</html>
 
 <style>
     input::-webkit-input-placeholder{
@@ -93,20 +90,21 @@
     }
 
     body{
-        background-color: white;
+        background-color: #f3eff5;
         font-family: sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0;
     }
 
     .container{
-        background-color: white;
+        background-color: #f3eff5;
         padding: 20px 40px ;
         border-radius: 10px;
         border-style:solid;
-        border-color: #BCA9F5;
+        border-color: #86a7ca;
         border-width:3px
     }
 
@@ -120,7 +118,7 @@
     .btn{
         cursor: pointer;
         width: 100%;
-        background-color: #BCA9F5;
+        background-color: #86a7ca;
         padding: 15px;
         border-radius: 10px;
         border-style:none;
@@ -139,7 +137,7 @@
 
     .container a{
         text-decoration: none;
-        color:#816AFE;
+        color:#4e7eb1;
     }
 
     .text{
@@ -161,16 +159,16 @@
         width: 100%;
         padding: 15px 0;
         font-size: 18px;
-        color:white;
+        color:#86a7ca;
     }
 
     .form-control input:focus{
         outline: 0;
-        border-bottom-color: #816AFE;
+        border-bottom-color: #86a7ca;
     }
 
     .form-control input:valid{
-        border-bottom-color: #816AFE;
+        border-bottom-color: #86a7ca;
     }
 
     .form-control label{
