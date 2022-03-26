@@ -48,7 +48,7 @@ public class UserServiceImpl implements IUserService {
         User result = userMapper.findByUsername(username);
         if (result != null) {
             //抛出用户名重复异常
-            throw new UsernameDuplicatedException("用户名已存在 username exists");
+            throw new UsernameDuplicatedException("Username exists");
         }
 
         // 密码加密，MD5

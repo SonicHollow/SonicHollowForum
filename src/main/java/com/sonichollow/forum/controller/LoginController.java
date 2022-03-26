@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.google.code.kaptcha.Producer;
 import org.springframework.web.servlet.ModelAndView;
@@ -69,13 +66,12 @@ public class LoginController {
         //验证码正确
         if (token != null && token.equalsIgnoreCase(code)) {
             //检查用户是否存在
-            //用户存在
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
+            //用户存在                               l.
             if(userService.isUser(username,password)){
                 //保存登录信息
                 HttpSession session = req.getSession(true);
                 session.setAttribute("username", username);
-                Cookie nameCookie = new Cookie("username", username); //可以使用md5或着自己的加密算法保存
+                Cookie nameCookie = new Cookie("username", username);
                 Cookie passwordCookie = new Cookie("password", password);
                 nameCookie.setPath("/");
                 nameCookie.setMaxAge(One_DAY);

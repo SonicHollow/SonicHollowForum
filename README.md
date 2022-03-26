@@ -17,9 +17,15 @@ Notes:
 
 1. All entities involving **user generated content** should inherent the class BaseEntity.
 2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html))  to [this one](https://pan.baidu.com/s/1_0r18fd85cthx7hef4n3cA?pwd=o3kv) (You don't have to). 
-3. In order to connect the database, use the *application.properties* in WeChat group. Use the schema "testRig" for testing.
+3. In order to connect the database, use the *application.properties* in WeChat group. For testing, use the schema "testRig" on the server.
 
 ## Updates
+
+#### 3.27
+
+New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. 
+
+Remember to add the new navigation bar and footer onto every page!
 
 #### 3.20
 
@@ -30,11 +36,6 @@ Create a new branch "login", including the completed login function (frontend an
 2. New LoginController and PageController.
 3. New *pom.xml*, *application.properties* and *application-dev.properties*.
 4. Only one SpringApplication class.
-
-**Todo**
-
-1. Login testing (database queries, verification code API and cookies).
-2. Integrate the registration function and develop the frontend.
 
 #### 3.12
 
