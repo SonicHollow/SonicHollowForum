@@ -1,10 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome to SonicHollow Forum!</title>
+    <link href="../static/css/bootstrap.min.css" >
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
 <body>
 
+<div class="text">
+    <h1>Posts</h1>
+</div>
+<br>
+<br>
+<h2>See What's New in SonicHollow!</h2>
+
+<section id="postIndex" class="widthWrapper">
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <span class="day">28</span>
+                    </div>
+                    <div class="post-month">
+                        <span class="month">Dec</span>
+                    </div>
+                    <span style="color: gray; font-weight: lighter">17:59</span>
+                </div>
+            </div>
+<!--            <h2>Speeding Up Your Website 101</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>It seems like only a select few, besides big companies and corporations, care about web page speed and performance.</p>
+            <button>Read more</button>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <span class="day">28</span>
+                    </div>
+                    <div class="post-month">
+                        <span class="month">Dec</span>
+                    </div>
+                    <span style="color: gray; font-weight: lighter">16:32</span>
+                </div>
+            </div>
+<!--            <h2>Guide to Grunt JS (The Basics)</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
+            <button>Read more</button>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <span class="day">28</span>
+                    </div>
+                    <div class="post-month">
+                        <span class="month">Dec</span>
+                    </div>
+                    <span style="color: gray; font-weight: lighter">14:15</span>
+                </div>
+            </div>
+<!--            <h2>Social Media Icons Tutorial</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
+            <button>Read more</button>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <span class="day">28</span>
+                    </div>
+                    <div class="post-month">
+                        <span class="month">Dec</span>
+                    </div>
+                    <span style="color: gray; font-weight: lighter">16:32</span>
+                </div>
+            </div>
+<!--            <h2>Guide to Grunt JS (The Basics)</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
+            <button>Read more</button>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <span class="day">28</span>
+                    </div>
+                    <div class="post-month">
+                        <span class="month">Dec</span>
+                    </div>
+                    <span style="color: gray; font-weight: lighter">14:15</span>
+                </div>
+            </div>
+<!--            <h2>Social Media Icons Tutorial</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
+            <button>Read more</button>
+        </a>
+    </article>
+</section>
+
+<footer th:replace="common/footer_long.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script src="../static/js/bootstrap.js"></script>
 </body>
 </html>
+
+<style>
+    html,body {
+        background-color: #333D47;
+        margin: 0;
+        height: 100%;
+        overflow-x:hidden;
+    }
+    /* Basic CSS Reset */
+    html, body, div, article, section, header,
+    h1, h2, h3, h4, h5, h6,
+    ul, li, ol, p, img {
+        margin:0;
+        padding:0;
+    }
+
+    img {
+        border:none;
+    }
+
+    /* Global Styles */
+    body {
+        line-height: 1.55;
+        font-size: 100%;
+        font-weight: 400;
+        font-family: helvetica, arial, sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        /*font-family: 'Roboto Slab', serif;*/
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    h2 {
+        text-align:center;
+        color: white;
+    }
+
+    .text {
+        color: white;
+        /*font-family: 'Roboto Slab', serif;*/
+        font-family: helvetica, arial, sans-serif;
+        letter-spacing: .05em;
+        text-shadow:
+                4px 4px 0 #86a7ca,
+                7px 7px 0 rgba(0, 0, 0, 0.2);
+        font-size:2.3em;
+        /*font-family:  sans-serif;*/
+        -webkit-animation: shift 2s ;
+        animation: shift 2s ;
+        margin-top:150px;
+        text-align:center;
+        text-transform:uppercase;
+    }
+
+    h2 {
+        font-weight: lighter;
+        font-size: 1.55em;
+        padding-bottom: .35em;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .widthWrapper {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* Post Index */
+    #postIndex {
+        margin: 3em auto;
+    }
+
+    article {
+        margin-top: -0.063em;
+    }
+
+    article a {
+        display: block;
+        padding: 2.374em 2.5em 2.5em 2.5em;
+        overflow: hidden;
+        border-top: .063em solid #ccc;
+        border-bottom: .063em solid #ccc;
+    }
+
+    article a:hover {
+        background: #eee;
+        border-top: #666 solid .25em;
+        padding: 2.187em 2.5em 2.5em 2.5em;
+    }
+
+    .postImg {
+        float: left;
+        width: 25%;
+        box-sizing: border-box;
+        padding-right: 2em;
+    }
+
+    .postImg img {
+        width: 100%;
+    }
+
+    article a h2 {
+        color: #00b2b3;
+        float: right;
+        width: 75%;
+    }
+
+    article a:hover h2 {
+        color: #157EBF;
+    }
+
+    article a p {
+        font-weight: lighter;
+        color: white;
+        float: right;
+        width: 75%;
+    }
+
+    article a p.name {
+        font-weight: lighter;
+        float: right;
+        width: 75%;
+        font-size: smaller;
+        color: cadetblue;
+    }
+
+    article a:hover p.name{
+        color: #157EBF;
+    }
+
+    article a:hover p {
+        color: #222;
+    }
+
+    @media only screen and (max-width: 750px) {
+        #postIndex {
+            width: 100%;
+        }
+
+        article a {
+            padding: 2.374em 1.5em 2.5em 1.5em;
+        }
+
+        article a:hover {
+            padding: 2.187em 1.5em 2.5em 1.5em;
+        }
+    }
+
+    @media only screen and (max-width: 481px) {
+        .postImg {
+            display: none;
+        }
+
+        article a p, article a h2 {
+            width: 100%;
+        }
+
+    }
+
+
+    /*----- Blog -----*/
+
+    .post-time-section {
+        float: left;
+        text-align: center;
+        margin-right: 15px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .post-time-section .post-date {
+        padding: 10px 0;
+        width: 55px;
+        background-color: #444;
+        color: #fff;
+    }
+
+    .post-time-section .post-date .day {
+        font-size: 20px;
+        font-weight: 700;
+        display: block;
+        letter-spacing: 1px;
+    }
+
+    .post-time-section .post-month .month {
+        display: block;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        height: 25px;
+        line-height: 25px;
+        color: #fff;
+        background-color:#333;
+    }
+</style>

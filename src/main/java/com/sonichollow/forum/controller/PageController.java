@@ -30,10 +30,13 @@ public class PageController {
         return "user/regist";
     }
     @RequestMapping(value = "myInfo")
-    public String myinfo() {
+    public String myInfo() {
         return "myInfo";
     }
-
+    @RequestMapping(value = "postList")
+    public String postList() {
+        return "postList";
+    }
     @RequestMapping(value = "login_success")
     public String login_success() {
         return "user/login_success";

@@ -6,14 +6,22 @@
     <title>Login Successfully!</title>
 </head>
 <div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
-<body>
+<body style="background-color: #333D47">
 <br><br><br><br><br><br>
 <div class="page-header" align="center">
-    <h1 style="color: #86a7ca;font-size: 40px">Login Successfully!</h1>
+    <h1 style="color: white;font-size: 40px">Login Successfully!</h1>
     <br><br>
-    <h1 style="color: #86a7ca;font-size: 20px"><a href="index">Return to Index</a> </h1>
-
+    <a href="index" style="color: white; font-size: 24px">Return to Index</a>
 </div>
+<footer th:replace="common/footer.html" style ="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 </body>
 </html>
+
+<style>
+    html,body {
+        background-color: #333D47;
+        margin: 0;
+        height: 100%;
+    }
+</style>
 
