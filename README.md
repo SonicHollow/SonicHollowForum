@@ -21,7 +21,7 @@ Notes:
 
 ## Updates
 
-#### 3.27 Login Branch
+### 3.27 Login Branch
 
 New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. Add a filter for page permissions (users cannot access myInfo, postList and home page without signing in, cannot access login page if already signed in). Remember to add the new navigation bar and footer onto every page!
 
@@ -32,7 +32,7 @@ There are two html files for footers:
 1. For a "short" page, which doesn't need "scrolling down", the position of footer is **<u>absolute/fixed</u>**, which means the footer will <u>always</u> display on the page. In this case, use *footer.html*. You can refer to *index.html* and *login.html* for the insertion details.
 2. For a "long" page, which needs "scrolling down", the position of footer is <u>**relative**</u>, which means the footer will display <u>only if</u> you reach the end of the page. In this case, use *footer_long.html*. You can refer to *postList.html* for the insertion details.
 
-#### 3.20 Login Branch
+### 3.20 Login Branch
 
 Create a new branch "login", including the completed login function (frontend and backend), not including the web pages in version 1. Other files remain the same.
 
@@ -42,7 +42,7 @@ Create a new branch "login", including the completed login function (frontend an
 3. New *pom.xml*, *application.properties* and *application-dev.properties*.
 4. Only one SpringApplication class.
 
-#### 3.12 Main Branch
+### 3.12 Main Branch
 
 Update the project framework with registration function (no frontend)
 
