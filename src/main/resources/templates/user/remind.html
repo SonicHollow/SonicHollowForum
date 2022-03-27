@@ -1,22 +1,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>提醒</title>
+    <title>Remind</title>
 </head>
 <body>
 <div th:include="common/commonNavbar"> </div>
-<br><br><br><br>
-<center>
-         <div class="page-header" align="center">
-    <h1 style="color: #f5646e" th:text="${#request.getAttribute('msg')}"></h1>
-</div>
+    <br><br><br><br>
+    <div class="page-header" align="center">
+        <h1 style="color: white" th:text="${#request.getAttribute('msg')}"></h1>
+        <a href="index" style="color: white; font-size: 24px">Return to Index</a>
+    </div>
     <br><br>
-    <a href="index">返回首页</a>
-</center>
-   
-<script language="javascript">
-    init();
-    snow();
-</script>
+
+<footer th:replace="common/footer.html" style ="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 </body>
 </html>
+
+<style>
+    html,body {
+        background-color: #333D47;
+        margin: 0;
+        height: 100%;
+    }
+</style>

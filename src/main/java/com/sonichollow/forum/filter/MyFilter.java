@@ -34,8 +34,9 @@ public class MyFilter implements Filter {
         String password = null;
         //1.先从session中找用户，如果session中找到用户，说明已经登录，直接使用此用户对象
         HttpSession session = request.getSession(false);
-        if(session!=null &&session.getAttribute("username")!=null)
+        if(session!=null &&session.getAttribute("username")!=null) {
             flag=true;
+        }
         //2.如果session中找不到，再从cookie中找用户信息(用户名和密码)，如果cookie中有，则查询数据库，再生成相应的session
         if(!flag) {
             Cookie[] cookies = request.getCookies();
@@ -58,12 +59,14 @@ public class MyFilter implements Filter {
             }
         }
         //如未登录 这些网页不能浏览
-            if (uri.contains("myInfo") || uri.contains("smallFeature") || uri.contains("questionnaire") || uri.contains("shopIndex"))
+            if (uri.contains("myInfo") || uri.contains("postList") || uri.contains("home")) {
                 haveQuality = false;
+            }
         //如登录，则登录页面不能浏览
         if(flag){
-            if (!uri.contains("loginimage") && !uri.contains("login_success") && uri.contains("login"))
+            if (!uri.contains("login_success") && uri.contains("login")) {
                 rpLogin = true;
+            }
         }
         if(rpLogin){
             request.setAttribute("msg","You have already logged in");
