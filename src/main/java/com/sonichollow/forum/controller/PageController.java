@@ -17,6 +17,10 @@ public class PageController {
     public String about() {
         return "about";
     }
+    @RequestMapping(value = "detail")
+    public String detail() {
+        return "detail";
+    }
     @RequestMapping(value = "wait")
     public String waithtml() {
         return "wait";
@@ -33,9 +37,17 @@ public class PageController {
     public String myInfo() {
         return "myInfo";
     }
+    @RequestMapping(value = "templates")
+    public String templates() {
+        return "templates";
+    }
     @RequestMapping(value = "postList")
     public String postList() {
         return "postList";
+    }
+    @RequestMapping(value = "posting")
+    public String posting() {
+        return "posting";
     }
     @RequestMapping(value = "login_success")
     public String login_success() {
