@@ -7,6 +7,7 @@ import com.sonichollow.forum.service.ex.InsertException;
 import com.sonichollow.forum.service.ex.UsernameDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
@@ -59,6 +60,27 @@ public class UserServiceImpl implements IUserService {
             throw new InsertException("未知的注册错误");//数据库宕机...
         }
 
+    }
+
+    @Override
+    public boolean isUser(String name, String password) {
+        return userMapper.isUser(name,password)!=null;
+    }
+
+    @Override
+    public boolean checkName(String name) {
+        return userMapper.checkName(name)==null;
+    }
+
+    @Override
+    @Transactional
+    public Integer addUser(User user) {
+        return userMapper.addUser(user);
+    }
+
+    @Override
+    public User getUser(String name) {
+        return userMapper.getUser(name);
     }
 
     /**

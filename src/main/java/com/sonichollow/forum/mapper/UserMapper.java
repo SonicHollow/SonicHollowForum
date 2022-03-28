@@ -1,6 +1,8 @@
 package com.sonichollow.forum.mapper;
 
 import com.sonichollow.forum.entity.User;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 用户模块的持久层接口
@@ -19,4 +21,19 @@ public interface UserMapper {
      * @return 如果找到对于的用户，返回其数据，否则返回 null值
      */
     User findByUsername(String username);
+
+    // Login Function
+
+    @Select("select name from user where name=#{name} and password=#{password}")
+    String isUser(String name, String password);
+
+    @Select("select name from user where name=#{name}")
+    String checkName(String name);
+
+    @Insert("insert into user(name,email,password) values(#{name},#{email},#{password}) ")
+    Integer addUser(User user);
+
+    @Select("select * from user where name=#{name}")
+    User getUser(String name);
+
 }

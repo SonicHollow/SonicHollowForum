@@ -33,7 +33,7 @@ $(function() {
 		})
 		//页面加载时运行的代码
 		//判断是否有自动登录的内容
-	if ($.cookie("isAutoLogin") == "true") {
+	if ($.cookie("isAutoLogin") === "true") {
 		//如果是自动登录，将cookie中的信息自动填写到用户名和密码框中
 		$("#auto").prop("checked", true);
 		$("#username").val($.cookie("username"));
