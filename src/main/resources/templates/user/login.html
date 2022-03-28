@@ -1,5 +1,9 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
 <meta name="viewport"
       content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 <head>
@@ -34,9 +38,12 @@
 <footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 </body>
 </html>
+<<<<<<< HEAD
 =======
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
 <script type="text/javascript">
     $(function () {
         // 给验证码的图片，绑定单击事件
@@ -75,40 +82,10 @@
         });
     });
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>Login</title>
-</head>
-<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
-<body>
-<div class="container">
-    <h1>Login to SonicHollow</h1>
-    <form method="post" action="loginUser">
-        <div class="form-control">
-            <input id="username" name="username" type="text" th:value="${param.username}" class="form-control login-input" required maxlength="50" placeholder="Username" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="password" name="password" type="password" th:value="${param.password}" class="form-control login-input login-password" required maxlength="50" placeholder="Password" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="code" name="code"  class="form-control login-input login-input" required maxlength="4" placeholder="Verification Code" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <img id="code_img" alt="Display Error" src="loginimage" width="50%">
-            <span class="errorMsg" style="color: black" th:text="${param.msg}">hahaha</span>
-        </div>
-        <button type="submit" id="signin" class="btn">Login</button>
-        <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a> </p>
-    </form>
-</div>
 
-</body>
-</html>
 
 <style>
+<<<<<<< HEAD
 <<<<<<< HEAD
     input::-webkit-input-placeholder {
         color: white;
@@ -127,16 +104,28 @@
 =======
     input::-webkit-input-placeholder{
         color:white; <!-- username这几个字的颜色  -->
+=======
+    input::-webkit-input-placeholder {
+        color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
-    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-        color:white;
+
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: white;
     }
-    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-        color:white;
+
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: white;
     }
+<<<<<<< HEAD
     input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
         color:white;
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+
+    input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 
     * {
@@ -146,19 +135,26 @@
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     body {
         background-color: #333D47;
 =======
     body{
         background-color: #333D47; <!-- 大的背景颜色  -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+    body {
+        background-color: #333D47;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
         font-family: sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     .container {
         background-color: #333D47;
@@ -177,10 +173,21 @@
         border-color: white; <!-- 框的颜色  -->
         border-width:3px
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+    .container {
+        background-color: #333D47;
+        padding: 20px 40px;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: white;
+        border-width: 3px;
+        margin-top: -70px;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 
     .container h1 {
         text-align: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
         margin-bottom: 10px;
         color: white;
@@ -188,6 +195,10 @@
         margin-bottom: 30px;
         color: white; <!-- login sonic这几个字的颜色  -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        margin-bottom: 10px;
+        color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
         font-size: 25px;
     }
 
@@ -195,15 +206,19 @@
         cursor: pointer;
         width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
         background-color: #adb1b5;
 =======
         background-color: #adb1b5; <!-- login按钮的颜色 相较于背景色我调淡了一点 -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        background-color: #adb1b5;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
         padding: 15px;
         border-radius: 10px;
         border-style: none;
         font-size: 16px;
-        color: white; <!-- login这几个字的颜色 -->
+        color: white;
         font-family: inherit;
     }
 
@@ -218,10 +233,14 @@
     .container a {
         text-decoration: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
         color: #adb1b5;
 =======
         color:#adb1b5; <!-- register one这几个字的颜色 同上淡一点的颜色 -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        color: #adb1b5;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 
     .text {
@@ -238,25 +257,35 @@
     .form-control input {
         background-color: transparent;
 <<<<<<< HEAD
+<<<<<<< HEAD
         border: 0;
         border-bottom: 2px solid white;
 =======
         border:0;
         border-bottom:2px solid white; <!-- username下划线的颜色 -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        border: 0;
+        border-bottom: 2px solid white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
         display: block;
         width: 100%;
         padding: 15px 0;
         font-size: 18px;
 <<<<<<< HEAD
+<<<<<<< HEAD
         color: white;
 =======
         color:white; <!--  -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 
     .form-control input:focus {
         outline: 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
         border-bottom-color: white;
     }
@@ -270,6 +299,13 @@
     .form-control input:valid{
         border-bottom-color: white; <!-- 输入username字段后下划线的颜色 -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        border-bottom-color: white;
+    }
+
+    .form-control input:valid {
+        border-bottom-color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 
     .form-control label {
@@ -289,12 +325,13 @@
     .form-control input:valid + label span {
         transform: translateY(-30px);
 <<<<<<< HEAD
+<<<<<<< HEAD
         color: white;
 =======
         color:white <!--  -->
 >>>>>>> f2aea7969bfd9d062b5b061e341674bfb79f06bb
+=======
+        color: white;
+>>>>>>> 4cc59d067e08ec40d36d9a2e27ad5a9262234e60
     }
 </style>
-    
-    
-    
