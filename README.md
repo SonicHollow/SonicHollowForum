@@ -21,16 +21,20 @@ Notes:
 
 ## Updates
 
+### 3.29 Login Branch
+
+New Post Detail Page. Update the template page ***templates.html***. You can use the template for any "short" pages. Add a post button and a selector (most recent, most views and most comments) on the post list page. Update the navigations of the pages. Update the Color Scheme of the login page.
+
 ### 3.27 Login Branch
 
-New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. Add a filter for page permissions (users cannot access myInfo, postList and home page without signing in, cannot access login page if already signed in). Remember to add the new navigation bar and footer onto every page!
+New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. Add a new PostList page. Add a **filter** for page permissions (users cannot access myInfo, postList and home page without signing in, cannot access login page if already signed in). Remember to add the new navigation bar and footer onto every page!
 
 **Note:**
 
 There are two html files for footers:
 
-1. For a "short" page, which doesn't need "scrolling down", the position of footer is **<u>absolute/fixed</u>**, which means the footer will <u>always</u> display on the page. In this case, use *footer.html*. You can refer to *index.html* and *login.html* for the insertion details.
-2. For a "long" page, which needs "scrolling down", the position of footer is <u>**relative**</u>, which means the footer will display <u>only if</u> you reach the end of the page. In this case, use *footer_long.html*. You can refer to *postList.html* for the insertion details.
+1. For a "**short**" page, which doesn't need "scrolling down", the position of footer is **<u>absolute/fixed</u>**, which means the footer will <u>always</u> display on the page. In this case, use ***footer.html***. You can refer to *index.html* and *login.html* for the insertion details.
+2. For a "**long**" page, which needs "scrolling down", the position of footer is <u>**relative**</u>, which means the footer will display <u>only if</u> you reach the end of the page. In this case, use ***footer_long.html***. You can refer to *postList.html* for the insertion details.
 
 ### 3.20 Login Branch
 
@@ -59,3 +63,10 @@ Update the project framework with registration function (no frontend)
 [Codepen -- Beautiful Code Templates for Frontend](https://codepen.io)
 
 [HTML Color Picker](https://www.runoob.com/tags/html-colorpicker.html)
+
+[SCSS to CSS Compiler](https://www.cssportal.com/scss-to-css/)
+
+[SASS to CSS Compiler](https://www.sassmeister.com/)
+
+[IDEA Server Deployment](https://blog.csdn.net/weixin_43711783/article/details/90218226?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&utm_relevant_index=1)
+
