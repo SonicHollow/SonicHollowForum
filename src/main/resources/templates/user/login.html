@@ -1,5 +1,39 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>Login</title>
+</head>
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"></div>
+<body>
+<div class="container">
+    <h1>Login to SonicHollow</h1>
+    <form method="post" action="loginUser">
+        <div class="form-control">
+            <input id="username" name="username" type="text" th:value="${param.username}"
+                   class="form-control login-input" required maxlength="50" placeholder="Username" style="color: gray">
+        </div>
+        <div class="form-control">
+            <input id="password" name="password" type="password" th:value="${param.password}"
+                   class="form-control login-input login-password" required maxlength="50" placeholder="Password"
+                   style="color: gray">
+        </div>
+        <div class="form-control">
+            <input id="code" name="code" class="form-control login-input login-input" required maxlength="4"
+                   placeholder="Verification Code" style="color: gray">
+        </div>
+        <div class="form-control">
+            <img id="code_img" alt="Display Error" src="loginimage" width="50%">
+            <span class="errorMsg" style="color: black" th:text="${param.msg}"></span>
+        </div>
+        <button type="submit" id="signin" class="btn">Login</button>
+        <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a></p>
+    </form>
+</div>
+<footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>
 <script type="text/javascript">
     $(function () {
         // 给验证码的图片，绑定单击事件
@@ -10,13 +44,13 @@
         $("#signin").click(function () {
             var usernameText = $("#username").val();
             var usernamePatt = /^\w{5,12}$/;
-            if(!usernamePatt.test(usernameText)){
+            if (!usernamePatt.test(usernameText)) {
                 $("span.errorMsg").text("Illegal Username!");
                 return false;
             }
             var passwordText = $("#password").val();
             var passwordPatt = /^\w{5,12}$/;
-            if(!passwordPatt.test(passwordText)){
+            if (!passwordPatt.test(passwordText)) {
                 $("span.errorMsg").text("Illegal Password!");
                 return false;
             }
@@ -31,7 +65,6 @@
             if (codeText == null || codeText === "") {
                 //4 提示用户
                 $("span.errorMsg").text("Fill in the validation code!");
-
                 return false;
             }
             // 去掉错误信息
@@ -39,147 +72,121 @@
         });
     });
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>Login</title>
-</head>
-<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
-<body>
-<div class="container">
-    <h1>Login to SonicHollow</h1>
-    <form method="post" action="loginUser">
-        <div class="form-control">
-            <input id="username" name="username" type="text" th:value="${param.username}" class="form-control login-input" required maxlength="50" placeholder="Username" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="password" name="password" type="password" th:value="${param.password}" class="form-control login-input login-password" required maxlength="50" placeholder="Password" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <input id="code" name="code"  class="form-control login-input login-input" required maxlength="4" placeholder="Verification Code" style="color: dimgray">
-        </div>
-        <div class="form-control">
-            <img id="code_img" alt="Display Error" src="loginimage" width="50%">
-            <span class="errorMsg" style="color: black" th:text="${param.msg}">hahaha</span>
-        </div>
-        <button type="submit" id="signin" class="btn">Login</button>
-        <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a> </p>
-    </form>
-</div>
 
-</body>
-</html>
 
 <style>
-    input::-webkit-input-placeholder{
-        color:white; <!-- username这几个字的颜色  -->
-    }
-    input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-        color:white;
-    }
-    input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-        color:white;
-    }
-    input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
-        color:white;
+    input::-webkit-input-placeholder {
+        color: white;
     }
 
-    *{
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: white;
+    }
+
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: white;
+    }
+
+    input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+    }
+
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
-    body{
-        background-color: #333D47; <!-- 大的背景颜色  -->
+    body {
+        background-color: #333D47;
         font-family: sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0;
     }
 
-    .container{
-        background-color: #333D47; <!-- 框内部的背景色  -->
-        padding: 20px 40px ;
+    .container {
+        background-color: #333D47;
+        padding: 20px 40px;
         border-radius: 10px;
-        border-style:solid;
-        border-color: white; <!-- 框的颜色  -->
-        border-width:3px
+        border-style: solid;
+        border-color: white;
+        border-width: 3px;
+        margin-top: -70px;
     }
 
-    .container h1{
+    .container h1 {
         text-align: center;
-        margin-bottom: 30px;
-        color: white; <!-- login sonic这几个字的颜色  -->
+        margin-bottom: 10px;
+        color: white;
         font-size: 25px;
     }
 
-    .btn{
+    .btn {
         cursor: pointer;
         width: 100%;
-        background-color: #adb1b5; <!-- login按钮的颜色 相较于背景色我调淡了一点 -->
+        background-color: #adb1b5;
         padding: 15px;
         border-radius: 10px;
-        border-style:none;
+        border-style: none;
         font-size: 16px;
-        color: white; <!-- login这几个字的颜色 -->
+        color: white;
         font-family: inherit;
     }
 
-    .btn:focus{
-        outline:0;
+    .btn:focus {
+        outline: 0;
     }
 
-    .btn:active{
+    .btn:active {
         transform: scale(0.98);
     }
 
-    .container a{
+    .container a {
         text-decoration: none;
-        color:#adb1b5; <!-- register one这几个字的颜色 同上淡一点的颜色 -->
+        color: #adb1b5;
     }
 
-    .text{
+    .text {
         margin-top: 30px;
     }
 
 
-    .form-control{
+    .form-control {
         width: 300px;
         margin: 20px 0 40px;
         position: relative;
     }
 
-    .form-control input{
+    .form-control input {
         background-color: transparent;
-        border:0;
-        border-bottom:2px solid white; <!-- username下划线的颜色 -->
+        border: 0;
+        border-bottom: 2px solid white;
         display: block;
         width: 100%;
         padding: 15px 0;
         font-size: 18px;
-        color:white; <!--  -->
+        color: white;
     }
 
-    .form-control input:focus{
+    .form-control input:focus {
         outline: 0;
-        border-bottom-color: white; <!-- 点击输入username下划线的颜色 -->
+        border-bottom-color: white;
     }
 
-    .form-control input:valid{
-        border-bottom-color: white; <!-- 输入username字段后下划线的颜色 -->
+    .form-control input:valid {
+        border-bottom-color: white;
     }
 
-    .form-control label{
+    .form-control label {
         position: absolute;
-        left:0;
-        top:15px;
+        left: 0;
+        top: 15px;
     }
 
-    .form-control label span{
+    .form-control label span {
         display: inline-block;
         font-size: 18px;
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -187,12 +194,8 @@
 
 
     .form-control input:focus + label span,
-    .form-control input:valid + label span
-    {
+    .form-control input:valid + label span {
         transform: translateY(-30px);
-        color:white <!--  -->
+        color: white;
     }
 </style>
-    
-    
-    
