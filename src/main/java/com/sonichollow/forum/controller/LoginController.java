@@ -98,7 +98,7 @@ public class LoginController {
         return mv;
     }
 
-    //todo: 把注册写到这里
+    //把注册写到这里
 
 //    @RequestMapping("registUser")
 //    public ModelAndView regist(User user,HttpServletRequest req){

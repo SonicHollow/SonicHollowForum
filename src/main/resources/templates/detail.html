@@ -7,13 +7,11 @@
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; z-index: 5"> </div>
 <body>
 
-<div class="header">
+<div class="header" style="z-index: 1">
     <div class="info">
-<!--        <h4><a href="#category">UI DESIGN</a></h4>-->
-<!--        <h1>KEN BURNS HEADERS ARE THE BEST</h1>-->
         <br>
         <div class="meta">
             <h1>
@@ -29,7 +27,6 @@
 <section class="content">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
 </section>
-<!-- Contenedor Principal -->
 <div class="comments-container">
     <h1>Comments
 <!--        <a href="http://creaticode.com">creaticode.com</a>-->
@@ -38,9 +35,7 @@
     <ul id="comments-list" class="comments-list">
         <li>
             <div class="comment-main-level">
-                <!-- Avatar -->
                 <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                <!-- Contenedor del Comentario -->
                 <div class="comment-box">
                     <div class="comment-head">
                         <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
@@ -53,12 +48,9 @@
                     </div>
                 </div>
             </div>
-            <!-- Respuestas de los comentarios -->
             <ul class="comments-list reply-list">
                 <li>
-                    <!-- Avatar -->
                     <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                    <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                         <div class="comment-head">
                             <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
@@ -73,9 +65,7 @@
                 </li>
 
                 <li>
-                    <!-- Avatar -->
                     <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                    <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                         <div class="comment-head">
                             <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
@@ -93,9 +83,7 @@
 
         <li>
             <div class="comment-main-level">
-                <!-- Avatar -->
                 <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                <!-- Contenedor del Comentario -->
                 <div class="comment-box">
                     <div class="comment-head">
                         <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
@@ -130,12 +118,7 @@
         font-family: 'Josefin Sans', sans-serif;
 
     }
-    /**
- * Oscuro: #283035
- * Azul: #03658c
- * Detalle: #c7cacb
- * Fondo: #dee1e3
- ----------------------------------*/
+
     * {
         margin: 0;
         padding: 0;
@@ -415,8 +398,6 @@
         overflow:hidden;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
-        align-content: flex-start;
         height:50px;
         min-height:350px;
         max-height:550px;
@@ -427,57 +408,11 @@
         content:"";
         width:100%;
         height:100%;
-        position:absolute;
         bottom:0;
         left:0;
-        z-index:-1;
-    }
-    .header:before{
-        content:"";
-        width:100%;
-        height:200%;
-        position:absolute;
-        top:0;
-        left:0;
-        -webkit-backface-visibility: hidden;
-        -webkit-transform: translateZ(0); backface-visibility: hidden;
-        scale(1.0, 1.0);
-        transform: translateZ(0);
-        background-size:100%;
-        animation: grow 360s  linear 10ms infinite;
-        transition:all 0.4s ease-in-out;
-        z-index:-2
     }
     .header a{
         color:#eee
-    }
-    .menu{
-        display:block;
-        width:40px;
-        height:30px;
-        border:2px solid #fff;
-        border-radius:3px;
-        position:absolute;
-        right:20px;
-        top:20px;
-        text-decoration:none
-    }
-    .menu:after{
-        content:"";
-        display:block;
-        width:20px;
-        height:3px;
-        background:#fff;
-        position:absolute;
-        margin:0 auto;
-        top:5px;
-        left:0;
-        right:0;
-        box-shadow:0 8px, 0 16px
-    }
-    .sides, .info{
-        flex: 0 0 auto;
-        width:50%
     }
     .info{
         width:100%;
@@ -491,9 +426,10 @@
         height:100px;
         border-radius:50%;
         background:url(https://i.imgur.com/6DLCsZcb.jpg) center no-repeat;
-        background-size:cover;
+        /*background-size:cover;*/
         box-shadow:0 2px 3px rgba(0,0,0,0.3);
-        margin-bottom:3px
+        margin-bottom:3px;
+        z-index: -1;
     }
     .info h4, .meta{
         font-size:0.7em

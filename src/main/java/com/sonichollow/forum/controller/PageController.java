@@ -21,10 +21,6 @@ public class PageController {
     public String detail() {
         return "detail";
     }
-    @RequestMapping(value = "wait")
-    public String waithtml() {
-        return "wait";
-    }
     @RequestMapping(value = "login")
     public String login() {
         return "user/login";
