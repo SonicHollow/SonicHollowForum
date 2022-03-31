@@ -22,7 +22,7 @@
 </div>
 
 <h1 style="position: relative; margin-top: 60px">
-    By <a href="https://twitter.com/nodws" target="_b">James Nodws</a> on May 30, 2019
+    By <a href="https://twitter.com/nodws" target="_b">Xuening Wang</a> on Dec 28, 2019
 </h1>
 <section class="content">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
@@ -99,6 +99,30 @@
         </li>
     </ul>
 </div>
+<!--评论信息-->
+<div class="cc_comment" style="padding-left: 400px;margin-top: 30px;padding-right: 300px;background-color: #ccffff">
+
+
+    <h5>comment</h5>
+
+    <div class="cc_comment__textarea" style="margin-bottom: 20px">
+        <textarea placeholder="say something"commentForms name="comment" style="margin-top: 0px; margin-bottom: 0px; height: 79px;"></textarea>
+        <!--和form关联    评论框主体-->
+        <div class="comment__textarea_form" style="overflow: hidden">
+            <form action="/recomm/comment" method="post" id="commentForms">
+                <input id="album_id" type="text" style="display: none" name="album_id" th:value="${session.currentAlbum.getAid()}">
+                <input id="comment_userID" type="text" style="display: none" name="userID" th:value="${session.user}!=null ?${session.user.getUid()}:''">
+                <!--这两个input仅仅只是获取相册id和用户id   不显示-->
+                <input type="submit" value="submit" style="float: right">
+            </form>
+        </div>
+
+
+    </div>
+
+
+</div>
+
 <br>
 <br>
 <br>
@@ -107,10 +131,39 @@
 <footer th:replace="common/footer_long.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 <script src="../static/js/jquery-3.5.1.min.js"></script>
 <script src="../static/js/bootstrap.js"></script>
+<script src="../static/js/comment.js"></script>
 </body>
 </html>
 
 <style>
+    .cc_infobox{
+        margin-left: 30px;
+        margin-top: 20px;
+        height: 500px;
+        background-color: #ffffff;
+
+    }
+    .cc_comment__textarea textarea{
+        display: block;
+        padding: 10px 13px;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 4px;
+        color: #000000;
+        box-sizing: border-box;
+    }
+
+    .cc_div:after{
+        content:"";
+        display: block;
+        clear: both;
+
+    }
+    .cc_comments{
+        padding-bottom: 60px;
+    }
+
+
     @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
     html,body{
         margin:0;
@@ -118,7 +171,12 @@
         font-family: 'Josefin Sans', sans-serif;
 
     }
-
+    /**
+ * Oscuro: #283035
+ * Azul: #03658c
+ * Detalle: #c7cacb
+ * Fondo: #dee1e3
+ ----------------------------------*/
     * {
         margin: 0;
         padding: 0;
