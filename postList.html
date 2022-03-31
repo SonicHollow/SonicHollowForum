@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>Welcome to SonicHollow Forum!</title>
+    <link href="../static/css/bootstrap.min.css" >
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
+<body>
+
+<div class="text">
+    <h1>Posts</h1>
+</div>
+<br>
+<br>
+<h2>See What's New in SonicHollow!</h2>
+
+<div class="search">
+    <i class="material-icons search-icon search-start"><button>Search</button>>search</i>
+    <input type="text" class="search-input" placeholder="Searching..." />
+    <i class="material-icons search-icon search-clear">clear</i>
+    <div class="search-results"></div>
+</div>
+
+<section id="postIndex" class="widthWrapper">
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <text class="day">28</text>
+                    </div>
+                    <div class="post-month">
+                        <text class="month">Dec</text>
+                    </div>
+                    <text style="color: gray; font-weight: lighter">17:59</text>
+                </div>
+            </div>
+<!--            <h2>Speeding Up Your Website 101</h2>-->
+
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>It seems like only a select few, besides big companies and corporations, care about web page speed and performance.</p>
+            <button onclick="location.href='detail.html';">Read more</button>
+            <body>
+            <label for="checkbox0">
+                <input type="checkbox" id="checkbox0" hidden>
+                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
+                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
+                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                          p-id="3129" id="heart"></path></svg>
+                <span></span>
+            </label>
+            </body>
+        </a>
+    </article>
+
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <text class="day">28</text>
+                    </div>
+                    <div class="post-month">
+                        <text class="month">Dec</text>
+                    </div>
+                    <text style="color: gray; font-weight: lighter">16:32</text>
+                </div>
+            </div>
+<!--            <h2>Guide to Grunt JS (The Basics)</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
+            <button>Read more</button>
+            <label for="checkbox1">
+                <input type="checkbox"  id="checkbox1" hidden>
+                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
+                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
+                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                          p-id="3129" id="heart"></path></svg>
+                <span></span>
+            </label>
+        </a>
+    </article>
+
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <text class="day">28</text>
+                    </div>
+                    <div class="post-month">
+                        <text class="month">Dec</text>
+                    </div>
+                    <text style="color: gray; font-weight: lighter">14:15</text>
+                </div>
+            </div>
+<!--            <h2>Social Media Icons Tutorial</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
+            <button>Read more</button>
+            <body>
+            <label for="checkbox2">
+                <input type="checkbox"  id="checkbox2" hidden>
+                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
+                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
+                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                          p-id="3129" id="heart"></path></svg>
+                <span></span>
+            </label>
+            </body>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <text class="day">28</text>
+                    </div>
+                    <div class="post-month">
+                        <text class="month">Dec</text>
+                    </div>
+                    <text style="color: gray; font-weight: lighter">16:32</text>
+                </div>
+            </div>
+<!--            <h2>Guide to Grunt JS (The Basics)</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
+            <button>Read more</button>
+            <body>
+            <label for="checkbox3">
+                <input type="checkbox"  id="checkbox3" hidden>
+                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
+                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
+                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                          p-id="3129" id="heart"></path></svg>
+                <span></span>
+            </label>
+            </body>
+        </a>
+    </article>
+
+    <article>
+        <a target="_blank">
+            <div class="postImg">
+                <div class="post-time-section">
+                    <div class="post-date">
+                        <text class="day">28</text>
+                    </div>
+                    <div class="post-month">
+                        <text class="month">Dec</text>
+                    </div>
+                    <text style="color: gray; font-weight: lighter">14:15</text>
+                </div>
+            </div>
+<!--            <h2>Social Media Icons Tutorial</h2>-->
+            <p class="name">By Xuening Wang</p>
+            <p class="name">0 Comments</p>
+            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
+            <button>Read more</button>
+
+            <label for="checkbox4">
+                <input type="checkbox"  id="checkbox4" hidden>
+                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
+                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                           id="heart"></path></svg>
+                <span></span>
+            </label>
+
+        </a>
+    </article>
+</section>
+
+<footer th:replace="common/footer_long.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script src="../static/js/bootstrap.js"></script>
+</body>
+
+
+
+</html>
+
+<style>
+
+    .search {
+        position: relative;
+        height: 30px;
+        text-align: right;
+        line-height: 30px;
+        padding-right: 10px;
+    }
+
+    .search .search-icon {
+        float: right;
+        height: 100%;
+        margin: 0 10px;
+        line-height: 30px;
+        cursor: pointer;
+        user-select: none;
+
+    }
+
+    .search .search-input {
+        float: right;
+        width: 30%;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .search .search-clear {
+        display: none;
+    }
+
+    .search .search-results {
+        display: block;
+        z-index: 1000;
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        width: 50%;
+        max-height: 400px;
+        overflow: auto;
+        text-align: left;
+        border-radius: 5px;
+        background: #ccc;
+        box-shadow: 0 .3rem .5rem #333;
+    }
+
+    .search .search-results .result-item {
+        background: aqua;
+        color: #000;
+        margin: 5px;
+        padding: 3px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    html,body {
+        background-color: #333D47;
+        margin: 0;
+        height: 100%;
+        overflow-x:hidden;
+    }
+    /* Basic CSS Reset */
+    html, body, div, article, section, header,
+    h1, h2, h3, h4, h5, h6,
+    ul, li, ol, p, img {
+        margin:0;
+        padding:0;
+    }
+
+    img {
+        border:none;
+    }
+
+    /* Global Styles */
+    body {
+        line-height: 1.55;
+        font-size: 100%;
+        font-weight: 400;
+        font-family: helvetica, arial, sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        /*font-family: 'Roboto Slab', serif;*/
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    h2 {
+        text-align:center;
+        color: white;
+    }
+
+    .text {
+        color: white;
+        /*font-family: 'Roboto Slab', serif;*/
+        font-family: helvetica, arial, sans-serif;
+        letter-spacing: .05em;
+        text-shadow:
+                4px 4px 0 #86a7ca,
+                7px 7px 0 rgba(0, 0, 0, 0.2);
+        font-size:2.3em;
+        /*font-family:  sans-serif;*/
+        -webkit-animation: shift 2s ;
+        animation: shift 2s ;
+        margin-top:150px;
+        text-align:center;
+        text-transform:uppercase;
+    }
+
+    h2 {
+        font-weight: lighter;
+        font-size: 1.55em;
+        padding-bottom: .35em;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .widthWrapper {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* Post Index */
+    #postIndex {
+        margin: 3em auto;
+    }
+
+    article {
+        margin-top: -0.063em;
+    }
+
+
+
+    article a {
+        display: block;
+        padding: 2.374em 2.5em 2.5em 2.5em;
+        overflow: hidden;
+        border-top: .063em solid #ccc;
+        border-bottom: .063em solid #ccc;
+    }
+
+    article a:hover {
+        background: #eee;
+        border-top: #666 solid .25em;
+        padding: 2.187em 2.5em 2.5em 2.5em;
+    }
+
+    .postImg {
+        float: left;
+        width: 25%;
+        box-sizing: border-box;
+        padding-right: 2em;
+    }
+
+    .postImg img {
+        width: 100%;
+    }
+
+    article a h2 {
+        color: #00b2b3;
+        float: right;
+        width: 75%;
+    }
+
+    article a:hover h2 {
+        color: #157EBF;
+    }
+
+    article a p {
+        font-weight: lighter;
+        color: white;
+        float: right;
+        width: 75%;
+    }
+
+    article a p.name {
+        font-weight: lighter;
+        float: right;
+        width: 75%;
+        font-size: smaller;
+        color: cadetblue;
+    }
+
+    article a:hover p.name{
+        color: #157EBF;
+    }
+
+    article a:hover p {
+        color: #222;
+    }
+
+    @media only screen and (max-width: 750px) {
+        #postIndex {
+            width: 100%;
+        }
+
+        article a {
+            padding: 2.374em 1.5em 2.5em 1.5em;
+        }
+
+        article a:hover {
+            padding: 2.187em 1.5em 2.5em 1.5em;
+        }
+    }
+
+    @media only screen and (max-width: 481px) {
+        .postImg {
+            display: none;
+        }
+
+        article a p, article a h2 {
+            width: 100%;
+        }
+
+    }
+
+
+    /*----- Blog -----*/
+
+    .post-time-section {
+        float: left;
+        text-align: center;
+        margin-right: 15px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .post-time-section .post-date {
+        padding: 10px 0;
+        width: 55px;
+        background-color: #444;
+        color: #fff;
+    }
+
+    .post-time-section .post-date .day {
+        font-size: 20px;
+        font-weight: 700;
+        display: block;
+        letter-spacing: 1px;
+    }
+
+    .post-time-section .post-month .month {
+        display: block;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        height: 25px;
+        line-height: 25px;
+        color: #fff;
+        background-color:#333;
+    }
+
+
+    body{
+        /* 100%窗口高度 */
+        height: 100vh;
+        /* 弹性布局 居中 */
+        display: right;
+        justify-content: center;
+        align-items: center;
+
+        /* 自定义属性，可通过var函数对其调用 */
+        --c: #ff6b81;
+    }
+    svg{
+        width: 30px;
+        /* 相对定位 */
+        position: relative;
+        top: 10px;
+        left: 40%;
+        /* z-index: 10; */
+    }
+    #heart{
+        /* 填充颜色 */
+        fill: #669999;
+        /* stroke属性可应用于任何种类的线条，文字和元素，就像一个圆的轮廓 */
+        stroke: var(--c);
+        /* 线条宽度 */
+        stroke-width: 40px;
+        /* 设置线条为虚线，虚线的长度 */
+        stroke-dasharray: 2600;
+        /* 线条的位移 */
+        stroke-dashoffset: 2600;
+        /* 端点为圆头 */
+        stroke-linecap: round;
+    }
+    span{
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+        border-radius: 50%;
+        /* 绝对定位 居中 */
+        position: relative;
+        top: -10px;
+        left: 90%;
+        transform: translate(-50%,-50%) scale(0);
+        /* 设置各个方向的阴影 */
+        /* 通过var函数调用自定义属性--c,设置阴影颜色 */
+        box-shadow:
+        0 -44px 0 var(--c),
+        0 44px 0 var(--c),
+        -44px 0 0 var(--c),
+        44px 0 0 var(--c),
+        -33px -33px 0 var(--c),
+        33px -33px 0 var(--c),
+        33px 33px 0 var(--c),
+        -33px 33px 0 var(--c);
+    }
+
+    /* 勾选复选框执行各个动画 */
+    #checkbox2:checked + svg #heart{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: drawHeart 1s linear forwards;
+    }
+    #checkbox2:checked ~ span{
+        /* 执行动画: 动画名 时长 加速后减速 停留在最后一帧 */
+        animation: blink 0.5s ease-in-out forwards;
+        /* 动画延迟时间 */
+        animation-delay: 0.85s;
+    }
+    #checkbox2:checked + svg{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: beat 1s linear forwards;
+    }
+
+    #checkbox3:checked + svg #heart{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: drawHeart 1s linear forwards;
+    }
+    #checkbox3:checked ~ span{
+        /* 执行动画: 动画名 时长 加速后减速 停留在最后一帧 */
+        animation: blink 0.5s ease-in-out forwards;
+        /* 动画延迟时间 */
+        animation-delay: 0.85s;
+    }
+    #checkbox3:checked + svg{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: beat 1s linear forwards;
+    }
+
+    #checkbox0:checked + svg #heart{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: drawHeart 1s linear forwards;
+    }
+    #checkbox0:checked ~ span{
+        /* 执行动画: 动画名 时长 加速后减速 停留在最后一帧 */
+        animation: blink 0.5s ease-in-out forwards;
+        /* 动画延迟时间 */
+        animation-delay: 0.85s;
+    }
+    #checkbox0:checked + svg{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: beat 1s linear forwards;
+    }
+
+    #checkbox1:checked + svg #heart{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: drawHeart 1s linear forwards;
+    }
+    #checkbox1:checked ~ span{
+        /* 执行动画: 动画名 时长 加速后减速 停留在最后一帧 */
+        animation: blink 0.5s ease-in-out forwards;
+        /* 动画延迟时间 */
+        animation-delay: 0.85s;
+    }
+    #checkbox1:checked + svg{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: beat 1s linear forwards;
+    }
+
+    #checkbox4:checked + svg #heart{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: drawHeart 1s linear forwards;
+    }
+    #checkbox4:checked ~ span{
+        /* 执行动画: 动画名 时长 加速后减速 停留在最后一帧 */
+        animation: blink 0.5s ease-in-out forwards;
+        /* 动画延迟时间 */
+        animation-delay: 0.85s;
+    }
+    #checkbox4:checked + svg{
+        /* 执行动画: 动画名 时长 线性的 停留在最后一帧 */
+        animation: beat 1s linear forwards;
+    }
+
+    label{
+        /* 鼠标移入,光标变小手 */
+        cursor: pointer;
+    }
+
+    /* 定义动画 */
+    /* 画心的动画 */
+    @keyframes drawHeart {
+        0%{
+            stroke-dashoffset: 2600;
+        }
+        80%{
+            fill: #eee;
+            stroke-dashoffset: 0;
+        }
+        100%{
+            fill: var(--c);
+            stroke-dashoffset: 0;
+        }
+    }
+    /* 小圆点闪出的动画 */
+    @keyframes blink {
+        0%{
+            transform: translate(-50%,-50%) scale(0.5);
+            opacity: 0.8;
+        }
+        50%{
+            transform: translate(-50%,-50%) scale(1);
+            opacity: 1;
+        }
+        100%{
+            transform: translate(-50%,-50%) scale(1.1);
+            opacity: 0;
+        }
+    }
+    /* 心跳动的动画 */
+    @keyframes beat {
+        0%{
+            transform: scale(1);
+        }
+        70%{
+            transform: scale(1);
+        }
+        80%{
+            transform: scale(1.2);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+</style>

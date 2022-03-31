@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>Welcome to SonicHollow Forum!</title>
+    <link href="../static/css/bootstrap.min.css" >
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; z-index: 5"> </div>
+<body>
+
+<div class="header" style="z-index: 1">
+    <div class="info">
+        <br>
+        <div class="meta">
+            <h1>
+            <a  href="https://twitter.com/nodws" target="_b" class="author"></a>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<h1 style="position: relative; margin-top: 60px">
+    By <a href="https://twitter.com/nodws" target="_b">Xuening Wang</a> on Dec 28, 2019
+</h1>
+<section class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
+</section>
+<div class="comments-container">
+    <h1>Comments
+<!--        <a href="http://creaticode.com">creaticode.com</a>-->
+    </h1>
+
+    <ul id="comments-list" class="comments-list">
+        <li>
+            <div class="comment-main-level">
+                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+                        <span>hace 20 minutos</span>
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                    </div>
+                </div>
+            </div>
+            <ul class="comments-list reply-list">
+                <li>
+                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+                            <span>hace 10 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+                            <span>hace 10 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="comment-main-level">
+                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+                        <span>hace 10 minutos</span>
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--评论信息-->
+<div class="cc_comment" style="padding-left: 400px;margin-top: 30px;padding-right: 300px;background-color: #ccffff">
+
+
+    <h5>comment</h5>
+
+    <div class="cc_comment__textarea" style="margin-bottom: 20px">
+        <textarea placeholder="say something"commentForms name="comment" style="margin-top: 0px; margin-bottom: 0px; height: 79px;"></textarea>
+        <!--和form关联    评论框主体-->
+        <div class="comment__textarea_form" style="overflow: hidden">
+            <form action="/recomm/comment" method="post" id="commentForms">
+                <input id="album_id" type="text" style="display: none" name="album_id" th:value="${session.currentAlbum.getAid()}">
+                <input id="comment_userID" type="text" style="display: none" name="userID" th:value="${session.user}!=null ?${session.user.getUid()}:''">
+                <!--这两个input仅仅只是获取相册id和用户id   不显示-->
+                <input type="submit" value="submit" style="float: right">
+            </form>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer th:replace="common/footer_long.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script src="../static/js/bootstrap.js"></script>
+<script src="../static/js/comment.js"></script>
+</body>
+</html>
+
+<style>
+    .cc_infobox{
+        margin-left: 30px;
+        margin-top: 20px;
+        height: 500px;
+        background-color: #ffffff;
+
+    }
+    .cc_comment__textarea textarea{
+        display: block;
+        padding: 10px 13px;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 4px;
+        color: #000000;
+        box-sizing: border-box;
+    }
+
+    .cc_div:after{
+        content:"";
+        display: block;
+        clear: both;
+
+    }
+    .cc_comments{
+        padding-bottom: 60px;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+    html,body{
+        margin:0;
+        height:120%;
+        font-family: 'Josefin Sans', sans-serif;
+
+    }
+    /**
+ * Oscuro: #283035
+ * Azul: #03658c
+ * Detalle: #c7cacb
+ * Fondo: #dee1e3
+ ----------------------------------*/
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: #03658c;
+        text-decoration: none;
+    }
+
+    p {
+        color: white
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    h1 {
+        font-size: 32px;
+        color: white;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    body {
+        font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana,serif;
+        background: #333D47;
+    }
+
+    /** ====================
+     * Lista de Comentarios
+     =======================*/
+    .comments-container {
+        margin: 60px auto 15px;
+        width: 768px;
+    }
+
+    .comments-container h1 {
+        font-size: 36px;
+        color: white;
+        font-weight: 400;
+    }
+
+    .comments-container h1 a {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .comments-list {
+        margin-top: 30px;
+        position: relative;
+    }
+
+    /**
+     * Lineas / Detalles
+     -----------------------*/
+    .comments-list:before {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background: #c7cacb;
+        position: absolute;
+        left: 32px;
+        top: 0;
+    }
+
+    .comments-list:after {
+        content: '';
+        position: absolute;
+        background: #c7cacb;
+        bottom: 0;
+        left: 27px;
+        width: 7px;
+        height: 7px;
+        border: 3px solid #dee1e3;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    .reply-list:before, .reply-list:after {display: none;}
+    .reply-list li:before {
+        content: '';
+        width: 60px;
+        height: 2px;
+        background: #c7cacb;
+        position: absolute;
+        top: 25px;
+        left: -55px;
+    }
+
+
+    .comments-list li {
+        margin-bottom: 15px;
+        display: block;
+        position: relative;
+    }
+
+    .comments-list li:after {
+        content: '';
+        display: block;
+        clear: both;
+        height: 0;
+        width: 0;
+    }
+
+    .reply-list {
+        padding-left: 88px;
+        clear: both;
+        margin-top: 15px;
+    }
+    /**
+     * Avatar
+     ---------------------------*/
+    .comments-list .comment-avatar {
+        width: 65px;
+        height: 65px;
+        position: relative;
+        z-index: 99;
+        float: left;
+        border: 3px solid #FFF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
+
+    .comments-list .comment-avatar img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .reply-list .comment-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .comment-main-level:after {
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        clear: both;
+    }
+    /**
+     * Caja del Comentario
+     ---------------------------*/
+    .comments-list .comment-box {
+        width: 680px;
+        float: right;
+        position: relative;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    }
+
+    .comments-list .comment-box:before, .comments-list .comment-box:after {
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        display: block;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent #FCFCFC;
+        top: 8px;
+        left: -11px;
+    }
+
+    .comments-list .comment-box:before {
+        border-width: 11px 13px 11px 0;
+        border-color: transparent rgba(0,0,0,0.05);
+        left: -12px;
+    }
+
+    .reply-list .comment-box {
+        width: 610px;
+    }
+    .comment-box .comment-head {
+        background: #FCFCFC;
+        padding: 10px 12px;
+        border-bottom: 1px solid #E5E5E5;
+        overflow: hidden;
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .comment-box .comment-head i {
+        float: right;
+        margin-left: 14px;
+        position: relative;
+        top: 2px;
+        color: #A6A6A6;
+        cursor: pointer;
+        -webkit-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+
+    .comment-box .comment-head i:hover {
+        color: #03658c;
+    }
+
+    .comment-box .comment-name {
+        color: #333D47;
+        font-size: 14px;
+        font-weight: 700;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .comment-box .comment-name a {
+        color: #333D47;
+    }
+
+    .comment-box .comment-head span {
+        float: left;
+        color: #999;
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+    }
+
+    .comment-box .comment-content {
+        background: #FFF;
+        padding: 12px;
+        font-size: 15px;
+        color: #595959;
+        -webkit-border-radius: 0 0 4px 4px;
+        -moz-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
+    .comment-box .comment-name.by-author:after {
+        content: 'autor';
+        background: #03658c;
+        color: #FFF;
+        font-size: 12px;
+        padding: 3px 5px;
+        font-weight: 700;
+        margin-left: 10px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    /** =====================
+     * Responsive
+     ========================*/
+    @media only screen and (max-width: 766px) {
+        .comments-container {
+            width: 480px;
+        }
+
+        .comments-list .comment-box {
+            width: 390px;
+        }
+
+        .reply-list .comment-box {
+            width: 320px;
+        }
+    }
+    a{
+        text-decoration:none
+    }
+    .header{
+        position:relative;
+        overflow:hidden;
+        flex-wrap: wrap;
+        justify-content: center;
+        height:50px;
+        min-height:350px;
+        max-height:550px;
+        min-width:300px;
+        color:#eee;
+    }
+    .header:after{
+        content:"";
+        width:100%;
+        height:100%;
+        bottom:0;
+        left:0;
+    }
+    .header a{
+        color:#eee
+    }
+    .info{
+        width:100%;
+        padding:15% 10% 0 10%;
+        text-align:center;
+        text-shadow:0 2px 3px rgba(0,0,0,0.2)
+    }
+    .author{
+        display:inline-block;
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        background:url(https://i.imgur.com/6DLCsZcb.jpg) center no-repeat;
+        /*background-size:cover;*/
+        box-shadow:0 2px 3px rgba(0,0,0,0.3);
+        margin-bottom:3px;
+        z-index: -1;
+    }
+    .info h4, .meta{
+        font-size:0.7em
+    }
+    .meta{
+        font-style:italic;
+    }
+    @keyframes grow{
+        0% { transform: scale(1) translateY(0px)}
+        50% { transform: scale(1.2) translateY(-400px)}
+    }
+    .content{
+        padding:5% 15%;
+        text-align:justify
+    }
+</style>
