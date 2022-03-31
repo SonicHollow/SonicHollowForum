@@ -15,7 +15,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @ImportResource("classpath:applicationContext.xml")
 @MapperScan(basePackages = "org.sang.mybatis.mapper")
 public class SonicHollowApplication extends SpringBootServletInitializer {
-//public class SonicHollowApplication extends WebMvcConfigurationSupport {
 
     public static void main(String[] args) {
         SpringApplication.run(SonicHollowApplication.class, args);
@@ -25,12 +24,5 @@ public class SonicHollowApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(SonicHollowApplication.class);
     }
-//
-//    @Override
-//    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/static/");
-//        super.addResourceHandlers(registry);
-//    }
-
 
 }

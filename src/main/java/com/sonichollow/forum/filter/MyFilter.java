@@ -27,18 +27,16 @@ public class MyFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         String uri = request.getRequestURI();
-//        System.out.println(uri);
         boolean flag=false;
         boolean haveQuality=true;
         boolean rpLogin=false;
         String username = null;
         String password = null;
         if(uri.contains(".css") || uri.contains(".js") || uri.contains(".png")|| uri.contains(".jpg")){
-            //如果发现是css或者js文件，直接放行
-//            System.out.println("!!!!!!!!!!!!!");
+            // Exclude css, js and image files
             filterChain.doFilter(request, response);
         }
-        //在else中放对网页过滤的代码
+        // Start filtering
         else{
             //1.先从session中找用户，如果session中找到用户，说明已经登录，直接使用此用户对象
             HttpSession session = request.getSession(false);
