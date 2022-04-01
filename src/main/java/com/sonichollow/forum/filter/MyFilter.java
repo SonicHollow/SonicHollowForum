@@ -38,12 +38,13 @@ public class MyFilter implements Filter {
         }
         // Start filtering
         else{
-            //1.先从session中找用户，如果session中找到用户，说明已经登录，直接使用此用户对象
+            // 1. Find the username in the session. If the username is found in the session, mark the flag as true
             HttpSession session = request.getSession(false);
             if(session!=null &&session.getAttribute("username")!=null) {
                 flag=true;
             }
-            //2.如果session中找不到，再从cookie中找用户信息(用户名和密码)，如果cookie中有，则查询数据库，再生成相应的session
+            // 2. If the username is not found, find username and password in cookies.
+            // If exists, query the database and get new session
             if(!flag) {
                 Cookie[] cookies = request.getCookies();
                 if (cookies != null) {
@@ -64,11 +65,11 @@ public class MyFilter implements Filter {
                     }
                 }
             }
-            //如未登录 这些网页不能浏览
+            // Set the permission to these pages if the user hasn't logged in
             if (uri.contains("myInfo") || uri.contains("postList") || uri.contains("home")) {
                 haveQuality = false;
             }
-            //如登录，则登录页面不能浏览
+            // Set the permission to these pages if the user has already logged in
             if(flag){
                 if (!uri.contains("login_success") && uri.contains("login")) {
                     rpLogin = true;
