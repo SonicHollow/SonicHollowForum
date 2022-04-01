@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
+
 @SpringBootApplication
 @ImportResource("classpath:applicationContext.xml")
 @MapperScan(basePackages = "org.sang.mybatis.mapper")
