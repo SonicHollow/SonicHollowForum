@@ -1,6 +1,7 @@
 package com.sonichollow.forum.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -28,10 +29,6 @@ public class PageController {
     @RequestMapping(value = "regist")
     public String regist() {
         return "user/regist";
-    }
-    @RequestMapping(value = "myInfo")
-    public String myInfo() {
-        return "myInfo";
     }
     @RequestMapping(value = "templates")
     public String templates() {

@@ -40,4 +40,6 @@ public interface UserMapper {
     @Select("select * from user where username=#{username}")
     User getUser(String username);
 
+
+    // MyInfo functions
 }
