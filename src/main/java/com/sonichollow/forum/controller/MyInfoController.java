@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +27,23 @@ public class MyInfoController {
         return "myInfo";
     }
 
+    @PostMapping(value = "myInfoSetName")
+    public String setUsername(Model model, @ModelAttribute InfoForm form, HttpServletRequest request) {
+        User user = userMapper.getUser(form.getUser());
+
+        System.out.println(form);
+        if (user == null) {
+            user = userMapper.getUser("Nyanner");
+            System.out.println("~!!!!!!!!!!!!!!!!!~");
+        }
+
+        user.setUsername(form.getContent());
+        model.addAttribute("user", user);
+        model.addAttribute("infoForm", new InfoForm(user.getUsername()));
+        HttpSession session = request.getSession();
+        session.setAttribute("username", user.getUsername());
+        return "myInfo";
+    }
 
     @PostMapping(value = "/myInfoSetEmail")
     public String setEmail(Model model, @ModelAttribute InfoForm form) {
@@ -69,9 +88,9 @@ public class MyInfoController {
         }
 
         if (form.getContent().equalsIgnoreCase("female"))
-            user.setGender(1);
-        else if (form.getContent().equalsIgnoreCase("male"))
             user.setGender(0);
+        else if (form.getContent().equalsIgnoreCase("male"))
+            user.setGender(1);
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));

@@ -11,19 +11,18 @@
 
 
 
+<body style="background-color: #333D47; display: flex">
 <div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter"></div>
-<body style="background-color: #333D47">
 
 
+</br>
+</br>
+</br>
 <!-- My info settings page -->
-</br>
-</br>
-
-</br>
 
 
 
-<section class="py-5 my-5">
+<section class="py-5 my-5" style="overflow: auto; top:100px; bottom: 100px; flex-grow: 1; min-height: 2em;">
     <div class="container">
         <h1 class="mb-5" style="color: white">Account Settings</h1>
         <div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -37,7 +36,7 @@
                     <!--                    <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.zsaaVp0tIiSnOK-1rYpBnwAAAA?pid=ImgDet&rs=1" alt="Image" class="shadow">-->
                 </div>
                 <h4 class="text-center" id="user-name-text">
-                    <div th:text="${session.username}">
+                    <div th:text="${user.getUsername()}">
                         Username
                     </div>
                 </h4>
@@ -49,11 +48,11 @@
                 <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                 <div class="row">
                     <!-- Username -->
-                    <form th:action="@{/myInfoSetEmail}" th:object="${infoForm}" method="post" >
-                    <div class="col-6 col-md-4">
+                    <form th:action="@{/myInfoSetName}" th:object="${infoForm}" method="post" class="col-6 col-md-4">
+                    <div>
 
                         <h5 class="text-uppercase text-decoration-underline lead">Username</h5>
-                        <h6 th:text="${session.username}"></h6>
+                        <h6 th:text="${user.getUsername()}"></h6>
 
                         <div class="collapse multi-collapse0">
                             <div class="card card-body">
@@ -61,7 +60,7 @@
                             </div>
                             <div class="card card-body">
                                 <label for="userFormControlInput0" class="form-label">new value:</label>
-                                <input type="hidden" th:placeholder="${session.username}" th:field="*{user}">
+                                <input type="hidden" th:placeholder="${user.getUsername()}" th:field="*{user}">
                                 <input type="text" class="form-control" id="userFormControlInput0" placeholder="" th:field="*{content}">
                                 <button
                                         type="submit"
@@ -80,9 +79,9 @@
                     </div>
                     </form>
                     <!-- Phone -->
-                    <form th:action="@{/myInfoSetPhone}" th:object="${infoForm}" method="post" >
+                    <form th:action="@{/myInfoSetPhone}" th:object="${infoForm}" method="post" class="col-6 col-md-4">
 
-                    <div class="col-6 col-md-4 ">
+                    <div>
                         <h5 class="text-uppercase text-decoration-underline lead">Phone Number</h5>
                         <h6 th:text="${user.getPhone()}"></h6>
                         <div class="collapse multi-collapse1">
@@ -91,7 +90,7 @@
                             </div>
                             <div class="card card-body">
                                 <label for="userFormControlInput1" class="form-label">new value:</label>
-                                <input type="hidden" th:placeholder="${session.username}" th:field="*{user}">
+                                <input type="hidden" th:placeholder="${user.getUsername()}" th:field="*{user}">
                                 <input type="text" class="form-control" id="userFormControlInput1" placeholder="" th:field="*{content}">
                                 <button
                                         type="submit"
@@ -112,9 +111,9 @@
                     </div>
                     </form>
                     <!-- Email -->
-                    <form th:action="@{/myInfoSetEmail}" th:object="${infoForm}" method="post" >
+                    <form th:action="@{/myInfoSetEmail}" th:object="${infoForm}" method="post" class="col-6 col-md-4">
 
-                    <div class="col-6 col-md-4 ">
+                    <div>
                         <h5 class="text-uppercase text-decoration-underline lead">E-mail</h5>
                         <h6 th:text="${user.getEmail()}" class="emailText"></h6>
                         <div class="collapse multi-collapse2">
@@ -123,7 +122,7 @@
                             </div>
                             <div class="card card-body">
                                 <label for="userFormControlInput2" class="form-label">new value:</label>
-                                <input type="hidden" th:placeholder="${session.username}" th:field="*{user}">
+                                <input type="hidden" th:placeholder="${user.getUsername()}" th:field="*{user}">
                                 <input type="text" class="form-control" id="userFormControlInput2" placeholder="" th:field="*{content}">
                                 <button
                                         type="submit"
@@ -144,9 +143,9 @@
                     </div>
                     </form>
                     <!-- Gender -->
-                    <form th:action="@{/myInfoSetGender}" th:object="${infoForm}" method="post" >
+                    <form th:action="@{/myInfoSetGender}" th:object="${infoForm}" method="post" class="col-6 col-md-4">
 
-                    <div class="col-6 col-md-4 ">
+                    <div>
                         <h5 class="text-uppercase text-decoration-underline lead">Gender</h5>
                         <h6 th:text="${user.getGender() == 1 ? 'Male' : 'Female'}"></h6>
                         <div class="collapse multi-collapse3">
@@ -155,7 +154,7 @@
                             </div>
                             <div class="card card-body">
                                 <label for="userFormControlInput3" class="form-label">new value:</label>
-                                <input type="hidden" th:placeholder="${session.username}" th:field="*{user}">
+                                <input type="hidden" th:placeholder="${user.getUsername()}" th:field="*{user}">
                                 <input type="text" class="form-control" id="userFormControlInput3" placeholder="" th:field="*{content}">
                                 <button
                                         type="submit"
@@ -176,9 +175,9 @@
                     </div>
                     </form>
                     <!-- Avatar -->
-                    <form th:action="@{/myInfoSetAvatar}" th:object="${infoForm}" method="post" >
+                    <form th:action="@{/myInfoSetAvatar}" th:object="${infoForm}" method="post" class="col-6 col-md-4">
 
-                    <div class="col-6 col-md-4 ">
+                    <div>
                         <h5 class="text-uppercase text-decoration-underline lead">Avatar</h5>
                         <div class="img-circle text-center mb-3">
                             <img th:src="${user.getAvatar()}">
@@ -190,7 +189,7 @@
                             </div>
                             <div class="card card-body">
                                 <label for="userFormControlInput4" class="form-label">new value:</label>
-                                <input type="hidden" th:placeholder="${session.username}" th:field="*{user}">
+                                <input type="hidden" th:placeholder="${user.getUsername()}" th:field="*{user}">
                                 <input type="text" class="form-control" id="userFormControlInput4" placeholder="" th:field="*{content}">
                                 <button
                                         type="submit"
@@ -221,9 +220,15 @@
 
 <!-- My post list -->
 
-
-<footer th:replace="common/footer.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div th:replace="common/footer.html" style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; overflow: hidden"></div>
 </body>
+<!-- Footer -->
 </html>
 
 
