@@ -1,0 +1,123 @@
+input::-webkit-input-placeholder {
+    color: white;
+}
+
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333D47;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #333D47;
+    padding: 20px 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    margin-top: -70px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.btn {
+    cursor: pointer;
+    width: 100%;
+    background-color: #adb1b5;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    color: white;
+    font-family: inherit;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.container a {
+    text-decoration: none;
+    color: #adb1b5;
+}
+
+.text {
+    margin-top: 30px;
+}
+
+
+.form-control {
+    width: 300px;
+    margin: 20px 0 40px;
+    position: relative;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid white;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-bottom-color: white;
+}
+
+.form-control input:valid {
+    border-bottom-color: white;
+}
+
+.form-control label {
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    transform: translateY(-30px);
+    color: white;
+}

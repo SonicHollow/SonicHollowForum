@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+body {
+    font-family: 'Noto Sans',serif;
+    padding: 0;
+    width: 100%;
+}
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+
+.grid-celda-1 {
+    grid-column: 1/2;
+}
+
+.grid-celda-2 {
+    grid-column: 2/3;
+}
+
+.grid-celda-3 {
+    grid-column: 3/4;
+}
+.grid-celda-4 {
+    grid-column: 4/4;
+}
+.patrones-comunes-navigation-bar {
+    height: 65px;
+    background-color: white;
+}
+.navigation-bar-links {
+    display: none;
+}
+
+.navigation-bar-links a {
+    color: #333D47;
+    text-decoration: none;
+}
+.navigation-bar-links a:hover {
+    color: #4e7eb1;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+}
+
+.navigation-bar-login {
+    display: none;
+}
+
+.navigation-bar-button-signup {
+    background-color: #333D47;
+    height: 40px;
+    width: 100px;
+    border-radius: 30px;
+    color: white;
+    border: 0;
+    padding: 5px 20px;
+    margin-top: 5px;
+}
+
+.navigation-bar-login a {
+    color: #333D47;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 460px) {
+    .patrones-comunes-navigation-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    .navigation-bar-links {
+        display: grid;
+        margin: 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    .menu-burger svg {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .navigation-bar-login {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
