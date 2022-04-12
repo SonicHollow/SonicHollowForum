@@ -42,4 +42,4 @@ public interface UserMapper {
 
 
     // MyInfo functions
-}
+
