@@ -143,5 +143,3 @@ public class MyInfoController {
 //    public String getUserName(@PathVariable String username) {
 //        return userMapper.getUser(username).getUsername();
 //    }
-
-}
