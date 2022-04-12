@@ -61,6 +61,7 @@ html{
 .navigation-bar-login a {
     color: #333D47;
     text-decoration: none;
+    font-family: 'Noto Sans',serif;
 }
 
 @media screen and (min-width: 460px) {
