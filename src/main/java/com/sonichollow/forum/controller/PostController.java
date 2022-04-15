@@ -36,10 +36,9 @@ public class PostController {
     @RequestMapping("/Publish")
     public String publish(Model model, Post post){
         int id = postService.PublishPost(post);
-
         return "redirect:publishedPost?pid"+id;
     }
-    //
+
     //去帖子详情页
     @RequestMapping("/publishedPost")
     public String postDetailPage(Model model,int pid){
