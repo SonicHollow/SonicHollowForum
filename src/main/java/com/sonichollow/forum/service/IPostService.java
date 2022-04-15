@@ -1,15 +1,9 @@
 package com.sonichollow.forum.service;
 
 import com.sonichollow.forum.entity.Post;
+import org.apache.catalina.Service;
 
-public interface IPostService {
-    /**
-     *
-     * @param post
-     */
+public interface IPostService  {
 
-    int PublishPost(Post post);
-    Post getPostByPid(int pid);
-//    Integer EditPost (Post post) ;
 
 }

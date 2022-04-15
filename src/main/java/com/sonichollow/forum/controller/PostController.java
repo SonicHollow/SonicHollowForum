@@ -1,48 +1,53 @@
 package com.sonichollow.forum.controller;
 
+
 import com.sonichollow.forum.entity.Post;
-import com.sonichollow.forum.entity.User;
-import com.sonichollow.forum.service.IPostService;
-import com.sonichollow.forum.service.IUserService;
-import com.sonichollow.forum.util.JsonResult;
+import com.sonichollow.forum.service.impl.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/posts")
-public class PostController extends BaseController{
+public class PostController {
     @Autowired
-    private IPostService postService;
+    private PostServiceImpl postService;
 
 
-
-
-//    发帖
-    @RequestMapping("/publishPost")
-    public String publishPost(Post post) {
-        int id = postService.PublishPost(post);
-
-        return "redirect:toPost.do?pid="+ id;
+    //去发帖页面
+    @RequestMapping("/toPublish")
+    public String toPublish(Model model, Post post){
+        return "publish";
     }
 
+    //发帖
 
-    //   帖子详情页
-    @RequestMapping("/toPost.do")
-    public String toPost(int pid, Model model, HttpSession session){
-        Integer sessionUid = (Integer) session.getAttribute("uid");
-        //获取帖子信息
-        Post post = postService.getPostByPid(pid);
-        //获取评论信息
+    /**
+     *
+     * @param model
+     * @param post
+     * @return
+     */
+    @RequestMapping("/Publish")
+    public String publish(Model model, Post post){
+        int id = postService.PublishPost(post);
 
-        //向模型中添加数据
-        model.addAttribute("post",post);
-        //添加评论
-//        model.addAttribute("replyList",replyList);
-        return "post";
+        return "redirect:publishedPost?pid"+id;
+    }
+    //
+    //去帖子详情页
+    @RequestMapping("/publishedPost")
+    public String postDetailPage(Model model,int pid,HttpSession ){
+        //注入内容需要更改
+//        Integer sessionUid = (Integer) session.getAttribute("pid");
+//        //获取帖子信息 浏览量 点赞信息
+//        Post post = postService.getById(pid);
+//        model.addAttribute("post",post);
+        return "postPage";
     }
 }
