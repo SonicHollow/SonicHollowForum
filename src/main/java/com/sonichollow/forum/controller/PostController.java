@@ -42,7 +42,7 @@ public class PostController {
     //
     //去帖子详情页
     @RequestMapping("/publishedPost")
-    public String postDetailPage(Model model,int pid,HttpSession ){
+    public String postDetailPage(Model model,int pid){
         //注入内容需要更改
 //        Integer sessionUid = (Integer) session.getAttribute("pid");
 //        //获取帖子信息 浏览量 点赞信息
