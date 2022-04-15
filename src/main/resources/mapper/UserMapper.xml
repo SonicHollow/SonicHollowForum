@@ -21,7 +21,7 @@
         keyProperty属性：将表中的哪个字段作为主键递增
     -->
     <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
-        INSERT INTO t_user (
+        INSERT INTO user (
                 username, password, salt, phone, email, gender, avatar, is_delete,
                 created_user, created_time, modified_user, modified_time)
         VALUES (
@@ -30,6 +30,12 @@
     </insert>
     <!--id设为方法的名字-->
     <select id="findByUsername" resultMap="UserEntityMap">
-        SELECT * FROM t_user WHERE username = #{username}
+        SELECT * FROM user WHERE username = #{username}
     </select>
+
+    <update id="updateUser">
+        UPDATE user SET username = #{username}, phone = #{phone}, email = #{email},
+                        gender = #{gender}, avatar = #{avatar}
+        WHERE uid = #{uid};
+    </update>
 </mapper>
