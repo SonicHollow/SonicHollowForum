@@ -31,4 +31,3 @@ public class InfoForm {
                 ", content='" + content + '\'' +
                 '}';
     }
-}
