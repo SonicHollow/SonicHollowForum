@@ -1,0 +1,132 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="static/css/login.css">
+    <script  th:inline="javascript" type="text/javascript">
+        $(function(){
+
+            // 给验证码的图片，绑定单击事件
+            $("#code_img").click(function () {
+                this.src = "loginimage?d=" + Math.random();
+            });
+
+            $("#signup").click(function () {
+                var usernameText =$("#name").val();
+                var usernamePatt = /^\w{5,12}$/;
+                var flag=true;
+
+                if (!usernamePatt.test(usernameText) && flag == true ) {
+                    $("span.errorMsg").text("用户不合法！");
+                    flag=false;
+                    return false;
+                }
+                var emailText = $("#email").val();
+                var emailPatt = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                if (!emailPatt.test(emailText) && flag == true) {
+                    $("span.errorMsg").text("邮箱格式不合法！");
+                    flag=false;
+                    return false;
+                }
+
+                var passwordText = $("#password").val();
+                var passwordPatt = /^\w{5,12}$/;
+                if (!passwordPatt.test(passwordText) && flag == true) {
+                    $("span.errorMsg").text("密码不合法！");
+                    return false;
+                }
+                var repwdText = $("#repwd").val();
+                if (repwdText != passwordText && flag == true) {
+                    $("span.errorMsg").text("确认密码和密码不一致！");
+                    flag=false;
+                    return false;
+                }
+
+                // 去掉错误信息
+                $("span.errorMsg").text("");
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div th:include="common/commonNavbar"> </div>
+
+<!-- BEGIN LOGIN FORM -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <span class="errorMsg" style="color: green; margin: 0; text-align: center" th:text="${param.msg}"></span>
+
+
+    <div class="row m-0 p-0 border-none">
+        <div class="col-md-8 col-md-offset-4">
+            <div class="row m-0 pb-10 border-none">
+                <h2 class="pb-15 login-heading">注册属于你的专属用户</h2>
+            </div>
+            <form method="post" class="form-horizontal" action="registUser">
+
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 login-input-container mb-5 p-0">
+                        <input id="name" name="name" type="text" th:value="${param.name}" class="form-control login-input" required maxlength="50">
+                        <label class="login-input-label-fixed">账号</label>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 login-input-container p-0">
+                        <input id="email" name="email" th:value="${param.email}" class="form-control login-input login-password" required maxlength="50">
+                        <label class="login-input-label-fixed">邮箱</label>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 login-input-container p-0">
+                        <input id="password" name="password" type="password" class="form-control login-input login-password" required maxlength="50">
+                        <label class="login-input-label-fixed">密码</label>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 login-input-container p-0">
+                        <input id="repwd" name="repwd" type="password" class="form-control login-input login-password" required maxlength="50">
+                        <label class="login-input-label-fixed">确认密码</label>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-3 login-input-container p-0">
+                        <input id="code" name="code"   class="form-control login-input login-input" required maxlength="4">
+                        <label class="login-input-label-fixed">验证码</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <img id="code_img" alt="验证码刷不出来蜡" src="loginimage" width="100%" >
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 p-0">
+                        <button type="submit" id="signup" class="btn btn-lg btn-login pull-left width-100" style="background-color:#00a7f5;">注册</button>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row m-0 border-none">
+                    <div class="col-sm-6 p-0">
+                        <div class="text-center"><a href="login" class="inline-block form-control-static forgot-password text-grey"><p class="text-blue">已有账号？点击登录</p></a></div>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- END LOGIN FORM -->
+
+    <script language="javascript">
+        init();
+        snow();
+    </script>
+</body>

@@ -62,13 +62,13 @@ public class LoginController {
         String username=user.getUsername();
         String password=user.getPassword();
         System.out.println("username " + username + " password " + password);
-        // 检查 验证码是否正确
-        // 验证码正确
+        //检查 验证码是否正确
+        //验证码正确
         if (token != null && token.equalsIgnoreCase(code)) {
-            // 检查用户是否存在
-            // 用户存在
+            //检查用户是否存在
+            //用户存在                               l.
             if(userService.isUser(username,password)){
-                // 保存登录信息
+                //保存登录信息
                 HttpSession session = req.getSession(true);
                 session.setAttribute("username", username);
                 Cookie nameCookie = new Cookie("username", username);
@@ -81,13 +81,13 @@ public class LoginController {
                 resp.addCookie(passwordCookie);
                 mv.setViewName("redirect:login_success");
             }
-            // 用户不存在
+            //用户不存在
             else{
                 mv.addObject("msg", "Wrong username or password!");
                 mv.setViewName("redirect:login");
             }
         }
-        // 验证码错误
+        //验证码错误
         else {
             // 把回显信息，保存到Request域中
             mv.addObject("msg", "Wrong verification code");
@@ -98,7 +98,7 @@ public class LoginController {
         return mv;
     }
 
-    // 把注册写到这里
+    //把注册写到这里
 
 //    @RequestMapping("registUser")
 //    public ModelAndView regist(User user,HttpServletRequest req){
