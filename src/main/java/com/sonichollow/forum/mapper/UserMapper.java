@@ -44,5 +44,13 @@ public interface UserMapper {
 }
 
 
-    // MyInfo functions
 
+
+    // MyInfo functions
+    /**
+     * 更新用户的数据 (仅限于 MyInfoPage能更改的内容)
+     * @param user 用户的数据
+     * @return 受影响的行数 （增删改，可以根据返回值判断是否执行成功）
+     */
+    Integer updateUser(User user);
+}
