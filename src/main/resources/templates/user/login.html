@@ -12,20 +12,20 @@
 <div class="container">
     <h1>Login to SonicHollow</h1>
     <form method="post" action="loginUser">
-        <div class="form-control">
+        <div class="form-control" style="margin: 20px 0 40px;">
             <input id="username" name="username" type="text" th:value="${param.username}"
                    class="form-control login-input" required maxlength="50" placeholder="Username" style="color: gray">
         </div>
-        <div class="form-control">
+        <div class="form-control" style="margin: 20px 0 40px;">
             <input id="password" name="password" type="password" th:value="${param.password}"
                    class="form-control login-input login-password" required maxlength="50" placeholder="Password"
                    style="color: gray">
         </div>
-        <div class="form-control">
+        <div class="form-control" style="margin: 20px 0 40px;">
             <input id="code" name="code" class="form-control login-input login-input" required maxlength="4"
                    placeholder="Verification Code" style="color: gray">
         </div>
-        <div class="form-control">
+        <div class="form-control" style="margin: 20px 0 40px;">
             <img id="code_img" alt="Display Error" src="loginimage" width="50%">
             <span class="errorMsg" style="color: black" th:text="${param.msg}"></span>
         </div>
@@ -36,3 +36,4 @@
 <footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 </body>
 </html>
+
