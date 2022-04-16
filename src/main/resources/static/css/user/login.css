@@ -1,9 +1,3 @@
-
-/**
-* When we write input, we usually use the color of placeholder. When the artist designs a beautiful input background for us, the content of placeholder is difficult to see clearly, so we need to change the color.
-* However, when we change the input color to other colors, we will only assign the color to the input content, and the placeholder is still the default color.
-* We can control it like this:
-*/
 input::-webkit-input-placeholder {
     color: white;
 }
@@ -20,21 +14,14 @@ input:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: white;
 }
 
-
-/**
-* We usually use this code to initialize the page, set the outer margin and inner margin of all elements to 0, and set the calculation method to box sizing: border box
-*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
-
 body {
-    background-color: #333D47; //Page background color
+    background-color: #333D47;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
@@ -44,11 +31,11 @@ body {
 }
 
 .container {
-    background-color: #333D47; //Background color inside the border
+    background-color: #333D47;
     padding: 20px 40px;
     border-radius: 10px;
     border-style: solid;
-    border-color: white; //border color
+    border-color: white;
     border-width: 3px;
     margin-top: -70px;
 }
@@ -56,64 +43,50 @@ body {
 .container h1 {
     text-align: center;
     margin-bottom: 10px;
-    color: white; //font color of Login to SonicHollow
+    color: white;
     font-size: 25px;
 }
 
 .btn {
     cursor: pointer;
     width: 100%;
-    background-color: #adb1b5; //The color of the login button is a little lighter than the background color
+    background-color: #adb1b5;
     padding: 15px;
     border-radius: 10px;
     border-style: none;
     font-size: 16px;
-    color: white; //The color of the login font on the login button
+    color: white;
     font-family: inherit;
 }
 
-
-/**
-* Removes the default border of the button when selected
-*/
 .btn:focus {
     outline: 0;
 }
 
-
-/**
-* When clicked, the button will be animated and its size will change to 0.98
-*/
 .btn:active {
     transform: scale(0.98);
 }
 
-
 .container a {
     text-decoration: none;
-    color: #adb1b5; // the color of "register one!" is a little lighter than the background color
+    color: #adb1b5;
 }
 
-
-/**
-* The distance from the top of this component to the adjacent component is 30px.
-* If there is no component above this component, it is 30px from the top of the parent component
-*/
 .text {
     margin-top: 30px;
 }
 
-control {
+
+.form-control {
     width: 300px;
     margin: 20px 0 40px;
     position: relative;
 }
 
-
 .form-control input {
     background-color: transparent;
     border: 0;
-    border-bottom: 2px solid white; //The color of the input line when no field is entered
+    border-bottom: 2px solid white;
     display: block;
     width: 100%;
     padding: 15px 0;
@@ -123,11 +96,11 @@ control {
 
 .form-control input:focus {
     outline: 0;
-    border-bottom-color: white; //Color of input line when entering field
+    border-bottom-color: white;
 }
 
 .form-control input:valid {
-    border-bottom-color: white; //After the input field is completed, the color of the input line
+    border-bottom-color: white;
 }
 
 .form-control label {

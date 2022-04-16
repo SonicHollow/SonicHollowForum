@@ -10,6 +10,10 @@ public class PageController {
     public String home() {
         return "home";
     }
+    @RequestMapping(value = "backstage")
+    public String backstage() {
+        return "backstage";
+    }
     @RequestMapping(value = "index")
     public String index() {
         return "index";

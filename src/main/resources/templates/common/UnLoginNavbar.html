@@ -9,12 +9,11 @@
     </div>
     <div style="font-family: 'Noto Sans',serif" class="grid-celda-2 navigation-bar-links">
         <a class="grid-celda-1" th:href="@{'~/home'}">Home</a>
-        <a class="grid-celda-2" th:href="@{'~/myInfo'}">MyInfo</a>
-        <a class="grid-celda-3" th:href="@{'~/about'}">About</a>
+        <a style="font-weight:normal;" class="grid-celda-2" th:href="@{'~/postList'}">Posts</a>
+        <a style="font-weight:normal;" class="grid-celda-3" th:href="@{'~/myInfo/' + ${session.username}}">MyInfo</a>
     </div>
     <div style="font-family: 'Noto Sans',serif" class="grid-celda-3 navigation-bar-login">
         <a th:href="@{'~/login'}"><button class="grid-celda-1 navigation-bar-button-signup">Sign In</button></a>
         <a class="grid-celda-4" style="margin-top: 11px;margin-right: 10px">Welcome to SonicHollow Forum</a>
     </div>
-
 </div>
