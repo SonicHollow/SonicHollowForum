@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sonichollow.forum.mapper.PostMapper">
+    <resultMap id="PostEntityMap" type="com.sonichollow.forum.entity.Post">
+        <id column="pid" property="pid"/>
+        <result column="reply_time" property="replyTime"/>
+        <result column="reply_count" property="replyCount"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"></result>
+        <result column="modified_user" property="modifiedUser"></result>
+        <result column="modified_time" property="modifiedTime"></result>
+    </resultMap>
+
+
+
+    <insert id="insertPost" useGeneratedKeys="true" keyProperty="pid">
+        INSERT INTO post (
+            content,reply_time,reply_count,created_user, created_time, modified_user, modified_time)
+        VALUES (#{content},#{replyTime},#{replyCount},#{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+
+
+    <update id="updateReplyCount">
+        update post set reply_count = reply_count + 1 where pid = #{pid}
+    </update>
+    <update id="updateReplyTime">
+        update post set reply_time = Current_Date
+        where pid=#{pid}
+    </update>
+    <select id="getPostByPid" resultMap="PostEntityMap">
+        select * from post where pid=#{pid}
+    </select>
+</mapper>
