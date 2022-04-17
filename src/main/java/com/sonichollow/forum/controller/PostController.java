@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("/posts")
+
 public class PostController {
     @Autowired
     private PostServiceImpl postService;
