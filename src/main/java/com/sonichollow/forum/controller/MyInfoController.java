@@ -38,7 +38,6 @@ public class MyInfoController {
         }
 
         user.setUsername(form.getContent());
-        userMapper.updateUser(user);
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         HttpSession session = request.getSession();
@@ -57,8 +56,6 @@ public class MyInfoController {
         }
         if (isEmail(form.getContent()))
             user.setEmail(form.getContent());
-        userMapper.updateUser(user);
-
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         return "myInfo";
@@ -75,8 +72,6 @@ public class MyInfoController {
         }
         if (isPhone(form.getContent()))
             user.setPhone(form.getContent());
-        userMapper.updateUser(user);
-
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         return "myInfo";
@@ -96,7 +91,6 @@ public class MyInfoController {
             user.setGender(0);
         else if (form.getContent().equalsIgnoreCase("male"))
             user.setGender(1);
-        userMapper.updateUser(user);
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
@@ -114,7 +108,6 @@ public class MyInfoController {
         }
         if (isURL(form.getContent()))
             user.setAvatar(form.getContent());
-        userMapper.updateUser(user);
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
@@ -144,4 +137,10 @@ public class MyInfoController {
     }
 }
 
-}
+
+
+
+//    @RequestMapping("myInfo/{username}")
+//    public String getUserName(@PathVariable String username) {
+//        return userMapper.getUser(username).getUsername();
+//    }
