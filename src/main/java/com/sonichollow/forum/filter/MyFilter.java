@@ -66,7 +66,7 @@ public class MyFilter implements Filter {
                 }
             }
             // Set the permission to these pages if the user hasn't logged in
-            if (uri.contains("myInfo") || uri.contains("myInfo/null") || uri.contains("postList")
+            if (uri.contains("myInfo") || uri.contains("manage") || uri.contains("postList")
                     || uri.contains("posting") || uri.contains("publishedPost") || uri.contains("home")) {
                 haveQuality = false;
             }
@@ -76,6 +76,18 @@ public class MyFilter implements Filter {
                     rpLogin = true;
                 }
             }
+            // Set the permission to system backstage. ONLY FOR ADMIN!!!
+
+            if(uri.contains("manage") && username != null){
+                if (username.contains("admin")){
+                    filterChain.doFilter(request, response);
+                }
+                else {
+                    request.setAttribute("msg","No permission to this page! You are not admin");
+                    request.getRequestDispatcher("remind").forward(request,response);
+                }
+            }
+
             if(rpLogin){
                 request.setAttribute("msg","You have already logged in");
                 request.getRequestDispatcher("remind").forward(request,response);

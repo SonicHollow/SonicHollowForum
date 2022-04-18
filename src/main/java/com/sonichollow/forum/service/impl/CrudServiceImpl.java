@@ -1,7 +1,7 @@
 package com.sonichollow.forum.service.impl;
 import com.sonichollow.forum.entity.User;
 import com.sonichollow.forum.mapper.UserMapper;
-import com.sonichollow.forum.service.Crud;
+import com.sonichollow.forum.service.CrudService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,24 +9,24 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CrudImpl implements Crud {
+public class CrudServiceImpl implements CrudService {
 
     @Autowired
     UserMapper userMapper;
 
     @Override
     public User getAcc(String username, String password) {
-        return userMapper.selectByNameAndAge(username,password);
+        return userMapper.selectByUsernameAndPassword(username,password);
     }
 
     @Override
-    public void insertAcc(String username, String password, String email) {
-        userMapper.insertUser(username,password,email);
+    public void insertAcc(String username, String password, int gender, String phone, String email) {
+        userMapper.insertUser(username,password,gender,phone,email);
     }
 
     @Override
-    public void updateAcc(String username, String password, String email,int uid) {
-        userMapper.updateUser(username, password, email, uid);
+    public void updateAcc(String username, String password, int gender, String phone, String email, int uid) {
+        userMapper.updateUser(username, password, gender, phone, email, uid);
     }
 
     @Override

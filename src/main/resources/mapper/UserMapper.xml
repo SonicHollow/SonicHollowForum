@@ -42,7 +42,9 @@
         update test
         set username  = #{username},
             password   = #{password},
-            email = #{email}
+            email = #{email},
+            gender = #{gender},
+            phone = #{phone}
         where uid = #{uid};
     </update>
     <delete id="deleteUser">
@@ -52,7 +54,7 @@
     </delete>
 
 
-    <select id="selectByNameAndAge" resultType="com.sonichollow.forum.entity.User">
+    <select id="selectByUsernameAndPassword" resultType="com.sonichollow.forum.entity.User">
         select *
         from test
         where username = #{username}
@@ -70,8 +72,8 @@
     </select>
 
     <insert id="insertUser">
-        INSERT INTO test (username, password, email)
-        VALUES (#{username}, #{password}, #{email});
+        INSERT INTO test (username, password, gender, phone, email)
+        VALUES (#{username}, #{password}, #{gender}, #{phone}, #{email});
     </insert>
 
 </mapper>
