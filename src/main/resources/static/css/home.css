@@ -1,0 +1,270 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #333d47;
+    margin: 0;
+}
+
+.typewriter h1 {
+    /* Set font color */
+    color: white;
+    font-family: monospace;
+    /* Set the font size to 50px */
+    font-size: 50px;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #4e7eb1;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    margin-top: -350px;
+    margin-right: 120px;
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+            typing 2.5s steps(30, end),
+            blink-caret .5s step-end infinite;
+}
+
+.typewriter p {
+    color: #FFF;
+    text-align: right;
+    margin-right: 80px;
+    margin-top: 100px;
+    /* Set the font size to 20px */
+    font-size: 20px;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 90%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #4e7eb1
+    }
+}
+
+.search-container {
+    width: 490px;
+    margin-left: 500px;
+    margin-top: 100px;
+    display: block;
+}
+
+input#search-bar {
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    /* Set the font size to 1rem */
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    border-radius: 10px;
+    outline: none;
+}
+
+input#search-bar:focus {
+    border: 1px solid #4e7eb1;
+    transition: 0.35s ease;
+    color: #4e7eb1;
+}
+
+input#search-bar:focus::-webkit-input-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+input#search-bar:focus::-moz-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+input#search-bar:focus:-ms-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+.search-icon {
+    position: relative;
+    float: right;
+    width: 75px;
+    height: 75px;
+    top: -62px;
+    right: -45px;
+}
+
+.button {
+    margin: 50px auto;
+    /* Set the font size to 20px */
+    font-size: 20px;
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #fff;
+    font-weight: 400;
+    color: #666;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 10px 10px 10px;
+    position: fixed;
+    top: 450px;
+    right: 100px;
+    background: #eee;
+    width: 150px;
+    display: block;
+    text-align: center;
+    box-shadow: 1px 1px 1px #fff;
+    -moz-box-shadow: 1px 1px 1px #fff;
+    -webkit-box-shadow: 1px 1px 1px #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.button:hover {
+    color: #333;
+    background: #eeffff;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.img1 {
+    width: 253px;
+    height: 100px;
+    float: left;
+    display: none;
+}
+
+.sec span {
+    /* Set the font size to 16px */
+    font-size: 16px;
+    position: relative;
+    left: 45px;
+    top: 17px;
+}
+
+.sec svg {
+    position: relative;
+    right: 21px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    float: right;
+}
+
+.btn {
+    background-color: #333d47;
+    width: 400px;
+    height: 100px;
+    line-height: 128px;
+    /* Set the font size to 28px */
+    font-size: 28px;
+    left: 100px;
+    font-weight: 700;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.b1,
+.b2,
+.b3,
+.b4 {
+    position: relative;
+    top: 60px;
+}
+
+.b1 span,
+.b2 span,
+.b3 span,
+.b4 span {
+    position: relative;
+    left: 140px;
+    top: -10px;
+    color: white;
+}
+
+.b1 svg,
+.b2 svg,
+.b3 svg,
+.b4 svg {
+    position: absolute;
+    top: 30px;
+    left: 320px;
+    width: 53px;
+    height: 53px;
+}
+
+.icon {
+    position: fixed;
+    margin-top: -120px;
+    margin-left: 350px;
+}
+
+.img3 {
+    position: relative;
+    left: 342px;
+    top: -32px;
+}
+
+.img4 {
+    position: relative;
+    left: 312px;
+    top: -187px;
+}
+
+.img5 {
+    width: 110px;
+    height: 100px;
+    position: relative;
+    top: -201px;
+    left: -11px;
+}
+
+.img6 {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    top: -273px;
+    left: -26px;
+}
+
+.img7 {
+    width: 93px;
+    height: 93px;
+    position: relative;
+    left: 22px;
+    top: -254px;
+}
+
+.img8 {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    left: 10px;
+    top: -305px;
+}

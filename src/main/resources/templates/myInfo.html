@@ -15,13 +15,13 @@
 
 <!--<body style="background-color: #333D47; display: flex">-->
 <body style="background-color: #333D47">
-<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter"></div>
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter; z-index: 1000"></div>
 
 <!-- My info settings page -->
 
-<section class="py-5 my-5" style="overflow: auto; top:100px; bottom: 100px; flex-grow: 1; min-height: 2em;">
+<section class="py-5 my-5" style="overflow: auto; top:100px; bottom: 100px; flex-grow: 1; min-height: 2em; margin-bottom: 200px!important;">
     <div class="container">
-        <div class="text">
+        <div class="text" style="margin-top: 50px;margin-bottom: 100px;">
             Account Settings
         </div>
         <div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -29,7 +29,7 @@
 
             <div class="p-4">
                 <div class="img-circle text-center mb-3">
-                    <img th:src="${user.getAvatar()}">
+                    <img th:src="${user.getAvatar()}" alt="Default Avatar">
 
                     <!--                    <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.zsaaVp0tIiSnOK-1rYpBnwAAAA?pid=ImgDet&rs=1" alt="Image" class="shadow">-->
                 </div>
@@ -176,7 +176,7 @@
                         <div>
                             <h5 class="text-uppercase text-decoration-underline lead">Avatar</h5>
                             <div class="img-circle text-center mb-3">
-                                <img th:src="${user.getAvatar()}">
+                                <img th:src="${user.getAvatar()}" alt="Default Avatar">
                                 <!--                            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.zsaaVp0tIiSnOK-1rYpBnwAAAA?pid=ImgDet&rs=1" alt="Image" class="shadow">-->
                             </div>
                             <div class="collapse multi-collapse4">
