@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 @Service //将当前类的对象交给 SpringBoot管理，自动创建对象以及对象维护
 public class UserServiceImpl implements IUserService {
@@ -39,6 +38,22 @@ public class UserServiceImpl implements IUserService {
     public User getUser(String username) {
         return userMapper.getUser(username);
     }
+
+//
+//    @Override
+//    public void insertUser(User user) {
+//        userMapper.insert(user);
+//    }
+//
+//    @Override
+//    public void deleteUser(User user) {
+//        user.setIsDelete(1);
+//    }
+
+//    @Override
+//    public void updateUser(User user) {
+//        userMapper.saveAndFlush(user);
+//    }
 
 
     @Override

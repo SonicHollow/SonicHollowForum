@@ -98,50 +98,6 @@ public class LoginController {
         return mv;
     }
 
-    // 把注册写到这里
-
-//    @RequestMapping("registUser")
-//    public ModelAndView regist(User user,HttpServletRequest req){
-//        System.out.println("进入注册业务" + user);
-//        ModelAndView mv = new ModelAndView();
-//        // 获取Session中的验证码
-//        String token = (String) req.getSession().getAttribute(KAPTCHA_SESSION_KEY);
-//        // 删除 Session中的验证码
-//        req.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
-//
-//        //  1、获取请求的参数
-//        String name = req.getParameter("name");
-//        String email = req.getParameter("email");
-//        String code = req.getParameter("code");
-//
-////        2、检查 验证码是否正确
-//        if (token != null && token.equalsIgnoreCase(code)) {
-////        3、检查 用户名是否可用
-//            if (!userService.checkName(name)) {
-//                // 把回显信息，保存到Request域中
-//                mv.addObject("msg", "用户名已存在！");
-//                mv.addObject("name", name);
-//                mv.addObject("email", email);
-////        跳回注册页面
-//                mv.setViewName("redirect:regist");
-//            } else {
-//                //      可用
-////                调用Service保存到数据库
-//                userService.addUser(user);
-////
-////        跳到注册成功页面 regist_success.jsp
-//                mv.setViewName("redirect:regist_success");
-//            }
-//        } else {
-//            // 把回显信息，保存到Request域中
-//            mv.addObject("msg", "验证码错误！");
-//            mv.addObject("name", name);
-//            mv.addObject("email", email);
-//            mv.setViewName("redirect:regist");
-//        }
-//        return mv;
-//    }
-
     @RequestMapping("signOut")
     public String signOut(HttpServletRequest req,HttpServletResponse resp){
         //删除session域中的信息

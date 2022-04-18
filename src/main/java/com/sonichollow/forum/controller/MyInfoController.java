@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +22,9 @@ public class MyInfoController {
 
     @RequestMapping(value = "myInfo/{username}")
     public String myInfo(Model model, @PathVariable String username) {
+        if(Objects.equals(username, "null")){
+            return "404";
+        }
         User user = userMapper.getUser(username);
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(username));

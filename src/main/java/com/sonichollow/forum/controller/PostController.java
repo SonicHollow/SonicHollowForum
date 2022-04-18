@@ -2,6 +2,8 @@ package com.sonichollow.forum.controller;
 
 
 import com.sonichollow.forum.entity.Post;
+import com.sonichollow.forum.entity.User;
+import com.sonichollow.forum.mapper.UserMapper;
 import com.sonichollow.forum.service.impl.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -17,7 +21,8 @@ import java.util.List;
 public class PostController {
     @Autowired
     private PostServiceImpl postService;
-
+    @Autowired
+    private UserMapper userMapper;
 
     //去发帖页面
     @RequestMapping("/toPublish")
@@ -27,16 +32,22 @@ public class PostController {
 
     //发帖
 
-    /**
-     *
-     * @param model
-     * @param post
-     * @return
-     */
-    @RequestMapping("/Publish")
-    public String publish(Model model, Post post){
+
+    @RequestMapping("publishPost")
+    public ModelAndView posting(Post post, HttpServletRequest req){
+        ModelAndView mv = new ModelAndView();
+        String username = req.getSession().getAttribute("username").toString();
+        String text = post.getText();
+        post.setUsername(username);
+        post.setText(text);
+
+        System.out.println("Username: " + username + "  Text: " + text);
+
         int id = postService.PublishPost(post);
-        return "redirect:publishedPost?pid"+id;
+
+        System.out.println("发布成功");
+        mv.setViewName("redirect:publishedPost?pid="+id);
+        return mv;
     }
 
     //去帖子详情页
@@ -49,4 +60,5 @@ public class PostController {
 //        model.addAttribute("post",post);
         return "detail";
     }
+
 }

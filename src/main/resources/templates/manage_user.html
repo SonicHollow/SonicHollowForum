@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>Welcome to SonicHollow Forum!</title>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
+<!--    <script src="../../static/js/bootstrap.bundle.min.js"></script>-->
+
+    <!-- Core plugin JavaScript-->
+<!--    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+    <script src="../static/js/demo/datatables-demo.js"></script>
+    <script src="../static/js/datatables/jquery.dataTables.min.js"></script>
+    <script src="../static/js/datatables/dataTables.bootstrap4.min.js"></script>
+
+</head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter"></div>
+<body style="background-color: #333D47">
+
+
+<h1>
+    Hello World
+</h1>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <!--                                <button class="layui-btn layui-btn-sm" onclick="window.location.href='insert_page.html'" type="button" >新增</button>-->
+                    <a th:href="@{/insert_page}" class="layui-btn layui-btn-sm">新增</a>
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                        <th>email</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user:${listUsers}">
+                        <td th:text="${user.getUid()}"></td>
+                        <td th:text="${user.getUsername()}"></td>
+                        <td th:text="${user.getPassword()}"></td>
+                        <td th:text="${user.getEmail()}"></td>
+                        <td>
+                                <a th:href="@{/update_user/ } + ${user.getUid()}" class="layui-btn layui-btn-warm layui-btn-sm">编辑</a>
+                                <a th:href="@{/delete/} + ${user.getUid()}" class="layui-btn layui-btn-danger layui-btn-sm">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>

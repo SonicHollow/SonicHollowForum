@@ -21,7 +21,7 @@
         keyProperty属性：将表中的哪个字段作为主键递增
     -->
     <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
-        INSERT INTO t_user (
+        INSERT INTO test (
                 username, password, salt, phone, email, gender, avatar, is_delete,
                 created_user, created_time, modified_user, modified_time)
         VALUES (
@@ -30,6 +30,48 @@
     </insert>
     <!--id设为方法的名字-->
     <select id="findByUsername" resultMap="UserEntityMap">
-        SELECT * FROM t_user WHERE username = #{username}
+        SELECT * FROM test WHERE username = #{username}
     </select>
+
+
+
+    <!--Backstage-->
+
+
+    <update id="updateUser">
+        update test
+        set username  = #{username},
+            password   = #{password},
+            email = #{email}
+        where uid = #{uid};
+    </update>
+    <delete id="deleteUser">
+        delete
+        from test
+        where uid = #{uid}
+    </delete>
+
+
+    <select id="selectByNameAndAge" resultType="com.sonichollow.forum.entity.User">
+        select *
+        from test
+        where username = #{username}
+          and password = #{password};
+    </select>
+
+    <select id="selectAll" resultType="com.sonichollow.forum.entity.User">
+        select *
+        from test;
+    </select>
+    <select id="SelectById" resultType="com.sonichollow.forum.entity.User">
+        select *
+        from test
+        where uid = #{uid};
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO test (username, password, email)
+        VALUES (#{username}, #{password}, #{email});
+    </insert>
+
 </mapper>

@@ -66,7 +66,8 @@ public class MyFilter implements Filter {
                 }
             }
             // Set the permission to these pages if the user hasn't logged in
-            if (uri.contains("myInfo") || uri.contains("postList") || uri.contains("home")) {
+            if (uri.contains("myInfo") || uri.contains("myInfo/null") || uri.contains("postList")
+                    || uri.contains("posting") || uri.contains("publishedPost") || uri.contains("home")) {
                 haveQuality = false;
             }
             // Set the permission to these pages if the user has already logged in

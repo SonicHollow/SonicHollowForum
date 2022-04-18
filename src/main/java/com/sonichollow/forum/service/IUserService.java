@@ -2,6 +2,8 @@ package com.sonichollow.forum.service;
 
 import com.sonichollow.forum.entity.User;
 
+import java.util.List;
+
 /**
  * 用户模块业务层接口
  */
@@ -17,4 +19,5 @@ public interface IUserService {
     //注册成功后添加用户
     Integer addUser(User user);
     User getUser(String username);
+
 }

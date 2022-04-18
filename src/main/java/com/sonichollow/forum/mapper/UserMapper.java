@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * 用户模块的持久层接口
  */
@@ -30,17 +32,38 @@ public interface UserMapper {
 
     // Login Function
 
-    @Select("select username from user where username=#{username} and password=#{password}")
+    @Select("select username from test where username=#{username} and password=#{password}")
     String isUser(String username, String password);
 
-    @Select("select username from user where username=#{username}")
+    @Select("select username from test where username=#{username}")
     String checkName(String username);
 
-    @Insert("insert into user(username,email,password) values(#{username},#{email},#{password})")
+    @Insert("insert into test(username,email,password) values(#{username},#{email},#{password})")
     Integer addUser(User user);
 
-    @Select("select * from user where username=#{username}")
+    @Select("select * from test where username=#{username}")
     User getUser(String username);
+
+    @Select("select * from test where is_delete=0")
+    List<User> findAll();
+
+    // Backstage Managing Function
+
+    List<User> selectAll();
+
+    User selectByNameAndAge(String username, String password);
+
+    void insertUser(String username, String password, String email);
+
+    void updateUser(String username, String password, String email,int uid);
+
+    User SelectById(int uid);
+
+    void deleteUser(int uid);
+
+
+
+
 }
 
 

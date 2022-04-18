@@ -1,7 +1,6 @@
 package com.sonichollow.forum.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -10,9 +9,13 @@ public class PageController {
     public String home() {
         return "home";
     }
-    @RequestMapping(value = "backstage")
-    public String backstage() {
-        return "backstage";
+    @RequestMapping(value = "manage_post")
+    public String manage_post() {
+        return "manage_post";
+    }
+    @RequestMapping(value = "manage_user")
+    public String manage_user() {
+        return "manage_user";
     }
     @RequestMapping(value = "index")
     public String index() {
@@ -50,6 +53,10 @@ public class PageController {
     public String login_success() {
         return "user/login_success";
     }
+    @RequestMapping(value = "posting_success")
+    public String posting_success() {
+        return "user/posting_success";
+    }
     @RequestMapping(value = "regist_success")
     public String regist_success() {
         return "user/regist_success";
@@ -57,6 +64,10 @@ public class PageController {
     @RequestMapping(value = "remind")
     public String remind() {
         return "user/remind";
+    }
+    @RequestMapping(value = "404")
+    public String page_404 () {
+        return "404";
     }
 
 }
