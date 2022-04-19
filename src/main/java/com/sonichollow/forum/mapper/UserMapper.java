@@ -51,11 +51,11 @@ public interface UserMapper {
 
     List<User> selectAll();
 
-    User selectByNameAndAge(String username, String password);
+    User selectByUsernameAndPassword(String username, String password);
 
-    void insertUser(String username, String password, String email);
+    void insertUser(String username, String password, int gender, String phone, String email);
 
-    void updateUser(String username, String password, String email,int uid);
+    void updateUser(String username, String password, int gender, String phone, String email,int uid);
 
     User SelectById(int uid);
 

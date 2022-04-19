@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 <head>
-    <title>Welcome to SonicHollow Forum!</title>
+    <title>SonicHollow Forum</title>
 </head>
 
 <div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter"></div>
@@ -47,7 +47,7 @@
         <h1>404</h1>
         <p>Oh no! Page Not Found.</p>
         <div class="go-back">
-            <a href="index" class="button">
+            <a th:href="@{/index}" class="button">
                 <?xml version="1.0" encoding="iso-8859-1"?>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 31.494 31.494" style="enable-background:new 0 0 31.494 31.494;" xml:space="preserve">
