@@ -1,25 +1,27 @@
 /* STYLES SPECIFIC TO FOOTER  */
 .footer {
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
     background-color: white;
+    height: 100px;
 }
 .footer .col {
-    width: 190px;
-    height: auto;
-    float: left;
+    width: 70%;
+    height: 80px;
+    float: right;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: 0 20px 20px 20px;
+    padding: 20px;
 }
 .footer .col h1 {
     margin: 0;
+    text-align: center;
     font-family: Arial,sans-serif;
     font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0 5px 0;
+    line-height: 17px !important;
+    padding: 5px 30px 5px 30px;
     color: #333D47;
     font-weight: normal;
     text-transform: uppercase;
@@ -35,7 +37,10 @@
     font-size: 14px;
     font-family: Arial,Sans-Serif,serif;
     font-weight: bold;
-    padding: 5px 0 5px 0;
+    text-align: center;
+    line-height: 17px !important;
+
+    padding: 2px 0 2px 0;
     cursor: pointer;
     transition: .2s;
     -webkit-transition: .2s;
@@ -58,7 +63,7 @@
 @media only screen and (min-width: 1280px) {
     .contain {
         width: 1200px;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
     }
 }
 @media only screen and (max-width: 1139px) {

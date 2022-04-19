@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ImportResource;
 @MapperScan(basePackages = "org.sang.mybatis.mapper")
 public class SonicHollowApplication extends SpringBootServletInitializer {
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         SpringApplication.run(SonicHollowApplication.class, args);
     }
 
