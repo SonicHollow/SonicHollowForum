@@ -1,37 +1,66 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-
 <mapper namespace="com.sonichollow.forum.mapper.PostMapper">
-    <resultMap id="PostEntityMap" type="com.sonichollow.forum.entity.Post">
-        <id column="pid" property="pid"></id>
-        <result column="reply_time" property="replyTime"></result>
-        <result column="reply_count" property="replyCount"></result>
-        <result column="created_user" property="createdUser"></result>
-        <result column="created_time" property="createdTime"></result>
-        <result column="modified_user" property="modifiedUser"></result>
-        <result column="modified_time" property="modifiedTime"></result>
+
+    <resultMap id="BaseResultMap" type="com.sonichollow.forum.entity.Post">
+        <id property="pid" column="pid" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="postName" column="post_name" jdbcType="VARCHAR"/>
+        <result property="text" column="text" jdbcType="VARCHAR"/>
+        <result property="likes" column="likes" jdbcType="INTEGER"/>
+        <result property="hates" column="hates" jdbcType="INTEGER"/>
+        <result property="accessPermission" column="access_permission" jdbcType="VARCHAR"/>
+        <result property="accessTimes" column="access_times" jdbcType="INTEGER"/>
+        <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+        <result property="isSelect" column="is_select" jdbcType="INTEGER"/>
+        <result property="isAbove" column="is_above" jdbcType="INTEGER"/>
+        <result property="viewCount" column="view_count" jdbcType="INTEGER"/>
+        <result property="isLike" column="is_like" jdbcType="TINYINT"/>
+        <result property="tag3" column="tag3" jdbcType="VARCHAR"/>
+        <result property="tag4" column="tag4" jdbcType="VARCHAR"/>
+        <result property="tag5" column="tag5" jdbcType="VARCHAR"/>
+        <result property="tag6" column="tag6" jdbcType="VARCHAR"/>
+        <result property="tag7" column="tag7" jdbcType="VARCHAR"/>
+        <result property="tag8" column="tag8" jdbcType="VARCHAR"/>
+        <result property="feature1" column="feature1" jdbcType="VARCHAR"/>
+        <result property="feature2" column="feature2" jdbcType="VARCHAR"/>
+        <result property="feature3" column="feature3" jdbcType="VARCHAR"/>
+        <result property="feature4" column="feature4" jdbcType="VARCHAR"/>
+        <result property="feature5" column="feature5" jdbcType="VARCHAR"/>
+        <result property="feature6" column="feature6" jdbcType="VARCHAR"/>
+        <result property="feature7" column="feature7" jdbcType="VARCHAR"/>
+        <result property="feature8" column="feature8" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="modifiedUser" column="modified_user" jdbcType="VARCHAR"/>
+        <result property="modifiedTime" column="modified_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-
-
-    <insert id="insertPost" useGeneratedKeys="true" keyProperty="pid">
-        INSERT INTO post (
-         content,reply_time,reply_count,created_user, created_time, modified_user, modified_time)
-        VALUES (#{content},#{replyTime},#{replyCount},#{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
-    </insert>
-
-
-    <update id="updateReplyCount">
-        update post set reply_count = reply_count + 1 where pid = #{pid}
+    <sql id="Base_Column_List">
+        pid,username,post_name,
+        text,likes,hates,
+        access_permission,access_times,is_delete,
+        is_select,is_above,view_count,
+        is_like,tag3,tag4,
+        tag5,tag6,tag7,
+        tag8,feature1,feature2,
+        feature3,feature4,feature5,
+        feature6,feature7,feature8,
+        created_user,created_time,modified_user,
+        modified_time
+    </sql>
+    <update id="updateViewCount">
+        update post
+        set view_count = view_count + 1 where pid = #{pid}
     </update>
-    <update id="updateReplyTime">
-        update post set reply_time = Current_Date
-        where pid=#{pid}
-    </update>
-    <select id="getPostByPid" resultMap="PostEntityMap">
-        select * from post where pid=#{pid}
+    <select id="getAllByPid" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from post
+        where
+        pid = #{pid,jdbcType=NUMERIC}
     </select>
+
 </mapper>
