@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CrudServiceImpl implements CrudService {
+public class CrudUserServiceImpl implements CrudService {
 
     @Autowired
     UserMapper userMapper;
