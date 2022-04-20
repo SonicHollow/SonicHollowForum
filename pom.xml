@@ -214,21 +214,37 @@
 <!--            </resource>-->
 <!--        </resources>-->
         <resources>
+<!--            <resource>-->
+<!--                <directory>src/main/java</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                </includes>-->
+<!--                <filtering>true</filtering>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                </includes>-->
+<!--                <filtering>true</filtering>-->
+<!--            </resource>-->
             <resource>
                 <directory>src/main/java</directory>
+                <!--所在的目录-->
                 <includes>
-                    <include>**/*.xml</include>
+                    <!--包括目录下的.properties,.xml 文件都会被扫描到-->
                     <include>**/*.properties</include>
+                    <include>**/*.xml</include>
                 </includes>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
+                    <include>**/*.*</include>
                 </includes>
-                <filtering>true</filtering>
             </resource>
         </resources>
 

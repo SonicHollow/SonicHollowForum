@@ -1,6 +1,6 @@
 package com.sonichollow.forum.controller;
 import com.sonichollow.forum.entity.User;
-import com.sonichollow.forum.service.impl.CrudServiceImpl;
+import com.sonichollow.forum.service.impl.CrudUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ import java.util.List;
 @Controller
 public class ManageUserController {
     @Autowired
-    CrudServiceImpl crud;
+    CrudUserServiceImpl crud;
 
     @GetMapping("manage_user")
     public String listAll(Model model) {
