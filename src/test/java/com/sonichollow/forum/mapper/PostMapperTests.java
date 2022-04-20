@@ -66,13 +66,13 @@ public class PostMapperTests {
 
     @Test
     public void testUpdateViewCount() {
-        int result = postMapper.updateViewCount(1);
+        int result = postMapper.updateViewCount(92);
         System.out.println("View Count ="+result);
     }
 
     @Test
     public void testGetALLByPid() {
-        Post result = postMapper.getAllByPid(40);
+        Post result = postMapper.getAllByPid(92);
         System.out.println(result);
     }
 }

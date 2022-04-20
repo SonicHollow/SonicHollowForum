@@ -71,7 +71,7 @@ public class PostController {
 //        //向模型中添加数据
         model.addAttribute("post",post);
         model.addAttribute("liked",liked);
-        return "postPage";
+        return "detail";
     }
 
 
