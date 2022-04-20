@@ -16,7 +16,7 @@ import java.util.*;
 @Slf4j
 @SpringBootTest
 //@Runwith(SpringRunner.class)
-class PostMapperTest {
+public class PostMapperTests {
     @Autowired
     private PostMapper postMapper;
 
@@ -64,4 +64,15 @@ class PostMapperTest {
 
     }
 
+    @Test
+    public void testUpdateViewCount() {
+        int result = postMapper.updateViewCount(1);
+        System.out.println("View Count ="+result);
+    }
+
+    @Test
+    public void testGetALLByPid() {
+        Post result = postMapper.getAllByPid(40);
+        System.out.println(result);
+    }
 }
