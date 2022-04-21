@@ -86,7 +86,6 @@ public class PostServiceTests {
         System.out.println(map);
     }
 
-    //    private static final ObjectMapper mapper = new ObjectMapper();
     //测试能不能存入对象
     @Test
     public void testSavePost() throws JsonProcessingException {
@@ -105,7 +104,7 @@ public class PostServiceTests {
 
     @Test
     public void testClickLikes(){
-        System.out.println(postService.clickLikes(93));
+        System.out.println(postService.clickLikes(94));
 //        redisTemplate.opsForValue().set(pid +":likes", uid);
 //        Object result = redisTemplate.opsForValue().get(pid +":likes");
 //        System.out.println("result = "+ result);
@@ -113,13 +112,13 @@ public class PostServiceTests {
 
     @Test
     public void testGetPostByPid(){
-        Post post = postService.getPostByPid(93);
+        Post post = postService.getPostByPid(94);
         System.out.println(post);
     }
 
     @Test
     public void testLikeStatus(){
-        Post post = postService.getPostByPid(93);
+        Post post = postService.getPostByPid(94);
         System.out.println(postService.getLikeStatus(post));
         System.out.println("Test Successfully");
     }
