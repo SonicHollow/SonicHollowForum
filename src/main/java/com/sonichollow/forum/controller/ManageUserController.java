@@ -55,7 +55,7 @@ public class ManageUserController {
         return "redirect:/manage_user";
     }
 
-    @GetMapping("delete/{uid}")
+    @RequestMapping("deleteUser/{uid}")
     public String delete(@PathVariable("uid")int uid){
         crud.deleteUserById(uid);
         return "redirect:/manage_user";

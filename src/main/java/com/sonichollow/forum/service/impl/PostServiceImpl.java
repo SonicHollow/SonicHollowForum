@@ -98,7 +98,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
                 stringRedisTemplate.opsForZSet().remove(key, String.valueOf(uid));
             }
         }
-
         return Result.ok();
     }
 

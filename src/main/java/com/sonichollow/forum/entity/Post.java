@@ -177,4 +177,8 @@ public class Post implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public Integer getLikes() {
+        return likes;
+    }
 }

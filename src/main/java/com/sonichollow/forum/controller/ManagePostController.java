@@ -16,14 +16,14 @@ public class ManagePostController {
 
     @GetMapping("manage_post")
     public String listAll(Model model) {
-        List<Post> posts = crud.listAllAccp();
+        List<Post> posts = crud.listAllPost();
         model.addAttribute("listPosts", posts);
         return "manage_post";
     }
 
-    @GetMapping("delete/{pid}")
+    @RequestMapping("deletePost/{pid}")
     public String delete(@PathVariable("pid")int pid){
-        crud.deletepostById(pid);
+        crud.deletePostById(pid);
         return "redirect:/manage_post";
     }
 }

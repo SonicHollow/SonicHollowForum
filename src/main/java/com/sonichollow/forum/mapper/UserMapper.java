@@ -32,19 +32,22 @@ public interface UserMapper {
 
     // Login Function
 
-    @Select("select username from test where username=#{username} and password=#{password}")
+    @Select("select username from user where username=#{username} and password=#{password}")
     String isUser(String username, String password);
 
-    @Select("select username from test where username=#{username}")
+    @Select("select username from user where username=#{username}")
     String checkName(String username);
 
-    @Insert("insert into test(username,email,password) values(#{username},#{email},#{password})")
+    @Insert("insert into user(username,email,password) values(#{username},#{email},#{password})")
     Integer addUser(User user);
 
-    @Select("select * from test where username=#{username}")
+    @Insert("insert into user(username,email,password,phone,avatar) values(#{username},#{email},#{password},#{phone},#{avatar})")
+    Integer registerUser(User user);
+
+    @Select("select * from user where username=#{username}")
     User getUser(String username);
 
-    @Select("select * from test where is_delete=0")
+    @Select("select * from user where is_delete=0")
     List<User> findAll();
 
     // Backstage Managing Function
@@ -67,5 +70,5 @@ public interface UserMapper {
 }
 
 
-    // MyInfo functions
+// MyInfo functions
 

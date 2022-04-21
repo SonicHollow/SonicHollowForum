@@ -30,6 +30,12 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     @Transactional
+    public Integer registerUser(User user) {
+        return userMapper.registerUser(user);
+    }
+
+    @Override
+    @Transactional
     public Integer addUser(User user) {
         return userMapper.addUser(user);
     }
@@ -38,22 +44,6 @@ public class UserServiceImpl implements IUserService {
     public User getUser(String username) {
         return userMapper.getUser(username);
     }
-
-//
-//    @Override
-//    public void insertUser(User user) {
-//        userMapper.insert(user);
-//    }
-//
-//    @Override
-//    public void deleteUser(User user) {
-//        user.setIsDelete(1);
-//    }
-
-//    @Override
-//    public void updateUser(User user) {
-//        userMapper.saveAndFlush(user);
-//    }
 
 
     @Override

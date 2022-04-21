@@ -18,5 +18,5 @@ public interface PostMapper extends BaseMapper<Post> {
 
     void deletePost(int pid);
 
-    List<Post> selectAllp();
+    List<Post> selectAllPost();
 }

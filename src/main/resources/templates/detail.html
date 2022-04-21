@@ -18,88 +18,91 @@
                 <br>
                 <div class="meta">
                     <h1>
-                    <a  href="https://twitter.com/nodws" target="_b" class="author"></a>
+                        <img th:src="${avatar}" class="author" alt="Default"/>
                     </h1>
                 </div>
             </div>
         </div>
 
         <h1 style="position: relative; margin-top: 60px">
-            By <a href="https://twitter.com/nodws" target="_b">James Nodws</a> on May 30, 2019
+            By <a th:href="@{postList}" target="_b" th:text="${post.getUsername()}"></a> on
+            <a th:text="${post_time}" style="color: white"></a>
         </h1>
         <section class="content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
+            <p th:text="${post.getText()}"></p>
         </section>
         <div class="comments-container" style="margin: 160px auto 15px">
             <h1>Comments
             </h1>
 
-            <ul id="comments-list" class="comments-list">
-                <li>
-                    <div class="comment-main-level">
-                        <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                        <div class="comment-box">
-                            <div class="comment-head">
-                                <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-                                <span>hace 20 minutos</span>
-                                <i class="fa fa-reply"></i>
-                                <i class="fa fa-heart"></i>
-                            </div>
-                            <div class="comment-content">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="comments-list reply-list">
-                        <li>
-                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                            <div class="comment-box">
-                                <div class="comment-head">
-                                    <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-                                    <span>hace 10 minutos</span>
-                                    <i class="fa fa-reply"></i>
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                            </div>
-                        </li>
+<!--            <ul id="comments-list" class="comments-list">-->
+<!--                <li>-->
+<!--                    <div class="comment-main-level">-->
+<!--                        <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>-->
+<!--                        <div class="comment-box">-->
+<!--                            <div class="comment-head">-->
+<!--                                <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>-->
+<!--                                <span>hace 20 minutos</span>-->
+<!--                                <i class="fa fa-reply"></i>-->
+<!--                                <i class="fa fa-heart"></i>-->
+<!--                            </div>-->
+<!--                            <div class="comment-content">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <ul class="comments-list reply-list">-->
+<!--                        <li>-->
+<!--                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>-->
+<!--                            <div class="comment-box">-->
+<!--                                <div class="comment-head">-->
+<!--                                    <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>-->
+<!--                                    <span>hace 10 minutos</span>-->
+<!--                                    <i class="fa fa-reply"></i>-->
+<!--                                    <i class="fa fa-heart"></i>-->
+<!--                                </div>-->
+<!--                                <div class="comment-content">-->
+<!--                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
 
-                        <li>
-                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                            <div class="comment-box">
-                                <div class="comment-head">
-                                    <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-                                    <span>hace 10 minutos</span>
-                                    <i class="fa fa-reply"></i>
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+<!--                        <li>-->
+<!--                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>-->
+<!--                            <div class="comment-box">-->
+<!--                                <div class="comment-head">-->
+<!--                                    <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>-->
+<!--                                    <span>hace 10 minutos</span>-->
+<!--                                    <i class="fa fa-reply"></i>-->
+<!--                                    <i class="fa fa-heart"></i>-->
+<!--                                </div>-->
+<!--                                <div class="comment-content">-->
+<!--                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
 
-                <li>
-                    <div class="comment-main-level">
-                        <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                        <div class="comment-box">
-                            <div class="comment-head">
-                                <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-                                <span>hace 10 minutos</span>
-                                <i class="fa fa-reply"></i>
-                                <i class="fa fa-heart"></i>
-                            </div>
-                            <div class="comment-content">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+<!--                <li>-->
+<!--                    <div class="comment-main-level">-->
+<!--                        <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>-->
+<!--                        <div class="comment-box">-->
+<!--                            <div class="comment-head">-->
+<!--                                <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>-->
+<!--                                <span>hace 10 minutos</span>-->
+<!--                                <i class="fa fa-reply"></i>-->
+<!--                                <i class="fa fa-heart"></i>-->
+<!--                            </div>-->
+<!--                            <div class="comment-content">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+            <svg style="margin-left: 280px; margin-top: 100px" t="1650459318154" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="628" width="200" height="200"><path d="M780.8 977.066667c41.813333 0 75.093333-33.28 75.093333-75.093334V122.026667c0-41.813333 33.28-75.093333 75.093334-75.093334h-699.733334c-41.813333 0-75.093333 33.28-75.093333 75.093334v855.893333h624.64z" fill="#FFFFFF" p-id="629"></path><path d="M931.84 46.933333c-41.813333 0-75.093333 33.28-75.093333 75.093334v104.106666H1006.933333V122.026667c0-41.813333-34.133333-75.093333-75.093333-75.093334zM794.453333 976.213333H93.866667c-41.813333 0-75.093333-33.28-75.093334-75.093333v-46.08h700.586667v46.08c0 41.813333 34.133333 75.093333 75.093333 75.093333zM724.48 164.693333c0 13.653333-11.093333 25.6-25.6 25.6H313.173333c-14.506667 0-25.6-11.946667-25.6-25.6s11.093333-25.6 25.6-25.6h385.706667c13.653333 0 25.6 11.093333 25.6 25.6zM740.693333 735.573333c0 11.946667-9.386667 21.333333-21.333333 21.333334h-426.666667c-11.946667 0-21.333333-9.386667-21.333333-21.333334s9.386667-21.333333 21.333333-21.333333h426.666667c11.946667 0 21.333333 9.386667 21.333333 21.333333z" fill="#C7CAC7" p-id="630"></path><path d="M279.893333 296.96h452.266667v196.266667h-452.266667z" fill="#EFCF48" p-id="631"></path><path d="M931.84 38.4H231.253333c-46.08 0-83.626667 37.546667-83.626666 83.626667v725.333333h-128c-5.12 0-8.533333 3.413333-8.533334 8.533333v46.08c0 46.08 37.546667 83.626667 83.626667 83.626667h58.026667c0.853333 0.853333 2.56 0.853333 3.413333 0.853333h625.493333c3.413333 0 7.68 0 11.093334-0.853333h2.56c1.706667 0 2.56-0.853333 4.266666-0.853333 37.546667-7.68 65.706667-41.813333 65.706667-81.92V233.813333H1006.933333c5.12 0 8.533333-3.413333 8.533334-8.533333V122.026667c0-46.08-37.546667-83.626667-83.626667-83.626667zM164.693333 967.68h-69.973333c-36.693333 0-66.56-29.866667-66.56-66.56v-37.546667h683.52v37.546667c0 27.306667 12.8 51.2 33.28 66.56h-580.266667z m683.52-65.706667c0 33.28-23.893333 60.586667-56.32 65.706667-34.986667-1.706667-64-30.72-64-66.56v-46.08c0-5.12-3.413333-8.533333-8.533333-8.533333h-554.666667v-725.333334c0-36.693333 29.866667-66.56 66.56-66.56h650.24l-0.853333 0.853334c-1.706667 0.853333-2.56 2.56-4.266667 3.413333-0.853333 0.853333-1.706667 1.706667-2.56 1.706667l-5.12 5.12c0 0.853333-0.853333 0.853333-0.853333 1.706666-1.706667 2.56-3.413333 4.266667-5.12 6.826667-0.853333 0.853333-0.853333 1.706667-1.706667 2.56-0.853333 1.706667-2.56 3.413333-3.413333 5.12-0.853333 0.853333-0.853333 1.706667-1.706667 2.56l-2.56 5.12c-0.853333 0.853333-0.853333 2.56-0.853333 3.413333-0.853333 1.706667-0.853333 3.413333-1.706667 5.12 0 0.853333-0.853333 2.56-0.853333 3.413334-0.853333 1.706667-0.853333 4.266667-0.853333 5.973333 0 0.853333 0 1.706667-0.853334 2.56 0 3.413333-0.853333 5.973333-0.853333 9.386667v782.506666zM998.4 216.746667h-133.12V122.026667c0-36.693333 29.866667-66.56 66.56-66.56s66.56 29.866667 66.56 66.56v94.72z" p-id="632"></path><path d="M582.826667 173.226667h17.066666c5.12 0 8.533333-3.413333 8.533334-8.533334s-3.413333-8.533333-8.533334-8.533333h-17.066666c-5.12 0-8.533333 3.413333-8.533334 8.533333s4.266667 8.533333 8.533334 8.533334zM497.493333 173.226667h17.066667c5.12 0 8.533333-3.413333 8.533333-8.533334s-3.413333-8.533333-8.533333-8.533333h-17.066667c-5.12 0-8.533333 3.413333-8.533333 8.533333s4.266667 8.533333 8.533333 8.533334zM352.426667 164.693333c0-5.12-3.413333-8.533333-8.533334-8.533333h-17.066666c-5.12 0-8.533333 3.413333-8.533334 8.533333s3.413333 8.533333 8.533334 8.533334h17.066666c5.12 0 8.533333-4.266667 8.533334-8.533334zM685.226667 156.16h-17.066667c-5.12 0-8.533333 3.413333-8.533333 8.533333s3.413333 8.533333 8.533333 8.533334h17.066667c5.12 0 8.533333-3.413333 8.533333-8.533334s-3.413333-8.533333-8.533333-8.533333zM412.16 173.226667h17.066667c5.12 0 8.533333-3.413333 8.533333-8.533334s-3.413333-8.533333-8.533333-8.533333h-17.066667c-5.12 0-8.533333 3.413333-8.533333 8.533333s4.266667 8.533333 8.533333 8.533334zM740.693333 295.253333v-1.706666c0-0.853333-0.853333-0.853333-0.853333-1.706667s-0.853333-0.853333-0.853333-1.706667-0.853333-0.853333-1.706667-0.853333l-0.853333-0.853333h-0.853334c-0.853333 0-0.853333 0-1.706666-0.853334h-1.706667-453.12c-5.12 0-8.533333 3.413333-8.533333 8.533334V494.933333c0 0.853333 0.853333 0.853333 0.853333 1.706667s0.853333 0.853333 0.853333 1.706667 0.853333 0.853333 1.706667 0.853333l0.853333 0.853333h1.706667c0.853333 0 1.706667 0.853333 2.56 0.853334h48.64v225.28h-40.96c-5.12 0-8.533333 3.413333-8.533333 8.533333s3.413333 8.533333 8.533333 8.533333h98.133333c5.12 0 8.533333-3.413333 8.533334-8.533333s-3.413333-8.533333-8.533334-8.533333h-40.96V622.933333H665.6v104.106667h-40.96c-5.12 0-8.533333 3.413333-8.533333 8.533333s3.413333 8.533333 8.533333 8.533334h98.133333c5.12 0 8.533333-3.413333 8.533334-8.533334s-3.413333-8.533333-8.533334-8.533333h-40.96V501.76h48.64c5.12 0 8.533333-3.413333 8.533334-8.533333v-196.266667c1.706667-0.853333 1.706667-0.853333 1.706666-1.706667zM520.533333 484.693333l103.253334-179.2H716.8l-102.4 179.2H520.533333z m-112.64 0l103.253334-179.2h93.013333l-103.253333 179.2H407.893333z m-113.493333 0l103.253333-179.2h93.013334l-103.253334 179.2H294.4z m83.626667-179.2L288.426667 460.8V305.493333h89.6zM667.306667 605.866667H344.746667V501.76h321.706666V605.866667z m-33.28-121.173334l89.6-156.16v156.16H634.026667z" p-id="633"></path></svg>
+            <h1 style="margin-top: 50px">Under Construction...</h1>
         </div>
         <br>
         <br>
