@@ -13,17 +13,17 @@ public class CrudPostServiceImpl implements CrudPostService {
     PostMapper postMapper;
 
     @Override
-    public Post getAccp(int pid) {
+    public Post getPid(int pid) {
         return postMapper.selectByPid(pid);
     }
 
     @Override
-    public void deletepostById(int pid) {
+    public void deletePostById(int pid) {
         postMapper.deletePost(pid);
     }
 
     @Override
-    public List<Post> listAllAccp() {
-        return postMapper.selectAllp();
+    public List<Post> listAllPost() {
+        return postMapper.selectAllPost();
     }
 }

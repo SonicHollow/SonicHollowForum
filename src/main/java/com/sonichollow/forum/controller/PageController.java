@@ -37,10 +37,6 @@ public class PageController {
     public String templates() {
         return "templates";
     }
-    @RequestMapping(value = "postList")
-    public String postList() {
-        return "postList";
-    }
     @RequestMapping(value = "posting")
     public String posting() {
         return "posting";
@@ -48,14 +44,6 @@ public class PageController {
     @RequestMapping(value = "login_success")
     public String login_success() {
         return "user/login_success";
-    }
-    @RequestMapping(value = "posting_success")
-    public String posting_success() {
-        return "user/posting_success";
-    }
-    @RequestMapping(value = "regist_success")
-    public String regist_success() {
-        return "user/regist_success";
     }
     @RequestMapping(value = "remind")
     public String remind() {
@@ -65,5 +53,8 @@ public class PageController {
     public String page_404 () {
         return "404";
     }
-
+    @RequestMapping(value = "500")
+    public String page_500 () {
+        return "500";
+    }
 }

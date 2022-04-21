@@ -37,18 +37,18 @@
 <br>
 <br>
 <div class="typewriter">
-    <h1>See what's new in SonicHollow!</h1>
+    <h1 style="margin-bottom: 70px">See what's new in SonicHollow!</h1>
 </div>
 
-
-<label class="sl">
-    <select placeholder="Sort by">
-        <option name="" value="" style="display:none;">Selector</option>
-        <option name="Sort by Time" value="Time">Most Recent</option>
-        <option name="Sort by Views" value="Views">Most Views</option>
-        <option name="Sort by Comments" value="Comments">Most Comments</option>
-    </select>
-</label>
+<!-- "Sort by Function, will display the post list by certain order. Coming soon in next Sprint" -->
+<!--<label class="sl">-->
+<!--    <select placeholder="Sort by">-->
+<!--        <option name="" value="" style="display:none;">Selector</option>-->
+<!--        <option name="Sort by Time" value="Time">Most Recent</option>-->
+<!--        <option name="Sort by Views" value="Views">Most Views</option>-->
+<!--        <option name="Sort by Comments" value="Comments">Most Comments</option>-->
+<!--    </select>-->
+<!--</label>-->
 
 
 <div id="popup" class="modalbg">
@@ -67,173 +67,69 @@
     </div>
 </div>
 
-<div class="search">
-    <i class="material-icons search-icon search-start"><button>Search</button></i>
-    <input type="text" class="search-input" placeholder="Searching..." />
-    <i class="material-icons search-icon search-clear">clear</i>
-    <div class="search-results"></div>
-</div>
+<!-- Search Function: under construction -->
+<!--<div class="search">-->
+<!--    <i class="material-icons search-icon search-start"><button>Search</button></i>-->
+<!--    <input type="text" class="search-input" placeholder="Searching..." />-->
+<!--    <i class="material-icons search-icon search-clear">clear</i>-->
+<!--    <div class="search-results"></div>-->
+<!--</div>-->
 
-<section id="postIndex" class="widthWrapper">
+<section id="postIndex" class="widthWrapper" th:each="post: ${posts}">
 
     <article>
-        <a target="_blank">
+        <a th:href="'/publishedPost?pid='+${post.getPid()}">
             <div class="postImg">
                 <div class="post-time-section">
                     <div class="post-date">
-                        <text class="day">28</text>
+                        <text class="day" th:text="${post.getCreatedTime().getDate()}"></text>
                     </div>
                     <div class="post-month">
-                        <text class="month">Dec</text>
+                        <text class="month" th:text="${utils.monthToString(post.getCreatedTime().getMonth())}"></text>
                     </div>
-                    <text style="color: gray; font-weight: lighter">17:59</text>
+                    <text style="color: gray; font-weight: lighter" th:text="${#dates.format(post.getCreatedTime(), 'HH:mm')}"></text>
                 </div>
             </div>
-            <p class="name">By Xuening Wang</p>
-            <p class="name">0 Comments</p>
-            <p>It seems like only a select few, besides big companies and corporations, care about web page speed and performance.</p>
-            <button onclick="location.href='detail';">Read more</button>
-            <body>
-            <label for="checkbox0">
-                <input type="checkbox" id="checkbox0" hidden>
+
+            <!-- like animation -->
+            <label for="checkbox0" style="width: 10%;margin-top: 40px">
+                <input onclick="window.alert('Oops! The like function is currently under construction...Coming soon in next sprint :)')" type="checkbox" id="checkbox0" hidden>
                 <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
                     <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
-                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
-                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
+                        0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
+                        0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
                           p-id="3129" id="heart"></path></svg>
                 <span></span>
             </label>
-            </body>
-        </a>
-    </article>
 
+                <!-- Like Function: Coming soon -->
+<!--            <form style="width: 10%;margin-top: 40px;" th:action="'/likepost/'+${post.getPid()}" method="post">-->
+<!--                <label for="checkbox0" onchange="this.form.submit()">-->
+<!--                    <input type="checkbox" id="checkbox0" hidden>-->
+<!--                    <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">-->
+<!--                        <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1-->
+<!--                        0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333-->
+<!--                        0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"-->
+<!--                              p-id="3129" id="heart"></path></svg>-->
+<!--                    <span></span>-->
+<!--                </label>-->
+<!--            </form>-->
 
-    <article>
-        <a target="_blank">
-            <div class="postImg">
-                <div class="post-time-section">
-                    <div class="post-date">
-                        <text class="day">28</text>
-                    </div>
-                    <div class="post-month">
-                        <text class="month">Dec</text>
-                    </div>
-                    <text style="color: gray; font-weight: lighter">16:32</text>
-                </div>
-            </div>
-            <p class="name">By Xuening Wang</p>
-            <p class="name">0 Comments</p>
-            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
-            <button onclick="location.href='detail';">Read more</button>
-            <label for="checkbox1">
-                <input type="checkbox"  id="checkbox1" hidden>
-                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
-                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
-                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
-                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
-                          p-id="3129" id="heart"></path></svg>
-                <span></span>
-            </label>
-        </a>
-    </article>
+<!--            <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>-->
 
-
-    <article>
-        <a target="_blank">
-            <div class="postImg">
-                <div class="post-time-section">
-                    <div class="post-date">
-                        <text class="day">28</text>
-                    </div>
-                    <div class="post-month">
-                        <text class="month">Dec</text>
-                    </div>
-                    <text style="color: gray; font-weight: lighter">14:15</text>
-                </div>
-            </div>
-            <!--            <h2>Social Media Icons Tutorial</h2>-->
-            <p class="name">By Xuening Wang</p>
-            <p class="name">0 Comments</p>
-            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
-            <button onclick="location.href='detail';">Read more</button>
-            <body>
-            <label for="checkbox2">
-                <input type="checkbox"  id="checkbox2" hidden>
-                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
-                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
-                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
-                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
-                          p-id="3129" id="heart"></path></svg>
-                <span></span>
-            </label>
-            </body>
-        </a>
-    </article>
-
-    <article>
-        <a target="_blank">
-            <div class="postImg">
-                <div class="post-time-section">
-                    <div class="post-date">
-                        <text class="day">28</text>
-                    </div>
-                    <div class="post-month">
-                        <text class="month">Dec</text>
-                    </div>
-                    <text style="color: gray; font-weight: lighter">16:32</text>
-                </div>
-            </div>
-            <!--            <h2>Guide to Grunt JS (The Basics)</h2>-->
-            <p class="name">By Xuening Wang</p>
-            <p class="name">0 Comments</p>
-            <p>Grunt is one of those tools I've heard of forever, but never got around to using.</p>
-            <button onclick="location.href='detail';">Read more</button>
-            <body>
-            <label for="checkbox3">
-                <input type="checkbox"  id="checkbox3" hidden>
-                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3128">
-                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
-                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
-                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
-                          p-id="3129" id="heart"></path></svg>
-                <span></span>
-            </label>
-            </body>
-        </a>
-    </article>
-
-    <article>
-        <a target="_blank">
-            <div class="postImg">
-                <div class="post-time-section">
-                    <div class="post-date">
-                        <text class="day">28</text>
-                    </div>
-                    <div class="post-month">
-                        <text class="month">Dec</text>
-                    </div>
-                    <text style="color: gray; font-weight: lighter">14:15</text>
-                </div>
-            </div>
-            <!--            <h2>Social Media Icons Tutorial</h2>-->
-            <p class="name">By Xuening Wang</p>
-            <p class="name">0 Comments</p>
-            <p>Nearly every modern website has social media icons on their page. It's a great and stylish why to cross link and hold everything together.</p>
-            <button onclick="location.href='detail';">Read more</button>
-
-            <label for="checkbox4">
-                <input type="checkbox"  id="checkbox4" hidden>
-                <svg t="1639041971928" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M512 896a42.666667 42.666667 0 0 1-30.293333-12.373333l-331.52-331.946667a224.426667 224.426667 0 0 1
-                    0-315.733333 223.573333 223.573333 0 0 1 315.733333 0L512 282.026667l46.08-46.08a223.573333 223.573333
-                    0 0 1 315.733333 0 224.426667 224.426667 0 0 1 0 315.733333l-331.52 331.946667A42.666667 42.666667 0 0 1 512 896z"
-                          id="heart"></path></svg>
-                <span></span>
-            </label>
-
+            <!--   author    -->
+            <p style="font-size: larger" th:text="'By ' +${post.getUsername()}"></p>
+            <!--   number of views and likes    -->
+            <p style="margin-top: 10px" class="name" th:text="${post.getViewCount()} + ' Views &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ${post.getLikes()} + ' Likes'"></p>
+<!--            <p class="name" th:text="${post.getLikes()} + ' Likes'"></p>-->
+            <!--    preview     -->
+            <p style="margin-top: 20px" th:if="${post.getText().length() <= 120}" th:text="${post.getText()}"></p>
+            <p style="margin-top: 20px" th:if="${post.getText().length() > 120}" th:text="${post.getText().substring(0,100)}+'...'"></p>
         </a>
     </article>
 </section>
+
+<div style="margin-bottom: 100px"></div>
 
 <footer th:replace="common/footer_long.html" style="position:relative;left: 0;bottom:0; height: 100px; width: 100%"></footer>
 <script src="../static/js/jquery-3.5.1.min.js"></script>
@@ -400,14 +296,11 @@
     }
 
     .widthWrapper {
-        max-width: 750px;
+        max-width: 800px;
         margin: 0 auto;
     }
 
     /* Post Index */
-    #postIndex {
-        margin: 3em auto;
-    }
 
     article {
         margin-top: -0.063em;
@@ -417,7 +310,7 @@
 
     article a {
         display: block;
-        padding: 2.374em 2.5em 2.5em 2.5em;
+        padding: 2.5em 0 2.5em 2.5em;
         overflow: hidden;
         border-top: .063em solid #ccc;
         border-bottom: .063em solid #ccc;
@@ -426,12 +319,12 @@
     article a:hover {
         background: #eee;
         border-top: #666 solid .25em;
-        padding: 2.187em 2.5em 2.5em 2.5em;
+        padding: 2.5em 0 2.5em 2.5em;
     }
 
     .postImg {
         float: left;
-        width: 25%;
+        width: 15%;
         box-sizing: border-box;
         padding-right: 2em;
     }
@@ -442,8 +335,8 @@
 
     article a h2 {
         color: #00b2b3;
-        float: right;
-        width: 75%;
+        float: left;
+        width: 72%;
     }
 
     article a:hover h2 {
@@ -453,14 +346,15 @@
     article a p {
         font-weight: lighter;
         color: white;
-        float: right;
-        width: 75%;
+        float: left;
+        width: 72%;
     }
 
     article a p.name {
+        display: block;
         font-weight: lighter;
-        float: right;
-        width: 75%;
+        float: left;
+        width: 62%;
         font-size: smaller;
         color: cadetblue;
     }
@@ -771,7 +665,7 @@
         /* 绝对定位 居中 */
         position: relative;
         top: -10px;
-        left: 44%;
+        left: 22%;
         transform: translate(-50%,-50%) scale(0);
         /* 设置各个方向的阴影 */
         /* 通过var函数调用自定义属性--c,设置阴影颜色 */
@@ -865,6 +759,7 @@
     label{
         /* 鼠标移入,光标变小手 */
         cursor: pointer;
+        float: right;
     }
 
     /* 定义动画 */

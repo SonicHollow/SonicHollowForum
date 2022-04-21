@@ -6,9 +6,10 @@
     <title>Login</title>
     <link rel="stylesheet" href="../../static/css/user/login.css"/>
     <script src="../../static/js/user/login.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="../../static/images/favicon.ico" type="image/x-icon"/>
 </head>
 <div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"></div>
-<body>
+<body style="display: flex">
 <div class="container">
     <h1>Login to SonicHollow</h1>
     <form method="post" action="loginUser">
@@ -27,7 +28,7 @@
         </div>
         <div class="form-control" style="margin: 20px 0 40px;">
             <img id="code_img" alt="Display Error" src="loginimage" width="50%">
-            <span class="errorMsg" style="color: black" th:text="${param.msg}"></span>
+            <span class="errorMsg" style="color: white" th:text="${param.msg}"></span>
         </div>
         <button type="submit" id="signin" class="btn">Login</button>
         <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a></p>

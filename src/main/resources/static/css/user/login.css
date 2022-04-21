@@ -23,10 +23,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10-11 */
 body {
     background-color: #333D47;
     font-family: sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -37,7 +35,8 @@ body {
     border-style: solid;
     border-color: white;
     border-width: 3px;
-    margin-top: -70px;
+    margin-top: 110px;
+    width: 26%;
 }
 
 .container h1 {

@@ -1,6 +1,7 @@
 package com.sonichollow.forum.service;
 
 import com.sonichollow.forum.entity.User;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,10 @@ public interface IUserService {
     boolean isUser(String username,String password);
     //判断账号是否已经注册
     boolean checkName(String username);
+
+    @Transactional
+    Integer registerUser(User user);
+
     //注册成功后添加用户
     Integer addUser(User user);
     User getUser(String username);

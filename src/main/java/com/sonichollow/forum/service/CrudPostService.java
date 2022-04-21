@@ -6,13 +6,13 @@ import com.sonichollow.forum.entity.Post;
 import java.util.List;
 
 public interface CrudPostService {
-    //post id
-    Post getAccp(int pid);
+    // post id
+    Post getPid(int pid);
 
     //查看所有post
-    List<Post> listAllAccp();
+    List<Post> listAllPost();
 
     //根据id删除post
-    void deletepostById(int pid);
+    void deletePostById(int pid);
 
 }

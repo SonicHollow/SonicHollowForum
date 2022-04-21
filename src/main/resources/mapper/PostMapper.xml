@@ -63,4 +63,16 @@
         pid = #{pid,jdbcType=NUMERIC}
     </select>
 
+    <!--Backstage-->
+    <select id="selectAllPost" resultType="com.sonichollow.forum.entity.Post">
+        select *
+        from post;
+    </select>
+
+    <delete id="deletePost">
+        delete
+        from post
+        where pid = #{pid}
+    </delete>
+
 </mapper>
