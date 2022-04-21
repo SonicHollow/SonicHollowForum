@@ -1,6 +1,7 @@
 package com.sonichollow.forum.controller;
 
 import com.google.code.kaptcha.Constants;
+import com.mysql.cj.Session;
 import com.sonichollow.forum.entity.User;
 import com.sonichollow.forum.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,6 +117,6 @@ public class LoginController {
                 }
             }
         }
-        return "index";
+        return "redirect:index";
     }
 }

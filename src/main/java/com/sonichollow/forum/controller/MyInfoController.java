@@ -36,12 +36,14 @@ public class MyInfoController {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
-        if (user == null) {
-            user = userMapper.getUser("Nyanner");
-            System.out.println("~!!!!!!!!!!!!!!!!!~");
-        }
+        if (user == null)
+            return "home";
+
 
         user.setUsername(form.getContent());
+
+        this.updateUser(user);
+
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         HttpSession session = request.getSession();
@@ -54,12 +56,14 @@ public class MyInfoController {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
-        if (user == null) {
-            user = userMapper.getUser("Nyanner");
-            System.out.println("~!!!!!!!!!!!!!!!!!~");
-        }
+        if (user == null)
+            return "home";
         if (isEmail(form.getContent()))
             user.setEmail(form.getContent());
+
+        this.updateUser(user);
+
+
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         return "myInfo";
@@ -70,12 +74,13 @@ public class MyInfoController {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
-        if (user == null) {
-            user = userMapper.getUser("Nyanner");
-            System.out.println("~!!!!!!!!!!!!!!!!!~");
-        }
+        if (user == null)
+            return "home";
         if (isPhone(form.getContent()))
             user.setPhone(form.getContent());
+
+        this.updateUser(user);
+
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         return "myInfo";
@@ -86,15 +91,16 @@ public class MyInfoController {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
-        if (user == null) {
-            user = userMapper.getUser("Nyanner");
-            System.out.println("~!!!!!!!!!!!!!!!!!~");
-        }
+        if (user == null)
+            return "home";
 
         if (form.getContent().equalsIgnoreCase("female"))
             user.setGender(0);
         else if (form.getContent().equalsIgnoreCase("male"))
             user.setGender(1);
+
+        this.updateUser(user);
+
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
@@ -106,16 +112,27 @@ public class MyInfoController {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
-        if (user == null) {
-            user = userMapper.getUser("Nyanner");
-            System.out.println("~!!!!!!!!!!!!!!!!!~");
-        }
+        if (user == null)
+            return "home";
         if (isURL(form.getContent()))
             user.setAvatar(form.getContent());
+
+        this.updateUser(user);
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
         return "myInfo";
+    }
+
+    private void updateUser(User user) {
+        userMapper.updateUser(
+                user.getUsername(),
+                user.getPassword(),
+                user.getGender() == null?  0 : user.getGender(),
+                user.getPhone(),
+                user.getEmail(),
+                user.getUid()
+        );
     }
 
 
