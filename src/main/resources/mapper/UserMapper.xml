@@ -22,21 +22,17 @@
     -->
     <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
         INSERT INTO user (
-                username, password, salt, phone, email, gender, avatar, is_delete,
-                created_user, created_time, modified_user, modified_time)
+            username, password, salt, phone, email, gender, avatar, is_delete,
+            created_user, created_time, modified_user, modified_time)
         VALUES (
-                #{username}, #{password}, #{salt}, #{phone}, #{email}, #{gender}, #{avatar}, #{isDelete},
-                #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
+                   #{username}, #{password}, #{salt}, #{phone}, #{email}, #{gender}, #{avatar}, #{isDelete},
+                   #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
     </insert>
     <!--id设为方法的名字-->
     <select id="findByUsername" resultMap="UserEntityMap">
         SELECT * FROM user WHERE username = #{username}
     </select>
 
-    <insert id="insertUser">
-        INSERT INTO user (username, password, gender, phone, email)
-        VALUES (#{username}, #{password}, #{gender}, #{phone}, #{email});
-    </insert>
 
 
     <!--Backstage-->
@@ -51,6 +47,13 @@
             phone = #{phone}
         where uid = #{uid};
     </update>
+
+    <update id="updateUserAvatar">
+        update user
+        set avatar  = #{avatar}
+        where uid = #{uid};
+    </update>
+
     <delete id="deleteUser">
         delete
         from user
@@ -74,5 +77,10 @@
         from user
         where uid = #{uid};
     </select>
+
+    <insert id="insertUser">
+        INSERT INTO user (username, password, gender, phone, email)
+        VALUES (#{username}, #{password}, #{gender}, #{phone}, #{email});
+    </insert>
 
 </mapper>

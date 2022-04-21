@@ -60,6 +60,8 @@ public interface UserMapper {
 
     void updateUser(String username, String password, int gender, String phone, String email,int uid);
 
+    void updateUserAvatar(String avatar, int uid);
+
     User SelectById(int uid);
 
     void deleteUser(int uid);

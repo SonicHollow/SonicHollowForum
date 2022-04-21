@@ -114,10 +114,10 @@ public class MyInfoController {
         System.out.println(form);
         if (user == null)
             return "home";
-        if (isURL(form.getContent()))
+        if (isURL(form.getContent())) {
             user.setAvatar(form.getContent());
-
-        this.updateUser(user);
+            userMapper.updateUserAvatar(form.getContent(), user.getUid());
+        }
 
         model.addAttribute("user", user);
         model.addAttribute("infoForm", new InfoForm(user.getUsername()));
@@ -158,10 +158,3 @@ public class MyInfoController {
     }
 }
 
-
-
-
-//    @RequestMapping("myInfo/{username}")
-//    public String getUserName(@PathVariable String username) {
-//        return userMapper.getUser(username).getUsername();
-//    }
