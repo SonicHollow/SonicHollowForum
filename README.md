@@ -1,4 +1,5 @@
 # SonicHollowForum
+
 This is the official repository for CPT202 Software Engineering Group Project *Group B1*.
 
 The project is now available at [101.132.122.132:8080](http://101.132.122.132:8080). Hope you enjoy :)
@@ -11,15 +12,14 @@ To clone this repository on your PC, run the command in git:
 
 `git clone git@github.com:SonicHollow/SonicHollowForum.git`
 
-Open this project in IDEA and start coding!
+Open this project in IDEA and start!
 
 File > New > Project from Existing Sources
 
 Notes: 
 
-1. All entities involving **user generated content** should inherent the class BaseEntity.
-2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
-3. In order to connect the database, use the *application.properties* in WeChat group. For testing, use the schema "testRig" on the server.
+1. *application.properties* is not available here for security reasons.
+2. For local database construction, refer to the sql statements under *src* folder.
 
 ## Requirements
 
