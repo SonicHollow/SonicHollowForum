@@ -1,27 +1,44 @@
-/* 索引页大背景*/
-.mycontent {
-	background-image: url(../images/index/bg1.png);
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 561px;
+html,body {
+    background-color: #333D47;
+    margin: 0;
+    height: 100%;
 }
-/*索引页半透明层*/
-.inputDiv {
-	height: 371px;
-	width: 270px;
-	background-color: rgba(255, 255, 255, 0.7);
-	float: right;
-	margin: 100px 60px 0 0;
-	text-align: center;
-	color: cadetblue;
-	line-height: 40px;
+
+.text {
+    color: white;
+
+    letter-spacing: .05em;
+    text-shadow:
+            4px 4px 0 #86a7ca,
+            7px 7px 0 rgba(0, 0, 0, 0.2);
+    font-size:2.3em;
+    font-family:  sans-serif;
+    -webkit-animation: shift 2s ;
+    animation: shift 2s ;
+    margin-top:180px;
+    text-align:center;
+    text-transform:uppercase;
 }
-/*索引页几个链接按钮*/
-.inputDiv a {
-	margin: 8px;
-	font-size: 16px;
+h2 {
+    animation: appear 3.2s;
+    text-align:center;
+    color: white;
 }
-/*按钮宽度	*/
-.inputDiv .btn {
-	width: 90%;
+
+@keyframes shift {
+    0% {opacity:0;}
+    33% {margin-top:0;opacity:0;}
+    100% {margin-top:180px;opacity:1;text-shadow:
+            4px 4px 0 #86a7ca,
+            7px 7px 0 rgba(0, 0, 0, 0.2);}
+}
+@keyframes appear {
+    0% {opacity:0;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+}
+html{
+    width:100%;
+    overflow-x:hidden;
+    margin: 0;
 }

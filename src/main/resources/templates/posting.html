@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>SonicHollow Forum</title>
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon"/>
+    <script src="../static/js/user/login.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../static/css/posting.css"/>
+</head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-weight: lighter"></div>
+
+<body style="background-color: #333D47">
+
+<div class="textarea">
+    <div class="text">
+        <h1>Posting</h1>
+    </div>
+    <br/>
+    <div class="typewriter">
+        <h1>Speak whatever you want in SonicHollow</h1>
+    </div>
+    <br>
+    <form method="post" action="publishPost">
+        <textarea id="text" name="text" type="text" class="textbox" style="font-size: large" th:text="${param.text}"></textarea>
+        <button class="divbutton" type="submit" style="background-color: transparent !important; color: transparent !important; border-color: transparent !important;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo"/>
+                </filter>
+            </defs>
+        </svg>
+
+        <span class="button--bubble__container">
+          <a class="button button--bubble">
+            SUBMIT
+          </a>
+          <span class="button--bubble__effect-container">
+            <span class="circle top-left"></span>
+            <span class="circle top-left"></span>
+            <span class="circle top-left"></span>
+            <span class="button effect-button"></span>
+
+            <span class="circle bottom-right"></span>
+            <span class="circle bottom-right"></span>
+            <span class="circle bottom-right"></span>
+            </span>
+            </span>
+    </button>
+    </form>
+</div>
+
+<footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>
