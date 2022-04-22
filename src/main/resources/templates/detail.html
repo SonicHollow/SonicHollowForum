@@ -25,9 +25,10 @@
         </div>
 
         <h1 style="position: relative; margin-top: 60px">
-            By <a th:href="@{postList}" target="_b" th:text="${post.getUsername()}"></a> on
+            By <a th:href="@{/userInfo/{name}(name=${post.getUsername()})}" target="_b" th:text="${post.getUsername()}"></a> on
             <a th:text="${post_time}" style="color: white"></a>
         </h1>
+
         <section class="content">
             <p th:text="${post.getText()}"></p>
         </section>

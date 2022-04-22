@@ -26,10 +26,9 @@
         </div>
 
 
-
     </div>
     <div style="font-family: 'Noto Sans',serif" class="grid-celda-3 navigation-bar-login">
-        <a th:href="signOut"><button class="grid-celda-1 navigation-bar-button-signup" style="font-weight:normal; font-size: 13px">Sign Out</button></a>
+        <a th:href="@{/signOut}"><button class="grid-celda-1 navigation-bar-button-signup" style="font-weight:normal; font-size: 13px">Sign Out</button></a>
         <a class="grid-celda-4" style="font-weight:normal; margin-top: 11px;margin-right: 10px; font-size: initial" th:text=" 'Welcome! User ' +${session.username}"></a>
     </div>
 </div>
