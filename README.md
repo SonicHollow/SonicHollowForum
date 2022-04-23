@@ -17,9 +17,9 @@ File > New > Project from Existing Sources
 
 Notes: 
 
-1. All entities involving **user generated content** should inherent the class BaseEntity.
+1. To run the project locally, please install Redis on your PC. 
 2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
-3. In order to connect the database, use the *application.properties* in WeChat group. For testing, use the schema "testRig" on the server.
+
 
 ## Requirements
 
