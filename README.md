@@ -18,17 +18,17 @@ Open this project in your IDE (IDEA is recommended) and run *SonicHollowApplicat
 
 File > New > Project from Existing Sources
 
-## Database
-
-Before running the project, please configure your local database referring to the sql statements under the *src* foler.
-
-Create two tables `User` and `Post` and change the database information in *application-dev.properties*.
-
 Notes: 
 
 1. To run the project locally, please install Redis on your PC. 
 2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
 
+
+## Database
+
+Before running the project, please configure your local database referring to the sql statements under the *src* foler.
+
+Create two tables `User` and `Post` and change the database information in *application-dev.properties*.
 
 ## Requirements
 
