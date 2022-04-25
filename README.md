@@ -20,7 +20,7 @@ File > New > Project from Existing Sources
 
 Notes: 
 
-1. To run the project locally, please install Redis on your PC. 
+1. To run the project (like function related parts) locally, please install Redis on your PC. 
 2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
 
 
