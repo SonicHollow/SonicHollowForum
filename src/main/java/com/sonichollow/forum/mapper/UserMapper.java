@@ -56,7 +56,7 @@ public interface UserMapper {
 
     User selectByUsernameAndPassword(String username, String password);
 
-    void insertUser(String username, String password, int gender, String phone, String email);
+    void insertUser(String username, String password, int gender, String phone, String email, String avatar);
 
     void updateUser(String username, String password, int gender, String phone, String email,int uid);
 

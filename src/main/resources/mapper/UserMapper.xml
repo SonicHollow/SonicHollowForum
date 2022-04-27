@@ -79,8 +79,8 @@
     </select>
 
     <insert id="insertUser">
-        INSERT INTO user (username, password, gender, phone, email)
-        VALUES (#{username}, #{password}, #{gender}, #{phone}, #{email});
+        INSERT INTO user (username, password, gender, phone, email, avatar)
+        VALUES (#{username}, #{password}, #{gender}, #{phone}, #{email}, #{avatar});
     </insert>
 
 </mapper>

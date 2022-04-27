@@ -61,6 +61,7 @@ public class SignUpController {
                 passwordCookie.setMaxAge(One_DAY);
                 resp.addCookie(nameCookie);
                 resp.addCookie(passwordCookie);
+                //
                 // default Avatar
                 user.setAvatar("https://i.ibb.co/YWLvMPd/default-Avatar.jpg");
                 userService.registerUser(user);
