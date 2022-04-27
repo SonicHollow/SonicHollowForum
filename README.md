@@ -27,11 +27,26 @@ New Post Detail Page. Update the template page ***templates.html***. You can use
 
 ### 3.27 Login Branch
 
+<<<<<<< HEAD
 New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. Add a new PostList page. Add a **filter** for page permissions (users cannot access myInfo, postList and home page without signing in, cannot access login page if already signed in). Remember to add the new navigation bar and footer onto every page!
+=======
+1. To run the project (like function related parts) locally, please install Redis on your PC. 
+2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
+>>>>>>> 9d04e5c3f7a25d5dc9ed792b3cf1fc3623bdf916
 
 **Note:**
 
+<<<<<<< HEAD
 There are two html files for footers:
+=======
+## Database
+
+Before running the project, please configure your local database referring to the sql statements under the *src* foler.
+
+Create two tables `User` and `Post` and change the database information in *application-dev.properties*.
+
+## Requirements
+>>>>>>> 9d04e5c3f7a25d5dc9ed792b3cf1fc3623bdf916
 
 1. For a "**short**" page, which doesn't need "scrolling down", the position of footer is **<u>absolute/fixed</u>**, which means the footer will <u>always</u> display on the page. In this case, use ***footer.html***. You can refer to *index.html* and *login.html* for the insertion details.
 2. For a "**long**" page, which needs "scrolling down", the position of footer is <u>**relative**</u>, which means the footer will display <u>only if</u> you reach the end of the page. In this case, use ***footer_long.html***. You can refer to *postList.html* for the insertion details.
