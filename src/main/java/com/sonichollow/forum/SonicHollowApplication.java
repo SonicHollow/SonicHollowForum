@@ -20,5 +20,4 @@ public class SonicHollowApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(SonicHollowApplication.class);
     }
-
 }

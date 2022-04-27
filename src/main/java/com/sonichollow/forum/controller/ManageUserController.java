@@ -1,5 +1,6 @@
 package com.sonichollow.forum.controller;
 import com.sonichollow.forum.entity.User;
+import com.sonichollow.forum.mapper.UserMapper;
 import com.sonichollow.forum.service.impl.CrudUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ import java.util.List;
 public class ManageUserController {
     @Autowired
     CrudUserServiceImpl crud;
+
+    @Autowired
+    UserMapper userMapper;
 
     @GetMapping("manage_user")
     public String listAll(Model model) {
@@ -31,7 +35,8 @@ public class ManageUserController {
                             @RequestParam("gender") int gender,
                             @RequestParam("phone") String phone,
                             @RequestParam("email") String email) {
-        crud.insertAcc(username, password, gender, phone, email);
+        String avatar = "https://i.ibb.co/YWLvMPd/default-Avatar.jpg";
+        crud.insertAcc(username, password, gender, phone, email, avatar);
         return "redirect:/manage_user";
     }
 
