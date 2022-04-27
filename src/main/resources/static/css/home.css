@@ -13,7 +13,7 @@ body {
     color: white;
     font-family: monospace;
     /* Set the font size to 50px */
-    font-size: 50px;
+    font-size: 46px;
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
     border-right: .15em solid #4e7eb1;
@@ -126,7 +126,7 @@ input#search-bar:focus:-ms-placeholder {
     cursor: pointer;
     padding: 10px 10px 10px;
     position: fixed;
-    top: 450px;
+    top: 500px;
     right: 100px;
     background: #eee;
     width: 150px;
@@ -221,7 +221,7 @@ input#search-bar:focus:-ms-placeholder {
 
 .icon {
     position: fixed;
-    margin-top: -120px;
+    margin-top: -90px;
     margin-left: 350px;
 }
 

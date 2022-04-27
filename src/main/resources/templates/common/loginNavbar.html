@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="../../static/css/common/loginNavbar.css"/>
 <script src="../../static/js/common/loginNavbar.js" type="text/javascript"></script>
+
+
 <div class="patrones-comunes-navigation-bar">
     <div class="grid-celda-1 navigation-bar-logo" onclick="window.location.href='/index'">
         <svg id="Layer_1" data-name="Layer 1" fill="#333D47" xmlns="http://www.w3.org/2000/svg" width="300" height="25" style="margin-top: 5px; margin-left: 100px" viewBox="0 0 822.05 117.59"><title>logo-vector</title><path d="M38.25,76.49c-15.9-13-19.8-22-19.8-32.25,0-16,12-27,31.05-27a58.17,58.17,0,0,1,14,1.5,29.86,29.86,0,0,0,6.3.9c.6,0,.9.31.75.9-.45,1.8-1,4.8-.9,13.2,0,3.6-.45,4.2-.75,4.2s-.45-.6-.6-2.7a13.72,13.72,0,0,0-2-6.6c-1-1.65-5.85-6.15-19.65-6.15-10.35,0-18,6.45-18,17.4,0,8.55,3.15,14.25,17.55,25.5l4.2,3.3c17.7,14,22.2,23,22.2,35,0,6.15-2.4,17.55-12.75,24.9-6.45,4.5-14.55,6.3-22.65,6.3a47,47,0,0,1-20.85-4.35c-1.35-.75-1.5-1.35-1.5-3a155.47,155.47,0,0,1,.75-16.2c.15-1.65.45-2.4.9-2.4s.3.45.3,1.65a27.49,27.49,0,0,0,.9,8.1c1.65,5.85,12.3,10.65,22.8,10.65,14.4,0,21-10.35,21-19.95C61.5,99,57.9,92.69,45,82Z" transform="translate(-14.85 -17.24)"/><path d="M76.9,94.69c0-16.2,11.8-39.1,39.4-39.1,22.5,0,39.3,14.2,39.3,37.5,0,22.4-15.8,40.9-39.9,40.9C88.3,134,76.9,112.69,76.9,
@@ -25,10 +27,10 @@
             <a style="font-weight:normal;" class="grid-celda-3" th:href="@{/myInfo/{name}(name=${session.username})}">MyInfo</a>
         </div>
 
-
     </div>
     <div style="font-family: 'Noto Sans',serif" class="grid-celda-3 navigation-bar-login">
         <a th:href="@{/signOut}"><button class="grid-celda-1 navigation-bar-button-signup" style="font-weight:normal; font-size: 13px">Sign Out</button></a>
-        <a class="grid-celda-4" style="font-weight:normal; margin-top: 11px;margin-right: 10px; font-size: initial" th:text=" 'Welcome! User ' +${session.username}"></a>
+        <a class="grid-celda-4" style="font-weight:normal; margin-top: 11px;margin-right: 130px; width:max-content; font-size: initial" th:text=" 'Welcome! User ' +${session.username}"></a>
+            <img style="border-radius:50%;float:right;position:fixed;right: 50px" width="45" height="45" th:src="${session.avatar}"/>
     </div>
 </div>
