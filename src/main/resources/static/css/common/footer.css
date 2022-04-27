@@ -46,6 +46,8 @@
     -webkit-transition: .2s;
     -moz-transition: .2s;
 }
+
+
 .social ul li {
     display: inline-block;
     padding-right: 5px !important;
