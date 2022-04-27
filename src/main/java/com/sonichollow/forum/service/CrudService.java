@@ -12,7 +12,7 @@ public interface CrudService {
     List<User> listAllAcc();
 
     //注册，新建用户
-    void insertAcc(String username, String password, int gender, String phone, String email);
+    void insertAcc(String username, String password, int gender, String phone, String email, String avatar);
 
     //修改用户
     void updateAcc(String username, String password, int gender, String phone, String email, int uid);

@@ -20,8 +20,8 @@ public class CrudUserServiceImpl implements CrudService {
     }
 
     @Override
-    public void insertAcc(String username, String password, int gender, String phone, String email) {
-        userMapper.insertUser(username,password,gender,phone,email);
+    public void insertAcc(String username, String password, int gender, String phone, String email, String avatar) {
+        userMapper.insertUser(username,password,gender,phone,email, avatar);
     }
 
     @Override
