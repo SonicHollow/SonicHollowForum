@@ -21,6 +21,10 @@ public class PageController {
     public String index() {
         return "index";
     }
+    @RequestMapping(value = "about")
+    public String about() {
+        return "about";
+    }
     @RequestMapping(value = "detail")
     public String detail() {
         return "detail";

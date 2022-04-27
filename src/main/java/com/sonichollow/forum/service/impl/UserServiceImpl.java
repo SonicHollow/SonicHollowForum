@@ -89,27 +89,6 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
-    @Override
-    public boolean isUser(String name, String password) {
-        return userMapper.isUser(name,password)!=null;
-    }
-
-    @Override
-    public boolean checkName(String name) {
-        return userMapper.checkName(name)==null;
-    }
-
-    @Override
-    @Transactional
-    public Integer addUser(User user) {
-        return userMapper.addUser(user);
-    }
-
-    @Override
-    public User getUser(String name) {
-        return userMapper.getUser(name);
-    }
-
     /**
      * 密码加密
      *
