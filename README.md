@@ -1,44 +1,29 @@
 # SonicHollowForum
+
+[![img](https://camo.githubusercontent.com/de3012ca40ba3ef433da8807996576d3cafaccf638909e83b1048b1d8aec3b77/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537072696e675f426f6f742d4632463446393f7374796c653d666f722d7468652d6261646765266c6f676f3d737072696e672d626f6f74)](https://camo.githubusercontent.com/de3012ca40ba3ef433da8807996576d3cafaccf638909e83b1048b1d8aec3b77/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537072696e675f426f6f742d4632463446393f7374796c653d666f722d7468652d6261646765266c6f676f3d737072696e672d626f6f74)[![img](https://camo.githubusercontent.com/506742bb72188756810aa73bf2b2032849399620bf5af3816b68090f24d81a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6170616368655f6d6176656e2d4337314133363f7374796c653d666f722d7468652d6261646765266c6f676f3d6170616368656d6176656e266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/506742bb72188756810aa73bf2b2032849399620bf5af3816b68090f24d81a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6170616368655f6d6176656e2d4337314133363f7374796c653d666f722d7468652d6261646765266c6f676f3d6170616368656d6176656e266c6f676f436f6c6f723d7768697465)[![mysql](https://camo.githubusercontent.com/a4a4a017a5d519d7c4ce2a3cd3d2194fb7af4b1ca424850784565007c2acc7d8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d7953514c2d3030354338343f7374796c653d666f722d7468652d6261646765266c6f676f3d6d7973716c266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/a4a4a017a5d519d7c4ce2a3cd3d2194fb7af4b1ca424850784565007c2acc7d8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d7953514c2d3030354338343f7374796c653d666f722d7468652d6261646765266c6f676f3d6d7973716c266c6f676f436f6c6f723d7768697465)[![img](https://camo.githubusercontent.com/16c5d674d150e47e77738a333e74716023295715c956aaf84615cef3f50675ed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656469732d2532334444303033312e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d7265646973266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/16c5d674d150e47e77738a333e74716023295715c956aaf84615cef3f50675ed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656469732d2532334444303033312e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d7265646973266c6f676f436f6c6f723d7768697465)![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
 This is the official repository for CPT202 Software Engineering Group Project *Group B1*.
+
+The project is now available at [101.132.122.132:8080](http://101.132.122.132:8080). Hope you enjoy :)
 
 ## Guideline
 
-To start, install [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git) on your PC. 
+To start the project locally, install [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git) on your PC. 
 
 To clone this repository on your PC, run the command in git:
 
 `git clone git@github.com:SonicHollow/SonicHollowForum.git`
 
-Open this project in IDEA and start coding!
+Open this project in your IDE (IDEA is recommended) and run *SonicHollowApplication.java*
 
 File > New > Project from Existing Sources
 
 Notes: 
 
-1. All entities involving **user generated content** should inherent the class BaseEntity.
-2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html))  to [this one](https://pan.baidu.com/s/1_0r18fd85cthx7hef4n3cA?pwd=o3kv) (You don't have to). 
-3. In order to connect the database, use the *application.properties* in WeChat group. For testing, use the schema "testRig" on the server.
-
-## Updates
-
-### 3.29 Login Branch
-
-New Post Detail Page. Update the template page ***templates.html***. You can use the template for any "short" pages. Add a post button and a selector (most recent, most views and most comments) on the post list page. Update the navigations of the pages. Update the Color Scheme of the login page.
-
-### 3.27 Login Branch
-
-<<<<<<< HEAD
-New footer and new color scheme on index page. Update and fix some bugs of the navigation bar. Add a new PostList page. Add a **filter** for page permissions (users cannot access myInfo, postList and home page without signing in, cannot access login page if already signed in). Remember to add the new navigation bar and footer onto every page!
-=======
 1. To run the project (like function related parts) locally, please install Redis on your PC. 
 2. To solve the possible maven dependency problem when importing the project, you can update your settings.xml ([Where is it?](https://www.cnblogs.com/Small-sunshine/p/11640576.html)). 
->>>>>>> 9d04e5c3f7a25d5dc9ed792b3cf1fc3623bdf916
 
-**Note:**
 
-<<<<<<< HEAD
-There are two html files for footers:
-=======
 ## Database
 
 Before running the project, please configure your local database referring to the sql statements under the *src* foler.
@@ -46,24 +31,16 @@ Before running the project, please configure your local database referring to th
 Create two tables `User` and `Post` and change the database information in *application-dev.properties*.
 
 ## Requirements
->>>>>>> 9d04e5c3f7a25d5dc9ed792b3cf1fc3623bdf916
 
-1. For a "**short**" page, which doesn't need "scrolling down", the position of footer is **<u>absolute/fixed</u>**, which means the footer will <u>always</u> display on the page. In this case, use ***footer.html***. You can refer to *index.html* and *login.html* for the insertion details.
-2. For a "**long**" page, which needs "scrolling down", the position of footer is <u>**relative**</u>, which means the footer will display <u>only if</u> you reach the end of the page. In this case, use ***footer_long.html***. You can refer to *postList.html* for the insertion details.
 
-### 3.20 Login Branch
+Springboot 2.6.3 RELEASE
 
-Create a new branch "login", including the completed login function (frontend and backend), not including the web pages in version 1. Other files remain the same.
+Front-end: Thymeleaf + JQuery + Bootstrap
 
-**Differences**
-1. No html5, js, css in version 1. Only login-related files.
-2. New LoginController and PageController.
-3. New *pom.xml*, *application.properties* and *application-dev.properties*.
-4. Only one SpringApplication class.
+Database: MySQL + Redis
 
-### 3.12 Main Branch
+Back-end: Springboot + Mybatis
 
-Update the project framework with registration function (no frontend)
 
 ## Useful Websites
 
