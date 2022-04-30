@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -19,6 +21,8 @@ public class MyInfoController {
 
     @Autowired
     private UserMapper userMapper;
+
+    final int One_DAY = 60 * 60 * 24 ;
 
     @RequestMapping(value = "myInfo/{username}")
     public String myInfo(Model model, @PathVariable String username) {
@@ -108,15 +112,22 @@ public class MyInfoController {
     }
 
     @PostMapping(value = "/myInfoSetAvatar")
-    public String setAvatar(Model model, @ModelAttribute InfoForm form) {
+    public String setAvatar(Model model, @ModelAttribute InfoForm form, HttpServletRequest req, HttpServletResponse resp) {
         User user = userMapper.getUser(form.getUser());
 
         System.out.println(form);
         if (user == null)
             return "home";
         if (isURL(form.getContent())) {
-            user.setAvatar(form.getContent());
+            String avatar = form.getContent();
+            user.setAvatar(avatar);
             userMapper.updateUserAvatar(form.getContent(), user.getUid());
+            HttpSession session = req.getSession(true);
+            session.setAttribute("avatar", avatar);
+            Cookie avatarCookie = new Cookie("avatar", avatar);
+            avatarCookie.setPath("/");
+            avatarCookie.setMaxAge(One_DAY);
+            resp.addCookie(avatarCookie);
         }
 
         model.addAttribute("user", user);

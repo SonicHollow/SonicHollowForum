@@ -61,9 +61,14 @@ public class SignUpController {
                 passwordCookie.setMaxAge(One_DAY);
                 resp.addCookie(nameCookie);
                 resp.addCookie(passwordCookie);
-                //
                 // default Avatar
-                user.setAvatar("https://i.ibb.co/YWLvMPd/default-Avatar.jpg");
+                String avatar = "https://i.ibb.co/YWLvMPd/default-Avatar.jpg";
+                user.setAvatar(avatar);
+                session.setAttribute("avatar", avatar);
+                Cookie avatarCookie = new Cookie("avatar", avatar);
+                avatarCookie.setPath("/");
+                avatarCookie.setMaxAge(One_DAY);
+                resp.addCookie(avatarCookie);
                 userService.registerUser(user);
                 mv.setViewName("redirect:myInfo/"+username);
             }

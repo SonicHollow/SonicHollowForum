@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,6 +40,7 @@ public class PostController {
         return mv;
     }
 
+    // See post list
     @RequestMapping(value = "postList")
     public String postList(Model model) {
         model.addAttribute("utils", PostUtil.getInstance());
@@ -77,13 +77,11 @@ public class PostController {
         return "detail";
     }
 
-
     // Like the post
     @PutMapping("/like/{pid}")
     public Result likePost(@PathVariable("pid") int pid) {
         return postService.clickLikes(pid);
     }
-
 
     @RequestMapping("/likepost/{pid}")
     public String likeexample(@PathVariable("pid") int pid, Model model) {
