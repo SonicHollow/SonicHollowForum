@@ -1,15 +1,11 @@
 package com.sonichollow.forum.controller;
-
 import com.google.code.kaptcha.Constants;
-import com.mysql.cj.Session;
 import com.sonichollow.forum.entity.User;
 import com.sonichollow.forum.mapper.UserMapper;
 import com.sonichollow.forum.service.impl.UserServiceImpl;
-import com.sonichollow.forum.util.InfoForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.imageio.ImageIO;
@@ -82,7 +78,6 @@ public class LoginController {
 
         User userGet = userMapper.getUser(username);
         String avatar = userGet.getAvatar();
-
 
         // 检查 验证码是否正确
         // 验证码正确

@@ -31,6 +31,6 @@
     <div style="font-family: 'Noto Sans',serif" class="grid-celda-3 navigation-bar-login">
         <a th:href="@{/signOut}"><button class="grid-celda-1 navigation-bar-button-signup" style="font-weight:normal; font-size: 13px">Sign Out</button></a>
         <a class="grid-celda-4" style="font-weight:normal; margin-top: 11px;margin-right: 130px; width:max-content; font-size: initial" th:text=" 'Welcome! User ' +${session.username}"></a>
-            <img style="border-radius:50%;float:right;position:fixed;right: 50px" width="45" height="45" th:src="${session.avatar}"/>
+            <img onerror="this.src='https://i.ibb.co/YWLvMPd/default-Avatar.jpg';this.onerror=null;" style="border-radius:50%;float:right;position:fixed;right: 50px" width="45" height="45" th:src="${session.avatar}"/>
     </div>
 </div>
