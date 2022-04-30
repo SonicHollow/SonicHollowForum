@@ -28,7 +28,7 @@ Notes:
 
 Before running the project, please configure your local database referring to the sql statements under the *src* foler.
 
-Create two tables `User` and `Post` and change the database information in *application-dev.properties*.
+Create two tables `User` and `Post` and update the database information in *application-dev.properties*.
 
 ## Requirements
 
