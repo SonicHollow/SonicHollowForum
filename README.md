@@ -47,9 +47,9 @@ For continuous testing, run the command as follows:
 
    or use this command:
 
-   `ss -lntpd | grep :8080 (Port for SpringBoot)`
+   `ss -lntpd | grep :8080`
 
-2. End the process with the kill command:
+2. End the process with the kill command (change the PID to yours):
 
    `kill PID`
 
