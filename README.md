@@ -47,9 +47,9 @@ For continuous testing, run the command as follows:
 
    or use this command:
 
-   `ss -lntpd | grep :8080 (Port for SpringBoot)`
+   `ss -lntpd | grep :8080`
 
-2. End the process with the kill command:
+2. End the process with the kill command (change the PID to yours):
 
    `kill PID`
 
@@ -144,4 +144,3 @@ The project structure is as follows:
 [SASS to CSS Compiler](https://www.sassmeister.com/)
 
 [IDEA Server Deployment](https://blog.csdn.net/weixin_43711783/article/details/90218226?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&utm_relevant_index=1)
-
