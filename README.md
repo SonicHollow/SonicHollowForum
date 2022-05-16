@@ -6,6 +6,16 @@ This is the official repository for *CPT202 Software Engineering Group Project* 
 
 The project is now available at [101.132.122.132:8080](http://101.132.122.132:8080). Hope you enjoy :)
 
+#### **Notes:** 
+
+Only admins can access the management system. Access permission has been set to the related pages. 
+
+For security concerns, currently we don't accept external registration for the admin accounts. 
+
+If you need an admin account for better user trial, please [email us](mailto: xuening.wang19@student.xjtlu.edu.cn).
+
+
+
 ## Guideline
 
 To start the project locally, install [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git) on your PC. 
@@ -47,9 +57,9 @@ For continuous testing, run the command as follows:
 
    or use this command:
 
-   `ss -lntpd | grep :8080 (Port for SpringBoot)`
+   `ss -lntpd | grep :8080`
 
-2. End the process with the kill command:
+2. End the process with the kill command (change the PID to yours):
 
    `kill PID`
 
@@ -143,5 +153,6 @@ The project structure is as follows:
 
 [SASS to CSS Compiler](https://www.sassmeister.com/)
 
-[IDEA Server Deployment](https://blog.csdn.net/weixin_43711783/article/details/90218226?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&utm_relevant_index=1)
+[LESS to CSS Compiler](https://tool.oschina.net/less)
 
+[IDEA Server Deployment](https://blog.csdn.net/weixin_43711783/article/details/90218226?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1.pc_relevant_antiscanv2&utm_relevant_index=1)
