@@ -28,3 +28,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Database Information ###
+
+src/main/resources/application-dev.properties
+src/main/resources/application.properties

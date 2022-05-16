@@ -6,6 +6,16 @@ This is the official repository for *CPT202 Software Engineering Group Project* 
 
 The project is now available at [101.132.122.132:8080](http://101.132.122.132:8080). Hope you enjoy :)
 
+#### **Notes:** 
+
+Only admins can access the management system. Access permission has been set to the related pages. 
+
+For security concerns, currently we don't accept external registration for the admin accounts. 
+
+If you need an admin account for better user trial, please [email us](mailto: xuening.wang19@student.xjtlu.edu.cn).
+
+
+
 ## Guideline
 
 To start the project locally, install [git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git) on your PC. 
