@@ -31,11 +31,6 @@ public class Post implements Serializable {
     private String username;
 
     /**
-     *
-     */
-    private String postName;
-
-    /**
      * the content of post
      */
     private String text;
@@ -54,11 +49,6 @@ public class Post implements Serializable {
      * 0- unlike the posts，1- like the posts
      */
     private Boolean isLike;
-
-    /**
-     * log - poster
-     */
-    private String createdUser;
 
     /**
      * log - created time

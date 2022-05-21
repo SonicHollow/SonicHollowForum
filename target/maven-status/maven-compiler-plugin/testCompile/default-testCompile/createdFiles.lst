@@ -1,0 +1,5 @@
+com\sonichollow\forum\service\UserServiceTests.class
+com\sonichollow\forum\mapper\PostMapperTests.class
+com\sonichollow\forum\ForumApplicationTests.class
+com\sonichollow\forum\mapper\UserMapperTests.class
+com\sonichollow\forum\service\PostServiceTests.class

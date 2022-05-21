@@ -29,24 +29,23 @@ public class PostMapperTests {
         post.forEach(System.out::println);
     }
 
-    @Test
-    void update() {
-        Post uppost = new Post();
-        uppost.setUsername("Alice");
-        uppost.setPostName("TestPost");
-        uppost.setText("This is a post");
-
-        int update = postMapper.update(uppost, null);
-        System.out.println(update);
-    }
+//    @Test
+//    void update() {
+//        Post uppost = new Post();
+//        uppost.setUsername("Alice");
+//        uppost.setText("This is a post");
+//        uppost.setViewCount(0);
+//        int update = postMapper.update(uppost, null);
+//        System.out.println(update);
+//    }
 
     @Test
     void testInsert() {
         //insert INSERT INTO post ( username, post_name, text ) VALUES ( ?, ?, ? )
         Post post3 = new Post();
         post3.setUsername("Bob");
-        post3.setPostName("TestPost");
         post3.setText("This is a post");
+        post3.setViewCount(0);
         int result = postMapper.insert(post3);
         log.warn("insert => {}", result);
         log.warn("id => {}", post3.getPid());
