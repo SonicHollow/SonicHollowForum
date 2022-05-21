@@ -67,7 +67,7 @@ public class PostController {
         // Check if the user likes the post
         boolean liked = false;
         if(sessionUid!=null){
-            liked = postService.getLikeStatus(post);
+            liked = postService.getLikeStatus(post, u.getUsername());
         }
         // Add data to the model
         model.addAttribute("avatar", avatar);
@@ -78,14 +78,14 @@ public class PostController {
     }
 
     // Like the post
-    @PutMapping("/like/{pid}")
-    public Result likePost(@PathVariable("pid") int pid) {
-        return postService.clickLikes(pid);
+    @PutMapping("/like/{pid}/{uid}")
+    public Result likePost(@PathVariable("pid") int pid , @PathVariable("uid") int uid) {
+        return postService.clickLikes(pid, uid);
     }
 
-    @RequestMapping("/likepost/{pid}")
-    public String likeexample(@PathVariable("pid") int pid, Model model) {
-        postService.clickLikes(pid);
+    @RequestMapping("/likepost/{pid}/{uid}")
+    public String likeexample(@PathVariable("pid") int pid, @PathVariable("uid") int uid, Model model) {
+        postService.clickLikes(pid, uid);
         return "util/closeme";
     }
 

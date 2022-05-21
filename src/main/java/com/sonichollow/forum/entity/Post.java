@@ -20,165 +20,61 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Post implements Serializable {
     /**
-     * 帖子id
+     * post ID
      */
     @TableId(type = IdType.AUTO)
     private Integer pid;
 
     /**
-     * 用户名
+     *
      */
     private String username;
 
     /**
-     * 帖子名称
+     *
      */
     private String postName;
 
     /**
-     * 帖子内容
+     * the content of post
      */
     private String text;
 
     /**
-     * 点赞
+     * the number of likes
      */
     private Integer likes;
 
     /**
-     * 踩
-     */
-    private Integer hates;
-
-    /**
-     * 访问权限: only-me/public/private
-     */
-    private String accessPermission;
-
-    /**
-     * 访问次数
-     */
-    private Integer accessTimes;
-
-    /**
-     * 是否删除：0-未删除，1-已删除
-     */
-    private Integer isDelete;
-
-    /**
-     * 是否精选：0-未精选，1-精选
-     */
-    private Integer isSelect;
-
-    /**
-     * 是否精选：0-不置顶，1-置顶
-     */
-    private Integer isAbove;
-
-    /**
-     *
+     * the number of views
      */
     private Integer viewCount;
 
     /**
-     * 0-未点赞，1-已点赞
+     * 0- unlike the posts，1- like the posts
      */
     private Boolean isLike;
 
     /**
-     *
-     */
-    private String tag3;
-
-    /**
-     *
-     */
-    private String tag4;
-
-    /**
-     *
-     */
-    private String tag5;
-
-    /**
-     *
-     */
-    private String tag6;
-
-    /**
-     *
-     */
-    private String tag7;
-
-    /**
-     *
-     */
-    private String tag8;
-
-    /**
-     *
-     */
-    private String feature1;
-
-    /**
-     *
-     */
-    private String feature2;
-
-    /**
-     *
-     */
-    private String feature3;
-
-    /**
-     *
-     */
-    private String feature4;
-
-    /**
-     *
-     */
-    private String feature5;
-
-    /**
-     *
-     */
-    private String feature6;
-
-    /**
-     *
-     */
-    private String feature7;
-
-    /**
-     *
-     */
-    private String feature8;
-
-    /**
-     * 日志-创建人
+     * log - poster
      */
     private String createdUser;
 
     /**
-     * 日志-创建时间
+     * log - created time
      */
     private Date createdTime;
 
     /**
-     * 日志-最后修改执行人
+     * log - Last modifier
      */
     private String modifiedUser;
 
     /**
-     * 日志-最后修改时间
+     * log - Last Modified time
      */
     private Date modifiedTime;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
-
-    public Integer getLikes() {
-        return likes;
-    }
 }
