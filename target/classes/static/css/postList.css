@@ -1,0 +1,497 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+.typewriter {
+    width: 41%;
+    text-align: center;
+    margin: auto;
+}
+
+.typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    text-align: center;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
+}
+
+.search {
+    position: fixed;
+    right: 60px;
+    top: 150px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.search .search-input {
+    float: right;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    background: #ccc;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    background: aqua;
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+html, body {
+    background-color: #333D47;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Basic CSS Reset */
+html, body, div, article, section, header,
+h1, h2, h3, h4, h5, h6,
+ul, li, ol, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: none;
+}
+
+/* Global Styles */
+body {
+    line-height: 1.55;
+    font-size: 100%;
+    /*font-weight: 400;*/
+    font-family: helvetica, arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*font-family: 'Roboto Slab', serif;*/
+    /*font-weight: 700;*/
+    line-height: 1.2;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.text {
+    color: white;
+    /*font-family: 'Roboto Slab', serif;*/
+    font-family: helvetica, arial, sans-serif;
+    letter-spacing: .05em;
+    text-shadow: 4px 4px 0 #86a7ca,
+    7px 7px 0 rgba(0, 0, 0, 0.2);
+    font-size: 2.3em;
+    /*font-family:  sans-serif;*/
+    -webkit-animation: shift 2s;
+    animation: shift 2s;
+    margin-top: 150px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: lighter;
+    font-size: 1.55em;
+    padding-bottom: .35em;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.widthWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Post Index */
+
+article {
+    margin-top: -0.063em;
+}
+
+article a {
+    display: block;
+    padding: 2.5em 0 2.5em 2.5em;
+    overflow: hidden;
+    border-top: .063em solid #ccc;
+    border-bottom: .063em solid #ccc;
+}
+
+article a:hover {
+    background: #eee;
+    border-top: #666 solid .25em;
+    padding: 2.5em 0 2.5em 2.5em;
+}
+
+.postImg {
+    float: left;
+    width: 15%;
+    box-sizing: border-box;
+    padding-right: 2em;
+}
+
+.postImg img {
+    width: 100%;
+}
+
+article a h2 {
+    color: #00b2b3;
+    float: left;
+    width: 72%;
+}
+
+article a:hover h2 {
+    color: #157EBF;
+}
+
+article a p {
+    font-weight: lighter;
+    color: white;
+    float: left;
+    width: 72%;
+}
+
+article a p.name {
+    display: block;
+    font-weight: lighter;
+    float: left;
+    width: 62%;
+    font-size: smaller;
+    color: cadetblue;
+}
+
+article a:hover p.name {
+    color: #157EBF;
+}
+
+article a:hover p {
+    color: #222;
+}
+
+@media only screen and (max-width: 750px) {
+    #postIndex {
+        width: 100%;
+    }
+
+    article a {
+        padding: 2.374em 1.5em 2.5em 1.5em;
+    }
+
+    article a:hover {
+        padding: 2.187em 1.5em 2.5em 1.5em;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .postImg {
+        display: none;
+    }
+
+    article a p, article a h2 {
+        width: 100%;
+    }
+
+}
+
+
+/*----- Blog -----*/
+
+.post-time-section {
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    overflow: hidden;
+}
+
+.post-time-section .post-date {
+    padding: 10px 0;
+    width: 55px;
+    background-color: #444;
+    color: #fff;
+}
+
+.post-time-section .post-date .day {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.post-time-section .post-month .month {
+    display: block;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    background-color: #333;
+}
+
+.button {
+    margin: 50px auto;
+    font-size: 20px;
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #fff;
+    font-weight: 400;
+    color: #666;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 10px 10px 10px;
+    position: fixed;
+    top: 180px;
+    right: 73px;
+    background: #eee;
+    width: 150px;
+    display: block;
+    text-align: center;
+    box-shadow: 1px 1px 1px #fff;
+    -moz-box-shadow: 1px 1px 1px #fff;
+    -webkit-box-shadow: 1px 1px 1px #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.button:hover {
+    color: #333;
+    background: #eeffff;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.modalbg {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 99999;
+    -moz-transition: all 2s ease-out;
+    -webkit-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+    -webkit-transition-delay: .1s;
+    -moz-transition-delay: .1s;
+    -o-transition-delay: .1s;
+    -transition-delay: .1s;
+    display: block;
+    pointer-events: none;
+}
+
+.modalbg .dialog {
+    width: 400px;
+    position: relative;
+    top: -1000px;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+    box-shadow: 0 0 10px #000;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+}
+
+.modalbg .dialog .ie7 {
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
+}
+
+.modalbg:target {
+    display: block;
+    pointer-events: auto;
+    background: rgba(4, 10, 30, 0.8);
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.modalbg:target .dialog {
+    top: -20px;
+    -moz-transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    -webkit-transition-delay: .2s;
+    -moz-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    -transition-delay: .2s;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    -webkit-transition-delay: .2s;
+    -moz-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    -transition-delay: .2s;
+}
+
+.close .ie7 {
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
+}
+
+.close:hover {
+    background: #00d9ff;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.sl {
+    position: fixed;
+    right: 70px;
+    top: 330px;
+}
+
+select {
+    background-color: #00b2b3;
+    color: #fff;
+    font-size: inherit;
+    padding: 10px 10px 10px 10px;
+    border: 0;
+    margin: 0;
+    width: 150px;
+    border-radius: 3px;
+    text-indent: 0;
+    text-overflow: '';
+    -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+/*Send Button*/
+
+.bubbly-button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 135px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #00b2b3;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px gray;
+}
+
+.bubbly-button:focus {
+    outline: 0;
+}
+
+.bubbly-button:before, .bubbly-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: 1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}

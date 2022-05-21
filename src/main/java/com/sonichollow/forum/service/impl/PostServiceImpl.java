@@ -20,14 +20,15 @@ import java.util.Date;
 import java.util.Objects;
 
 import static com.sonichollow.forum.util.RedisUtil.POST_LIKED_KEY;
+
 /**
  * @author admin
- * @description  service implementation of post module
+ * @description service implementation of post module
  * @createDate 2022-04-18 16:21:26
  */
 @Service
 public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
-        implements PostService{
+        implements PostService {
     @Resource
     private PostMapper postMapper;
 
@@ -40,45 +41,49 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
     private StringRedisTemplate stringRedisTemplate;
 
     /**
-     *  publish post
+     * publish post
+     *
      * @param post
      * @return post id
      */
     @Override
-    public int PublishPost(Post post){
+    public int PublishPost(Post post) {
         //construct the posts
-        post.setPostName(post.getPostName());
         post.setUsername(post.getUsername());
         post.setModifiedUser(post.getUsername());
         post.setText(post.getText());
         post.setCreatedTime(new Date());
         post.setLikes(0);
-
-
+        post.setViewCount(0);
         //insert the posts
         postMapper.insert(post);
         System.out.println(post.getPid());
 
-
-
         return post.getPid();
+    }
+
+    @Override
+    public Integer getLikesFromPid(Integer pid){
+        return postMapper.getLikesFromPid(pid);
     }
 
     /**
      * edit the content of the posts
+     *
      * @param post
      */
     @Override
-    public void updatePost(Post post){
+    public void updatePost(Post post) {
         UpdateWrapper<Post> wrapper = new UpdateWrapper<Post>();
-        wrapper.eq("text",post.getText());
+        wrapper.eq("text", post.getText());
         post.setModifiedUser(post.getUsername());
         post.setModifiedTime(new Date());
-        postMapper.update(post,wrapper);
+        postMapper.update(post, wrapper);
     }
 
     /**
-     *  like the posts
+     * like the posts
+     *
      * @param pid
      * @return
      */
@@ -89,13 +94,13 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
         Double score = stringRedisTemplate.opsForZSet().score(key, String.valueOf(uid));
         // if not - user could like the posts
         if (score == null) {
-            boolean isSuccess = update().setSql("likes = likes + 1").eq("pid", pid).update();
+            boolean isSuccess = update().setSql("likes = likes - 1").eq("pid", pid).update();
             if (isSuccess) {
                 stringRedisTemplate.opsForZSet().add(key, String.valueOf(uid), System.currentTimeMillis());
             }
         } else {
             // cancel likes
-            boolean isSuccess = update().setSql("likes = likes - 1").eq("pid", pid).update();
+            boolean isSuccess = update().setSql("likes = likes + 1").eq("pid", pid).update();
             if (isSuccess) {
                 stringRedisTemplate.opsForZSet().remove(key, String.valueOf(uid));
             }
@@ -105,12 +110,13 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
 
     /**
      * Get the content of a post by its post id
+     *
      * @param pid
      * @return the content of a post
      * @throws NullPointerException
      */
     @Override
-    public Post getPostByPid(int pid) throws NullPointerException{
+    public Post getPostByPid(int pid) throws NullPointerException {
         //update the number of views
         postMapper.updateViewCount(pid);
         Post post = postMapper.getAllByPid(pid);
@@ -123,23 +129,23 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post>
 
     /**
      * Determine whether a user likes a post or not
+     *
      * @param post
      * @return true: Users have liked the post
-     *         false: Users do not like posts
+     * false: Users do not like posts
      */
     @Override
-    public boolean getLikeStatus(Post post,String username) {
+    public boolean getLikeStatus(Post post, String username) {
         int uid = userMapper.getUser(username).getUid();
 
         // check if the user likes the posts or not
-        String key = "post:like"+post.getPid();
+        String key = "post:like" + post.getPid();
         Double score = stringRedisTemplate.opsForZSet().score(key, String.valueOf(uid));
         post.setIsLike(score != null);
-        if(score != null){
+        if (score != null) {
             post.setIsLike(true);
             return true;
-        }else
-        {
+        } else {
             return false;
         }
     }

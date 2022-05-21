@@ -1,0 +1,100 @@
+p {
+  color: white;
+}
+body {
+  font-family: 'Noto Sans',serif;
+  padding: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.text {
+  color: white;
+
+  letter-spacing: .05em;
+  text-shadow:
+          4px 4px 0 #86a7ca,
+          7px 7px 0 rgba(0, 0, 0, 0.2);
+  font-size:2.3em;
+  font-family:  sans-serif;
+  margin-top:100px;
+  text-align:center;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+}
+.container {
+  max-width: 980px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.landing-section {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+}
+.landing-section:before,
+.landing-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.landing-section-header {
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: 800;
+  font-size: 5.6rem;
+}
+.landing-section-grid.mod-3 > * {
+  display: block;
+  float: left;
+  width: 33%;
+  padding: 20px 0;
+}
+.landing-section-grid.mod-3 > *:nth-child(3n-2) {
+  padding-right: 10px;
+}
+.landing-section-grid.mod-3 > *:nth-child(3n-1) {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.landing-section-grid.mod-3 > *:nth-child(3n) {
+  padding-left: 10px;
+}
+.icon-link {
+  display: block;
+  padding: 20px;
+  color: #eee;
+  text-decoration: none;
+  height: 250px;
+}
+.icon-link:hover {
+  background-color: #eee;
+  color: #000;
+}
+.icon-link-img {
+  float: left;
+  width: 80px;
+  height: auto;
+  padding-right: 20px;
+}
+.icon-link:hover .icon-link-img {
+  -webkit-filter: brightness(1.1);
+  filter: brightness(1.1);
+}
+.icon-link-text {
+  margin-left: 80px;
+}
+.icon-link-title {
+  margin: 0 0 0.5em;
+  font-size: 2rem;
+}
+
+.icon-link-summary {
+  color: #777;
+  font-size: 1.6rem;
+}

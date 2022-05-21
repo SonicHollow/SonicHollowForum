@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>SonicHollow Forum</title>
+    <link rel="stylesheet" href="../static/css/index.css"/>
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon"/>
+</head>
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"> </div>
+<body>
+
+<br>
+<br>
+
+<div class="text">
+    <h1>About us</h1>
+</div>
+
+<h2 style="margin-top: 100px">
+    Contributors: &nbsp; XJTLU CPT202 2022 Spring Group-B1
+</h2>
+
+<h2>
+    ICS: &nbsp; Xuening Wang · Hsun Pu · Zhenxu Gao · Mingze Wu · Yiming Liu · Tianyu Ma
+</h2>
+
+<h2>
+    IMIS: &nbsp; Ziteng Ma · Siqi Du · Yiyan Ran
+</h2>
+
+
+<footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+    h2 {
+        display: block;
+        text-align: center;
+        color: white;
+        justify-content: center;
+        font-size: x-large;
+        font-weight: lighter;
+        margin-top: 50px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+</style>

@@ -43,7 +43,7 @@ public class PostServiceTests {
     public void testPublish() {
         try {
             Post post=new Post();
-            post.setPostName("aaa");
+            post.setViewCount(0);
             post.setUsername("bbb");
             post.setText("This is a post");
             postService.PublishPost(post);
@@ -54,17 +54,17 @@ public class PostServiceTests {
         }
     }
 
-    @Test
-    public void testUpdate(){
-        Post post=new Post();
-        post.setPostName("aaa");
-        post.setUsername("bbb");
-        post.setText("This is a post");
-        post.setModifiedTime(new Date());
-        postService.updatePost(post);
-        System.out.println(post.getText());
-
-    }
+//    @Test
+//    public void testUpdate(){
+//        Post post=new Post();
+//        post.setUsername("bbb");
+//        post.setViewCount(0);
+//        post.setText("This is a post");
+//        post.setModifiedTime(new Date());
+//        postService.updatePost(post);
+//        System.out.println(post.getText());
+//
+//    }
 
     // Test for connection to redis
     @DisplayName("RedisTest")
@@ -98,22 +98,19 @@ public class PostServiceTests {
 
     @Test
     public void testClickLikes(){
-        System.out.println(postService.clickLikes(41,94));
-//        redisTemplate.opsForValue().set(pid +":likes", uid);
-//        Object result = redisTemplate.opsForValue().get(pid +":likes");
-//        System.out.println("result = "+ result);
+        System.out.println(postService.clickLikes(41,1));
     }
 
     @Test
     public void testGetPostByPid(){
-        Post post = postService.getPostByPid(42);
+        Post post = postService.getPostByPid(100);
         System.out.println(post);
     }
 
     @Test
     public void testLikeStatus(){
-        Post post = postService.getPostByPid(42);
-        System.out.println(postService.getLikeStatus(post,"Tim"));
+        Post post = postService.getPostByPid(100);
+        System.out.println(postService.getLikeStatus(post,"Alice"));
         System.out.println("Test Successfully");
     }
 }

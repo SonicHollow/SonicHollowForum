@@ -15,5 +15,5 @@ public interface PostService extends IService<Post> {
     Post getPostByPid(int pid);
     Result clickLikes(int pid, int uid);
     boolean getLikeStatus(Post post,String username);
+    Integer getLikesFromPid(Integer pid);
 }
-

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../../static/css/user/login.css"/>
+    <script src="../../static/js/user/login.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="../../static/images/favicon.ico" type="image/x-icon"/>
+</head>
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%"></div>
+<body style="display: flex">
+<div class="container">
+    <h1>Login to SonicHollow</h1>
+    <form method="post" action="loginUser">
+        <div class="form-control" style="margin: 20px 0 40px;">
+            <input id="username" name="username" type="text" th:value="${param.username}"
+                   class="form-control login-input" required maxlength="50" placeholder="Username" style="color: gray">
+        </div>
+        <div class="form-control" style="margin: 20px 0 40px;">
+            <input id="password" name="password" type="password" th:value="${param.password}"
+                   class="form-control login-input login-password" required maxlength="50" placeholder="Password"
+                   style="color: gray">
+        </div>
+        <div class="form-control" style="margin: 20px 0 40px;">
+            <input id="code" name="code" class="form-control login-input login-input" required maxlength="4"
+                   placeholder="Verification Code" style="color: gray">
+        </div>
+        <div class="form-control" style="margin: 20px 0 40px;">
+            <img id="code_img" alt="Display Error" src="loginimage" width="50%">
+            <span class="errorMsg" style="color: white" th:text="${param.msg}"></span>
+        </div>
+        <button type="submit" id="signin" class="btn">Login</button>
+        <p class="text" style="color: gray">Don't have an account? <a href="regist">Register one!</a></p>
+    </form>
+</div>
+<footer th:replace="common/footer.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>
+

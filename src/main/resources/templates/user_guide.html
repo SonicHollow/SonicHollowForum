@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<head>
+    <meta charset="UTF-8">
+    <title>SonicHollow Forum</title>
+    <link rel="stylesheet" href="../static/css/user_guide.css"/>
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon"/>
+</head>
+
+<div th:include="common/commonNavbar" style="position:fixed;left: 0;top:0; width:100%; font-size: initial;font-weight: lighter; z-index: 1000"></div>
+
+<body style="background-color: #333D47; margin: 0;">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700' rel='stylesheet' type='text/css'>
+
+<div class="container">
+    <section class="landing-section">
+        <div class="text">
+            <h1 style="font-size: 50pt">Getting Started</h1>
+        </div>
+        <nav class="landing-section-grid mod-3">
+            <div>
+                <a class="icon-link" href="#">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/04/OE16UK.png" alt="LiveWhale Calendar User Guide"/>
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">Publish Posts</h3>
+                        <p class="icon-link-summary">Click “POST SOMETHING!” on the posts list page. Type something in the box and submit it.</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a class="icon-link">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/04/OE1DD1.png" alt="LiveWhale Calendar User Guide"/>
+
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">Search and See Posts</h3>
+                        <p class="icon-link-summary">In homepage, you can enter keywords in the search bar to find relevant posts; Click “SEE POSTS” to enter the posts list page.</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a class="icon-link">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/04/OE1BuR.png" alt="LiveWhale Calendar User Guide"/>
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">Like Posts</h3>
+                        <p class="icon-link-summary">If you want to like a post, click the heart on the corresponding post.</p>
+                    </div>
+                </a>
+                </div>
+        </nav>
+        <nav class="landing-section-grid mod-3">
+            <div>
+                <a class="icon-link">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/04/OE1yE6.png" alt="LiveWhale Calendar User Guide"/>
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">User Information</h3>
+                        <p class="icon-link-summary">Click the username in post detail page, you can see the user's information page. You can also access MyInfo page to customize your personal information.</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a class="icon-link" href="login">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/04/OE1c4O.png" alt="LiveWhale Calendar User Guide"/>
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">Login or Register</h3>
+                        <p class="icon-link-summary">Click the “Sign in” on the navigation bar, fill in the form and login to SonicHollow. If you don’t have an account, click “Register one” at the bottom.</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a class="icon-link">
+                    <img class="icon-link-img" src="https://s1.ax1x.com/2022/05/21/Oj1vEF.png" alt="LiveWhale Calendar User Guide"/>
+                    <div class="icon-link-text">
+                        <h3 class="icon-link-title">Management System</h3>
+                        <p class="icon-link-summary">Only for super admins. Forum admins can manage user information and post information here.</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </section>
+</div>
+<footer th:replace="common/footer_long.html" style="position:fixed;left: 0;bottom:0; height: 100px; width: 100%"></footer>
+</body>
+</html>
