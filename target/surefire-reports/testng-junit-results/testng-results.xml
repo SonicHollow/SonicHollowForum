@@ -2,43 +2,43 @@
 <testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-22T03:56:21 CST" name="Surefire suite" finished-at="2022-05-22T03:56:36 CST" duration-ms="15097">
+  <suite started-at="2022-05-22T04:44:37 CST" name="Surefire suite" finished-at="2022-05-22T04:44:53 CST" duration-ms="15784">
     <groups>
     </groups>
-    <test started-at="2022-05-22T03:56:21 CST" name="Surefire test" finished-at="2022-05-22T03:56:36 CST" duration-ms="15097">
+    <test started-at="2022-05-22T04:44:37 CST" name="Surefire test" finished-at="2022-05-22T04:44:53 CST" duration-ms="15784">
       <class name="com.sonichollow.forum.service.PostServiceTests">
-        <test-method signature="testClickLikes()" started-at="2022-05-22T03:56:22 CST" name="testClickLikes" finished-at="2022-05-22T03:56:36 CST" duration-ms="13869" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testClickLikes -->
-        <test-method signature="testGetCount()" started-at="2022-05-22T03:56:22 CST" name="testGetCount" finished-at="2022-05-22T03:56:35 CST" duration-ms="13760" status="PASS">
+        <test-method signature="testGetCount()" started-at="2022-05-22T04:44:38 CST" name="testGetCount" finished-at="2022-05-22T04:44:52 CST" duration-ms="14345" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetCount -->
-        <test-method signature="testString()" started-at="2022-05-22T03:56:22 CST" name="testString" finished-at="2022-05-22T03:56:36 CST" duration-ms="14441" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testString -->
-        <test-method signature="testSavePost()" started-at="2022-05-22T03:56:22 CST" name="testSavePost" finished-at="2022-05-22T03:56:36 CST" duration-ms="13979" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSavePost -->
-        <test-method signature="testHash()" started-at="2022-05-22T03:56:22 CST" name="testHash" finished-at="2022-05-22T03:56:36 CST" duration-ms="14269" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testHash -->
-        <test-method signature="testGetPostByPid()" started-at="2022-05-22T03:56:22 CST" name="testGetPostByPid" finished-at="2022-05-22T03:56:36 CST" duration-ms="14125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetPostByPid -->
-        <test-method signature="testPublish()" started-at="2022-05-22T03:56:22 CST" name="testPublish" finished-at="2022-05-22T03:56:36 CST" duration-ms="14379" status="PASS">
+        <test-method signature="testPublish()" started-at="2022-05-22T04:44:38 CST" name="testPublish" finished-at="2022-05-22T04:44:53 CST" duration-ms="14998" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPublish -->
-        <test-method signature="testLikeStatus()" started-at="2022-05-22T03:56:22 CST" name="testLikeStatus" finished-at="2022-05-22T03:56:35 CST" duration-ms="13607" status="PASS">
+        <test-method signature="testHash()" started-at="2022-05-22T04:44:38 CST" name="testHash" finished-at="2022-05-22T04:44:53 CST" duration-ms="14885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHash -->
+        <test-method signature="testLikeStatus()" started-at="2022-05-22T04:44:38 CST" name="testLikeStatus" finished-at="2022-05-22T04:44:52 CST" duration-ms="14214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLikeStatus -->
+        <test-method signature="testSavePost()" started-at="2022-05-22T04:44:38 CST" name="testSavePost" finished-at="2022-05-22T04:44:53 CST" duration-ms="14599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSavePost -->
+        <test-method signature="testClickLikes()" started-at="2022-05-22T04:44:38 CST" name="testClickLikes" finished-at="2022-05-22T04:44:52 CST" duration-ms="14485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testClickLikes -->
+        <test-method signature="testGetPostByPid()" started-at="2022-05-22T04:44:38 CST" name="testGetPostByPid" finished-at="2022-05-22T04:44:53 CST" duration-ms="14776" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetPostByPid -->
+        <test-method signature="testString()" started-at="2022-05-22T04:44:38 CST" name="testString" finished-at="2022-05-22T04:44:53 CST" duration-ms="15060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testString -->
       </class> <!-- com.sonichollow.forum.service.PostServiceTests -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
