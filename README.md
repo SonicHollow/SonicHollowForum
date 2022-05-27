@@ -12,7 +12,7 @@ Only admins can access the management system. Access permission has been set to 
 
 For security concerns, currently we don't accept external registration for the admin accounts. 
 
-If you need an admin account for better user trial, please [email us](mailto: xuening.wang19@student.xjtlu.edu.cn).
+If you need an admin account for better user trial, please [email us](mailto:xuening.wang19@student.xjtlu.edu.cn).
 
 
 
